@@ -19,10 +19,13 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Switch>
+          <Route path="/login">
+            <h1>Page Count: {count}</h1>
+          </Route>
           <Route path="/homepage">
             <PostList></PostList>
           </Route>
-          <Route exact path="/count">
+          <Route path="/explore">
             <h1>Page Count: {count}</h1>
           </Route>
         </Switch>
