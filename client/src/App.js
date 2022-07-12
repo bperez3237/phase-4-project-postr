@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import './App.css';
-import PostList from './components/PostList';
+import Homepage from './components/Homepage';
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
             <h1>Page Count: {count}</h1>
           </Route>
           <Route path="/homepage">
-            <PostList></PostList>
+            <Homepage></Homepage>
           </Route>
           <Route path="/explore">
             <h1>Page Count: {count}</h1>
