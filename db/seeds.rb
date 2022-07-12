@@ -33,9 +33,7 @@ l10 = Location.create(name: Faker::Address.unique.city , country: Faker::Address
 
 puts 'seeding posts'
 for i in 1..100 do
-    Post.create(user_id: u1, location_id: l2, text: Faker::Twitter.status[:text])
+    Post.create(user_id: User.order('RANDOM()').first.id, location_id: Location.order('RANDOM()').first.id, text: Faker::Twitter.status[:text])
 end
-Post.create(user_id: 1, location_id: l2, text: 'dniuenkxjnej')
 
-byebug
 puts 'done seeding'
