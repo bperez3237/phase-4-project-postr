@@ -5,8 +5,6 @@ function LocationList() {
     return (
         <></>
     )
-
-
 }
 
 export default LocationList;
