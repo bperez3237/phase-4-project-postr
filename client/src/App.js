@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import './App.css';
 import Homepage from './components/Homepage';
+import Explore from './components/Explore';
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
             <Homepage></Homepage>
           </Route>
           <Route path="/explore">
-            <h1>Page Count: {count}</h1>
+            <Explore></Explore>
           </Route>
         </Switch>
       </div>
