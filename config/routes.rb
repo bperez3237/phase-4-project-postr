@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :posts, only: [:index]
   
   get '/hello', to: 'application#hello_world'
+
 
 
   get '*path',
