@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :posts, only: [:index]
+  resources :users, only: [:create,:show]
   
-  get '/hello', to: 'application#hello_world'
-
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+  
 
 
   get '*path',
