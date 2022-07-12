@@ -1,6 +1,6 @@
 import React from "react";
-import PostBar from "./PostBar";
-import PostList from "./PostList";
+import PostBar from "../components/PostBar";
+import PostList from "../components/PostList";
 
 function Homepage() {
 

@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import './App.css';
-import Homepage from './components/Homepage';
-import Explore from './components/Explore';
+import Homepage from './pages/Homepage';
+import Explore from './pages/Explore';
 import Navbar from './components/Navbar';
-import Login from './components/Login';
+import Login from './pages/Login';
 
 
 function App() {

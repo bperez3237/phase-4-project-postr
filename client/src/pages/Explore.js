@@ -1,6 +1,6 @@
 import React from "react";
-import LocationList from "./LocationList";
-import PostList from "./PostList";
+import LocationList from "../components/LocationList";
+import PostList from "../components/PostList";
 
 function Explore() {
 
