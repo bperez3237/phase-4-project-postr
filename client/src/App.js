@@ -1,11 +1,11 @@
-import logo from './logo.svg';
+
 import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import './App.css';
 import Homepage from './pages/Homepage';
 import Explore from './pages/Explore';
-import Navbar from './components/Navbar';
+import Nav from './components/Nav';
 import Login from './pages/Login';
 
 
@@ -27,7 +27,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar></Navbar>
+        <Nav setUser={setUser}></Nav>
         <Switch>
           <Route path="/">
             <Homepage></Homepage>
