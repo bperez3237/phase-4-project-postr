@@ -29,7 +29,7 @@ function App() {
       <div className="App">
         <Navbar></Navbar>
         <Switch>
-          <Route path="/homepage">
+          <Route path="/">
             <Homepage></Homepage>
           </Route>
           <Route path="/explore">

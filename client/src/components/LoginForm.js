@@ -1,6 +1,6 @@
 import React from "react";
 import {useState} from 'react'
-import {Button, Form} from 'react-bootstrap'
+import {Alert,Button, Form} from 'react-bootstrap'
 
 function LoginForm({onLogin}) {
     const [username, setUsername] = useState("");
@@ -30,7 +30,7 @@ function LoginForm({onLogin}) {
     return (
         <Form onSubmit={handleSubmit}>
              <Form.Group>
-             <Form.Label>Username</Form.Label>
+             <Form.Label htmlFor="username">Username</Form.Label>
                  <Form.Control
                     type="text"
                     id="username"
@@ -54,7 +54,7 @@ function LoginForm({onLogin}) {
                  </Button>
              </Form.Group>
              <Form.Group>
-                 
+                <Alert key={errors}>{errors}</Alert>
              </Form.Group>
       </Form>
     );
