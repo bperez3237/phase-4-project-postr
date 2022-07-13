@@ -1,6 +1,6 @@
 import React from "react";
 import {useState} from 'react'
-import {Alert,Button, Form} from 'react-bootstrap'
+import {Alert, Button, Form} from 'react-bootstrap'
 
 function LoginForm({onLogin}) {
     const [username, setUsername] = useState("");
@@ -29,27 +29,29 @@ function LoginForm({onLogin}) {
 
     return (
         <Form onSubmit={handleSubmit}>
-             <Form.Group>
+             <Form.Group className="mb-3">
              <Form.Label htmlFor="username">Username</Form.Label>
                  <Form.Control
-                    type="text"
+                    type="username"
                     id="username"
                     autoComplete="off"
                     value={username}
+                    placeholder="Enter Email"
                     onChange={(e) => setUsername(e.target.value)}/>
             </Form.Group>
-             <Form.Group>
+             <Form.Group className="mb-3">
                  <Form.Label htmlFor="password">Password</Form.Label>
                  <Form.Control
                     type="password"
                     id="password"
                     autoComplete="current-password"
                     value={password}
+                    placeholder="Enter Password"
                     onChange={(e) => setPassword(e.target.value)}
                  />
              </Form.Group>
-             <Form.Group>
-                 <Button variant="fill" color="primary" type="submit">
+             <Form.Group className="mb-3">
+                 <Button variant="primary" type="submit">
                      {isLoading ? "Loading..." : "Login"}
                  </Button>
              </Form.Group>
