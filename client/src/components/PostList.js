@@ -12,10 +12,10 @@ function PostList() {
             .then((data)=>setPosts(data))
     },[])
 
-    const postElements = posts.map((post)=><Post></Post>)
+    const postElements = posts.map((post)=><Post post={post}></Post>)
 
     return (
-        <Container style={{borderStyle:'solid'}}>
+        <Container style={{borderStyle:'solid', maxHeight:'900px', overflow: 'scroll'}}>
             {posts ? postElements : <></>}
         </Container>
     )
