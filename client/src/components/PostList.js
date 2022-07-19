@@ -15,7 +15,7 @@ function PostList() {
     const postElements = posts.map((post)=><Post post={post}></Post>)
 
     return (
-        <Container style={{borderStyle:'solid', maxHeight:'900px', overflow: 'scroll'}}>
+        <Container className="m-3" style={{borderStyle:'solid', maxHeight:'900px', overflow: 'scroll'}}>
             {posts ? postElements : <></>}
         </Container>
     )
