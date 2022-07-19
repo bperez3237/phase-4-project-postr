@@ -6,7 +6,7 @@ function Explore() {
 
     return (
         <>
-        <h1>hi</h1>
+        <h1>explore</h1>
             <LocationList></LocationList>
             <PostList></PostList>
         </>
