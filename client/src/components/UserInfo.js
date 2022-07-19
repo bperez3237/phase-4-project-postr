@@ -1,10 +1,16 @@
 import React from "react";
-import {Container} from 'react-bootstrap'
+import {Container, ListGroup} from 'react-bootstrap'
 
 function UserInfo() {
 
     return (
-        <Container className='m-3' style={{borderStyle:'solid'}}>Userinfo</Container>
+        <Container className='m-3' style={{borderStyle:'solid'}}>
+            <ListGroup>
+                <ListGroup.Item></ListGroup.Item>
+                <ListGroup.Item></ListGroup.Item>
+                <ListGroup.Item></ListGroup.Item>
+            </ListGroup>
+        </Container>
     )
 }
 
