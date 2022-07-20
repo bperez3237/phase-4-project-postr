@@ -13,7 +13,7 @@ function LoginForm({onLogin, location, setLocation}) {
         fetch('/locations')
             .then((r)=>r.json())
             .then((locations)=>setLocations(locations))
-    })
+    },[])
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -35,12 +35,15 @@ function LoginForm({onLogin, location, setLocation}) {
     }
 
     function handleChange(e) {
+        console.log(e.target.value)
+        // setLocation(e.target.value)
         fetch(`/locations/${e.target.value}`)
             .then((r)=>r.json())
             .then((location)=>setLocation(location))
     }
 
-    const optionElements = locations.map((location)=><option key={location.id} value={location.id} >{location.name}</option>)
+    const optionElements = locations.map((location)=><option key={location.id} value={location.id}>{location.name}</option>)
+
 
     return (
         <Container className="d-flex m-3">
@@ -71,7 +74,7 @@ function LoginForm({onLogin, location, setLocation}) {
                         {isLoading ? "Loading..." : "Login"}
                     </Button>
                 </Form.Group>
-                <Form.Select value={location} onChange={handleChange}>
+                <Form.Select value={location.id} onChange={handleChange}>
                     {locations ? optionElements : <></>}
                 </Form.Select>
         </Form>

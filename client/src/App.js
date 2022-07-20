@@ -21,8 +21,6 @@ function App() {
     });
   }, []);
 
-  console.log(location)
-
 
   if (!user) return <Login onLogin={setUser} location={location} setLocation={setLocation}/>;
 
