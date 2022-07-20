@@ -14,16 +14,24 @@ function LoginForm({onLogin, location, setLocation}) {
             .then((r)=>r.json())
             .then((locations)=>setLocations(locations))
     },[])
+    // console.log(location)
 
     function handleSubmit(e) {
         e.preventDefault();
         setIsLoading(true);
+
+        const loginObj = {
+            username: username,
+            password: password,
+            location_id: location.id
+        }
+
         fetch("/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify(loginObj),
             }).then((r) => {
                 setIsLoading(false);
                 if (r.ok) {

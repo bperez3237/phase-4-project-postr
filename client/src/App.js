@@ -12,14 +12,18 @@ function App() {
   const [user, setUser] = useState(null);
   const [location, setLocation] = useState({})
 
-  // useEffect(() => {
-  //   // auto-login
-  //   fetch("/me").then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((user) => setUser(user));
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((result) => {
+          console.log(result)
+          setUser(result.user)
+          setLocation(result.location)
+        });
+      }
+    });
+  }, []);
 
 
   if (!user) return <Login onLogin={setUser} location={location} setLocation={setLocation}/>;
@@ -29,11 +33,11 @@ function App() {
       <div className="App" >
         <Navigator setUser={setUser}></Navigator>
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Homepage location={location} user={user} setLocation={setLocation} ></Homepage>
           </Route>
           <Route path="/explore">
-            <Explore></Explore>
+            <Explore location={location} user={user}></Explore>
           </Route>
         </Switch>
       </div>

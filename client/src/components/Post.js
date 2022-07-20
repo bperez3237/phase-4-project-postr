@@ -1,12 +1,12 @@
 import React from "react";
 import {Card} from 'react-bootstrap'
 
-function Post({post, username, location}) {
+function Post({post, name, location}) {
 
     return (
         <Card className='m-4'>
             <Card.Body>
-                <Card.Subtitle>{username} says:</Card.Subtitle>
+                <Card.Subtitle>{name} says:</Card.Subtitle>
                 <Card.Text style={{fontSize:'20px'}}>{post.text}</Card.Text>
                 <Card.Subtitle>Postr'd from {location}</Card.Subtitle>
             </Card.Body>

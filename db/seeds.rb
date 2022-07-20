@@ -1,11 +1,14 @@
 require 'faker'
 require 'byebug'
 
+
+
 Post.destroy_all
 User.destroy_all
 Location.destroy_all
 
 puts 'seeding users'
+my_user = User.create(username: 'brian123', password: 'password',name: 'Brian')
 u1 = User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
 u2 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
 u3 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
