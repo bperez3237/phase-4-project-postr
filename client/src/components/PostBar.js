@@ -4,13 +4,13 @@ import NewPost from './NewPost'
 import LocationInfo from './LocationInfo'
 import UserInfo from './UserInfo'
 
-function PostBar() {
+function PostBar({user, location}) {
 
     return (
         <Container className='d-flex flex-column m-3' style={{borderStyle:'solid', maxHeight:'900px'}}>
-            <LocationInfo></LocationInfo>
+            <LocationInfo location={location}></LocationInfo>
             <NewPost></NewPost>
-            <UserInfo></UserInfo>
+            <UserInfo user={user}></UserInfo>
         </Container>
     )
 

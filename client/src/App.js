@@ -30,7 +30,7 @@ function App() {
         <Navigator setUser={setUser}></Navigator>
         <Switch>
           <Route path="/">
-            <Homepage location={location} username={user.name}></Homepage>
+            <Homepage location={location} user={user}></Homepage>
           </Route>
           <Route path="/explore">
             <Explore></Explore>
