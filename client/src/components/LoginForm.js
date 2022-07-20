@@ -35,10 +35,12 @@ function LoginForm({onLogin, location, setLocation}) {
     }
 
     function handleChange(e) {
-        setLocation(e.target.value)
+        fetch(`/locations/${e.target.value}`)
+            .then((r)=>r.json())
+            .then((location)=>setLocation(location))
     }
 
-    const optionElements = locations.map((location)=><option key={location.id}>{location.name}</option>)
+    const optionElements = locations.map((location)=><option key={location.id} value={location.id} >{location.name}</option>)
 
     return (
         <Container className="d-flex m-3">
