@@ -12,10 +12,12 @@ function LoginForm({onLogin, location, setLocation}) {
     useEffect(()=>{
         fetch('/locations')
             .then((r)=>r.json())
-            .then((locations)=>setLocations(locations))
+            .then((locations)=>{
+                setLocation(locations[0])
+                setLocations(locations)
+            })
     },[])
-    // console.log(location)
-
+   
     function handleSubmit(e) {
         e.preventDefault();
         setIsLoading(true);

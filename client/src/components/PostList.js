@@ -2,10 +2,9 @@ import React from "react";
 import {Container} from 'react-bootstrap'
 import Post from './Post'
 
-function PostList({location, username: name}) {
+function PostList({location, name}) {
 
     const postElements = location.posts.sort((a,b)=> Date.parse(b.created_at) - Date.parse(a.created_at)).map((post)=>{
-        // console.log(Date.parse(post.created_at))
         return <Post key={post.id} post={post} location={location.name} name={name}></Post>}
         )
 

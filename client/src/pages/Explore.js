@@ -15,10 +15,8 @@ function Explore({user}) {
                 setLocation(locations[0])
                 setAllLocations(locations)
             })
-
     },[])
 
-    console.log(location)
     return (
 
         <Container>
