@@ -1,21 +1,21 @@
 import React from "react";
-import {Container, Row, Col, Card, ListGroup} from 'react-bootstrap'
+import {Container, Row, Col, Card, ListGroup, Image} from 'react-bootstrap'
 
-function LocationInfo() {
+function LocationInfo({location}) {
+    console.log(location)
 
     return (
         <Container className='m-3' style={{borderStyle:'solid'}}>
             <Row>
                 <Col>
-                    image here
+                    <Image ></Image>
                 </Col>
                 <Col>
                     <Card>
-                        <Card.Header>Header</Card.Header>
+                        <Card.Header>{location.name}</Card.Header>
                         <ListGroup>
-                            <ListGroup.Item></ListGroup.Item>
-                            <ListGroup.Item></ListGroup.Item>
-                            <ListGroup.Item></ListGroup.Item>
+                            <ListGroup.Item>Country: {location.country}</ListGroup.Item>
+                            <ListGroup.Item>{location.coordinates}</ListGroup.Item>
                         </ListGroup>
                     </Card>
                 </Col>
