@@ -2,7 +2,6 @@ import React from "react";
 import {Container, Row, Col, Card, ListGroup, Image} from 'react-bootstrap'
 
 function LocationInfo({location}) {
-    console.log(location)
 
     return (
         <Container className='m-3' style={{borderStyle:'solid'}}>
