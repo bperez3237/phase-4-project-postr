@@ -4,9 +4,8 @@ import {Button, Col, Container} from 'react-bootstrap'
 import LoginForm from "../components/LoginForm";
 import SignUpForm from "../components/SignUpForm";
 
-function Login({onLogin}) {
+function Login({onLogin, location, setLocation}) {
     const [showLogin, setShowLogin] = useState(true);
-    const [locations, setLocations] = useState([])
 
     return (
         <Container className='d-flex'>
@@ -14,7 +13,7 @@ function Login({onLogin}) {
             <h1 style={{"color":'white', "backgroundColor":"blue"}} >POSTR</h1>
             {showLogin ? (
                 <div>
-                    <LoginForm className='justify-content-center' onLogin={onLogin}/>
+                    <LoginForm className='justify-content-center' onLogin={onLogin} location={location} setLocation={setLocation}/>
                     <p>
                         Don't have an account? &nbsp;
                         <Button color="secondary" onClick={() => setShowLogin(false)}>

@@ -10,6 +10,7 @@ import Login from './pages/Login';
 
 function App() {
   const [user, setUser] = useState(null);
+  const [location, setLocation] = useState('')
 
   useEffect(() => {
     // auto-login
@@ -21,7 +22,7 @@ function App() {
   }, []);
 
 
-  if (!user) return <Login onLogin={setUser} />;
+  if (!user) return <Login onLogin={setUser} location={location} setLocation={setLocation}/>;
 
    else {return (
     <BrowserRouter>

@@ -12,7 +12,7 @@ function PostList() {
             .then((data)=>setPosts(data))
     },[])
 
-    const postElements = posts.map((post)=><Post post={post}></Post>)
+    const postElements = posts.map((post)=><Post key={post.id} post={post}></Post>)
 
     return (
         <Container className="m-3" style={{borderStyle:'solid', maxHeight:'900px', overflow: 'scroll'}}>

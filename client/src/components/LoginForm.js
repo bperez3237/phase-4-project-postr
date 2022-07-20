@@ -1,12 +1,19 @@
 import React from "react";
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {Alert, Button, Container,  Form} from 'react-bootstrap'
 
-function LoginForm({onLogin}) {
+function LoginForm({onLogin, location, setLocation}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [locations, setLocations] = useState([])
+
+    useEffect(()=>{
+        fetch('/locations')
+            .then((r)=>r.json())
+            .then((locations)=>setLocations(locations))
+    })
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -27,8 +34,14 @@ function LoginForm({onLogin}) {
             });
     }
 
+    function handleChange(e) {
+        setLocation(e.target.value)
+    }
+
+    const optionElements = locations.map((location)=><option key={location.id}>{location.name}</option>)
+
     return (
-        <Container className="d-flex">
+        <Container className="d-flex m-3">
             <Form  className="justify-content-center" style={{"width":"300px"}} onSubmit={handleSubmit}>
                 <Form.Group className="mb-4">
                 <Form.Label htmlFor="username">Username</Form.Label>
@@ -56,9 +69,9 @@ function LoginForm({onLogin}) {
                         {isLoading ? "Loading..." : "Login"}
                     </Button>
                 </Form.Group>
-                <Form.Group>
-                    <Alert key={errors}>{errors}</Alert>
-                </Form.Group>
+                <Form.Select value={location} onChange={handleChange}>
+                    {locations ? optionElements : <></>}
+                </Form.Select>
         </Form>
       </Container>
     );
