@@ -10,16 +10,16 @@ import Login from './pages/Login';
 
 function App() {
   const [user, setUser] = useState(null);
-  const [location, setLocation] = useState('')
+  const [location, setLocation] = useState({})
 
-  useEffect(() => {
-    // auto-login
-    fetch("/me").then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setUser(user));
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   // auto-login
+  //   fetch("/me").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) => setUser(user));
+  //     }
+  //   });
+  // }, []);
 
 
   if (!user) return <Login onLogin={setUser} location={location} setLocation={setLocation}/>;
@@ -30,7 +30,7 @@ function App() {
         <Navigator setUser={setUser}></Navigator>
         <Switch>
           <Route path="/">
-            <Homepage></Homepage>
+            <Homepage location={location} username={user.name}></Homepage>
           </Route>
           <Route path="/explore">
             <Explore></Explore>

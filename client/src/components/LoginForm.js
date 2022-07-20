@@ -35,8 +35,6 @@ function LoginForm({onLogin, location, setLocation}) {
     }
 
     function handleChange(e) {
-        console.log(e.target.value)
-        // setLocation(e.target.value)
         fetch(`/locations/${e.target.value}`)
             .then((r)=>r.json())
             .then((location)=>setLocation(location))

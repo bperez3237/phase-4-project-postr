@@ -3,20 +3,21 @@ import {useEffect, useState } from 'react'
 import {Container} from 'react-bootstrap'
 import Post from './Post'
 
-function PostList() {
-    const [posts, setPosts] = useState([])
+function PostList({location, username}) {
+    // const [posts, setPosts] = useState([])
 
-    useEffect(()=> {
-        fetch('/posts')
-            .then((r) => r.json())
-            .then((data)=>setPosts(data))
-    },[])
+    // useEffect(()=> {
+    //     fetch('/posts')
+    //         .then((r) => r.json())
+    //         .then((data)=>setPosts(data))
+    // },[])
+    // console.log(posts)
 
-    const postElements = posts.map((post)=><Post key={post.id} post={post}></Post>)
+    const postElements = location.posts.map((post)=><Post key={post.id} post={post} location={location.name} username={username}></Post>)
 
     return (
         <Container className="m-3" style={{borderStyle:'solid', maxHeight:'900px', overflow: 'scroll'}}>
-            {posts ? postElements : <></>}
+            {location ? postElements : <></>}
         </Container>
     )
 

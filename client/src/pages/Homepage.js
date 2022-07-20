@@ -3,7 +3,7 @@ import PostBar from "../components/PostBar";
 import PostList from "../components/PostList";
 import {Container, Row, Col} from 'react-bootstrap'
 
-function Homepage() {
+function Homepage({location, username}) {
 
     return (
         <Container>
@@ -12,7 +12,7 @@ function Homepage() {
                     <PostBar></PostBar>
                 </Col>
                 <Col>
-                    <PostList></PostList>
+                    <PostList location={location} username={username}></PostList>
                 </Col>
             </Row>
         </Container>
