@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :posts, only: [:index]
   # resources :users, only: [:create,:show]
+  resources :locations, only: [:show]
   
 
 
