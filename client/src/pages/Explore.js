@@ -2,28 +2,35 @@ import React from "react";
 import {useState, useEffect} from 'react'
 import LocationList from "../components/LocationList";
 import PostList from "../components/PostList";
+import {Container, Row, Col} from 'react-bootstrap'
 
 function Explore({user}) {
     const [location, setLocation] = useState(null)
-    const [locations, setLocations] = useState([])
+    const [allLocations, setAllLocations] = useState([])
 
     useEffect(()=>{
         fetch(`/locations`)
             .then((r)=>r.json())
             .then((locations)=> {
                 setLocation(locations[0])
-                setLocations(locations)
-                
+                setAllLocations(locations)
             })
 
     },[])
 
+    console.log(location)
     return (
-        <>
-        <h1>explore</h1>
-            <LocationList></LocationList>
-            {location ? <PostList location={location} name={user.name}></PostList> : <></>}
-        </>
+
+        <Container>
+            <Row>
+                <Col>
+                    {allLocations ? <LocationList locations={allLocations} setLocation={setLocation}></LocationList> : <></>}
+                </Col>
+                <Col>
+                    {location ? <PostList location={location} name={user.name}></PostList> : <></>}
+                </Col>
+            </Row>
+        </Container>
     )
 
 
