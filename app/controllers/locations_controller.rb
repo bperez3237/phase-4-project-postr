@@ -3,7 +3,7 @@ class LocationsController < ApplicationController
 
     def index
         locations = Location.all 
-        render json: locations
+        render json: locations, include: :posts
     end
     def show
         location = Location.find(params[:id])

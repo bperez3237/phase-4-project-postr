@@ -17,7 +17,6 @@ function App() {
     fetch("/me").then((r) => {
       if (r.ok) {
         r.json().then((result) => {
-          console.log(result)
           setUser(result.user)
           setLocation(result.location)
         });
@@ -37,7 +36,7 @@ function App() {
             <Homepage location={location} user={user} setLocation={setLocation} ></Homepage>
           </Route>
           <Route path="/explore">
-            <Explore location={location} user={user}></Explore>
+            <Explore user={user}></Explore>
           </Route>
         </Switch>
       </div>
