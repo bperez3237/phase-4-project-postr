@@ -1,11 +1,12 @@
 import React from "react";
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {Button, Col, Container} from 'react-bootstrap'
 import LoginForm from "../components/LoginForm";
 import SignUpForm from "../components/SignUpForm";
 
 function Login({onLogin}) {
     const [showLogin, setShowLogin] = useState(true);
+    const [locations, setLocations] = useState([])
 
     return (
         <Container className='d-flex'>
