@@ -1,14 +1,11 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import {Button, Container, Nav,  Navbar} from 'react-bootstrap'
 
 function Navigator({setUser}) {
-    const history = useHistory()
     function handleLogoutClick() {
         fetch("/logout", { method: "DELETE" }).then((r) => {
           if (r.ok) {
             setUser(null);
-            history.push('/')
           }
         });
       }

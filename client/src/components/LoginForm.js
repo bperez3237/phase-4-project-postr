@@ -1,8 +1,10 @@
 import React from "react";
 import {useState, useEffect} from 'react'
+import { useHistory } from "react-router-dom";
 import {Alert, Button, Container,  Form} from 'react-bootstrap'
 
 function LoginForm({onLogin, location, setLocation}) {
+    const history = useHistory()
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
@@ -37,7 +39,10 @@ function LoginForm({onLogin, location, setLocation}) {
             }).then((r) => {
                 setIsLoading(false);
                 if (r.ok) {
-                    r.json().then((user) => onLogin(user));
+                    r.json().then((user) => {
+                        onLogin(user)
+                        history.push('/')
+                    });
                 } else {
                     r.json().then((err) => setErrors(err.errors));
                 }

@@ -5,7 +5,7 @@ import Post from './Post'
 function PostList({location}) {
 
     const postElements = location.posts.sort((a,b)=> Date.parse(b.created_at) - Date.parse(a.created_at)).map((post)=>{
-        return <Post key={post.id} post={post} location={location.name}></Post>}
+        return <Post key={post.id} post={post} location={location.name} username={post.username}></Post>}
         )
 
     return (
