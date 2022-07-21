@@ -9,4 +9,13 @@ class PostsController < ApplicationController
         location = Location.find(params[:location_id]).with_posts
         render json: location, status: :created
     end
+
+    def destory
+        post = Post.find(params[:id])
+        location_id = params[:location_id]
+        post.destory
+        location = Location.find(location_id).with_posts
+        render json: location
+    end
+
 end

@@ -12,7 +12,7 @@ function Homepage({location, user, setLocation}) {
                     <PostBar location={location} user={user} setLocation={setLocation}></PostBar>
                 </Col>
                 <Col className="col-8 p-3">
-                    <PostList location={location} currentUser={user}></PostList>
+                    <PostList location={location} currentUser={user} setLocation={setLocation}></PostList>
                 </Col>
             </Row>
         </Container>
