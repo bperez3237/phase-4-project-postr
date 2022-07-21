@@ -40,7 +40,7 @@ function App() {
             <Explore user={user}></Explore>
           </Route>
           <Route exact path="/account">
-            <Account location={location} user={user} setLocation={setLocation} ></Account>
+            <Account user={user} ></Account>
           </Route>
         </Switch>
       </div>
