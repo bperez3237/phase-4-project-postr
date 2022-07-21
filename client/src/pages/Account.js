@@ -3,7 +3,13 @@ import { useState, useEffect } from "react";
 import {Card, ListGroup} from 'react-bootstrap'
 
 function Account({user}) {
-    console.log(user)
+    // console.log(user)
+
+    useEffect(()=>{
+        fetch(`/user-info/${user.id}`)
+            .then(r=>r.json())
+            .then((data)=>console.log(data))
+    })
     
     return (
         <Card>

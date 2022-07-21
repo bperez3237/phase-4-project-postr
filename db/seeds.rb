@@ -39,4 +39,6 @@ for i in 1..100 do
     Post.create(user_id: User.order('RANDOM()').first.id, location_id: Location.order('RANDOM()').first.id, text: Faker::Twitter.status[:text], likes: 0)
 end
 
+byebug
+
 puts 'done seeding'

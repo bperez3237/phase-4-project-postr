@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     skip_before_action :authorized, only: [:create, :show]
     
+    
     def create
         user = User.create(user_params)
         if user.valid?
@@ -20,6 +21,11 @@ class UsersController < ApplicationController
         else
             render json: { error: 'User not found'}, status: :unauthorized
         end
+    end
+
+    def user_info
+        user = User.find(params[:id])
+        render json: user, include: [:locations, :posts]
     end
 
     private

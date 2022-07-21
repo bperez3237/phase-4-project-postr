@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :locations, only: [:show, :index]
   
 
+  get '/user-info/:id', to: 'users#user_info'
 
   post '/signup', to: 'users#create'
   get '/me', to: 'users#show'
