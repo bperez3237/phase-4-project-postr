@@ -6,12 +6,12 @@ import {Container, Row, Col} from 'react-bootstrap'
 function Homepage({location, user, setLocation}) {
 
     return (
-        <Container>
-            <Row >
-                <Col>
+        <Container className="fluid">
+            <Row>
+                <Col className="col-4 p-3">
                     <PostBar location={location} user={user} setLocation={setLocation}></PostBar>
                 </Col>
-                <Col>
+                <Col className="col-8 p-3">
                     <PostList location={location} name={user.name}></PostList>
                 </Col>
             </Row>

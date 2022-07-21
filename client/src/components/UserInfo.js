@@ -4,7 +4,7 @@ import {Container, ListGroup} from 'react-bootstrap'
 function UserInfo({user}) {
 
     return (
-        <Container className='m-3' style={{borderStyle:'solid'}}>
+        <Container className='h-25 d-inline-block' style={{borderStyle:'solid'}}>
             <ListGroup>
                 <ListGroup.Item>{user.username}</ListGroup.Item>
                 <ListGroup.Item>Name: {user.name}</ListGroup.Item>

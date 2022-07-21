@@ -19,12 +19,12 @@ function Explore({user}) {
 
     return (
 
-        <Container>
+        <Container className="fluid">
             <Row>
-                <Col>
+                <Col className="h-100 col-4 p-3">
                     {allLocations ? <LocationList locations={allLocations} setLocation={setLocation}></LocationList> : <></>}
                 </Col>
-                <Col>
+                <Col className="col-8 p-3">
                     {location ? <PostList location={location} name={user.name}></PostList> : <></>}
                 </Col>
             </Row>

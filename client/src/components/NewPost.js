@@ -27,10 +27,10 @@ function NewPost({userId, locationId, setLocation}) {
     }
 
     return (
-        <Form className='m-3' style={{borderStyle:'solid'}}>
-            <Form.Group className='m-3'>
+        <Form className='' style={{borderStyle:'solid', height: '500px'}}>
+            <Form.Group className='h-75'>
                 <Form.Label>post here:</Form.Label>
-                <Form.Control value={text} type='text' size='lg' onChange={handleChange}></Form.Control>
+                <Form.Control value={text} type='text' onChange={handleChange} className="h-75"></Form.Control>
             </Form.Group>
             <Button variant='dark' type='submit' onClick={handleSubmit}>POST!</Button>
         </Form>

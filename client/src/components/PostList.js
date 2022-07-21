@@ -9,7 +9,7 @@ function PostList({location}) {
         )
 
     return (
-        <Container className="m-3" style={{borderStyle:'solid', maxHeight:'900px', overflow: 'scroll'}}>
+        <Container className="h-100" style={{borderStyle:'solid', maxHeight:'900px', overflow: 'scroll'}}>
             {location ? postElements : <></>}
         </Container>
     )

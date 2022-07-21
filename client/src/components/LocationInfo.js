@@ -4,12 +4,12 @@ import {Container, Row, Col, Card, ListGroup, Image} from 'react-bootstrap'
 function LocationInfo({location}) {
 
     return (
-        <Container className='m-3' style={{borderStyle:'solid'}}>
+        <Container className='h-25 d-inline-block m-1' style={{borderStyle:'solid'}}>
             <Row>
-                <Col>
+                <Col className="col-6">
                     <Image ></Image>
                 </Col>
-                <Col>
+                <Col className="col-6">
                     <Card>
                         <Card.Header>{location.name}</Card.Header>
                         <ListGroup>

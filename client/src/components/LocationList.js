@@ -7,7 +7,7 @@ function LocationList({locations, setLocation}) {
     const locationsElements = locations.map((location)=><Location key={location.id} location={location} setLocation={setLocation}></Location>)
 
     return (
-       <Container className="m-3" style={{borderStyle:'solid', maxHeight:'900px', overflow: 'scroll'}}>
+       <Container className='h-100' style={{borderStyle:'solid', maxHeight:'900px', overflow: 'scroll'}}>
             {locationsElements}
        </Container>
     )

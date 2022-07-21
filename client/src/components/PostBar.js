@@ -1,5 +1,5 @@
 import React from "react";
-import {Container} from 'react-bootstrap'
+import {Container, Row, Col} from 'react-bootstrap'
 import NewPost from './NewPost'
 import LocationInfo from './LocationInfo'
 import UserInfo from './UserInfo'
@@ -7,10 +7,16 @@ import UserInfo from './UserInfo'
 function PostBar({user, location, setLocation}) {
 
     return (
-        <Container className='d-flex flex-column m-3' style={{borderStyle:'solid', maxHeight:'900px'}}>
-            <LocationInfo location={location}></LocationInfo>
-            <NewPost locationId={location.id} userId={user.id} setLocation={setLocation}></NewPost>
-            <UserInfo user={user}></UserInfo>
+        <Container className='fluid h-100' style={{borderStyle:'solid',maxHeight:'900px'}}>
+            <Row className="">
+                <LocationInfo location={location}></LocationInfo>
+            </Row>
+            <Row className="">
+                <NewPost locationId={location.id} userId={user.id} setLocation={setLocation}></NewPost>
+            </Row>
+            <Row className="">
+                <UserInfo user={user}></UserInfo>
+            </Row>
         </Container>
     )
 
