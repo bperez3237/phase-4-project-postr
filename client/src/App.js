@@ -6,6 +6,7 @@ import Homepage from './pages/Homepage';
 import Explore from './pages/Explore';
 import Navigator from './components/Navigator';
 import Login from './pages/Login';
+import Account from "./pages/Account";
 
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path="/explore">
             <Explore user={user}></Explore>
+          </Route>
+          <Route exact path="/account">
+            <Account location={location} user={user} setLocation={setLocation} ></Account>
           </Route>
         </Switch>
       </div>

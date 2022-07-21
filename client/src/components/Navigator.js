@@ -17,6 +17,7 @@ function Navigator({setUser}) {
             <Nav className='me-auto'>
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/explore">Explore</Nav.Link>
+              <Nav.Link href="/account">Account</Nav.Link>
               <Button className='justify-content-end' variant="light" onClick={handleLogoutClick}>Logout</Button>
             </Nav>
           </Container>
