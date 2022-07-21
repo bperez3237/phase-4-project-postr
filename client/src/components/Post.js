@@ -4,7 +4,6 @@ import {Button, Card} from 'react-bootstrap'
 function Post({post, location, setLocation, username, access}) {
 
     function handleDelete() {
-        console.log(location)
         fetch(`/posts/${post.id}`,{
             method: 'DELETE'
         })
@@ -14,6 +13,17 @@ function Post({post, location, setLocation, username, access}) {
 
     function handleLike(){
         console.log('like')
+        const updateLikesObj = {...post}
+        console.log(updateLikesObj)
+        // fetch(`/posts/${post.id}`,{
+        //     method:"PATCH",
+        //     headers: {
+        //         'Content-type': "application/json",
+        //     },
+        //     body: JSON.stringify(updateLikesObj),
+        // })
+        //     .then(r=>r.json())
+        //     .then((location)=>setLocation(location))
     }
 
     return (

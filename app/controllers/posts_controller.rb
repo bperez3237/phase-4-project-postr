@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     end
 
     def create
-        post = Post.create(user_id: params[:user_id], location_id:params[:location_id], text: params[:text])
+        post = Post.create(user_id: params[:user_id], location_id:params[:location_id], text: params[:text], likes: 0)
         location = Location.find(params[:location_id]).with_posts
         render json: location, status: :created
     end
