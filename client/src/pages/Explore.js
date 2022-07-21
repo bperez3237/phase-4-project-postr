@@ -25,7 +25,7 @@ function Explore({user}) {
                     {allLocations ? <LocationList locations={allLocations} setLocation={setLocation}></LocationList> : <></>}
                 </Col>
                 <Col className="col-8 p-3">
-                    {location ? <PostList location={location} currentUser={user} setLocation={setLocation} /> : <></>}
+                    {location ? <PostList location={location} currentUser={user} setLocation={setLocation} editable={false}/> : <></>}
                 </Col>
             </Row>
         </Container>
