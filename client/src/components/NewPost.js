@@ -23,7 +23,10 @@ function NewPost({userId, locationId, setLocation}) {
             })
         })
             .then((r)=>r.json())
-            .then((location)=>setLocation(location))
+            .then((location)=>{
+                setText('')
+                setLocation(location)
+            })
     }
 
     return (
