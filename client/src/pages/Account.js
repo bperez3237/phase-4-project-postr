@@ -10,7 +10,6 @@ function Account({user_id}) {
             .then(r=>r.json())
             .then((data)=>setUserInfo(data))
     },[])
-    console.log(userInfo.posts[0])
 
     if (!userInfo) return <></>
     else {return (
