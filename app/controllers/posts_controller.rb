@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
     def update
         post = Post.find(params[:id])
-        post.update(likes: post.likes + params[:change_likes])
+        post.update(likes: post.likes + params[:likes])
         location = Location.find(post.location_id).with_posts
         render json: location
     end

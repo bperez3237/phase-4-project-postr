@@ -12,7 +12,7 @@ class UsersController < ApplicationController
         end
     end
 
-    def show
+    def auto_login
         user = User.find_by(id: session[:user_id])
         location = Location.find_by(id: session[:location_id])
         if user
