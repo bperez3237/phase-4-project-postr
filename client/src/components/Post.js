@@ -5,7 +5,11 @@ function Post({post, location, setLocation, username, access}) {
 
     function handleDelete() {
         console.log(location)
-        // fetch(`/`)
+        fetch(`/posts/${post.id}`,{
+            method: 'DELETE'
+        })
+            .then((r=>r.json()))
+            .then((location)=>setLocation(location))
     }
 
     function handleLike(){

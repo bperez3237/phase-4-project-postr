@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+    require 'byebug'
     def index
         posts = Post.all 
         render json: posts, include: [:user,:location]
@@ -10,10 +11,10 @@ class PostsController < ApplicationController
         render json: location, status: :created
     end
 
-    def destory
+    def destroy
         post = Post.find(params[:id])
-        location_id = params[:location_id]
-        post.destory
+        location_id = post.location_id
+        post.destroy
         location = Location.find(location_id).with_posts
         render json: location
     end
