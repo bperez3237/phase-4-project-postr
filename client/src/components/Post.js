@@ -12,18 +12,16 @@ function Post({post, location, setLocation, username, access}) {
     }
 
     function handleLike(){
-        console.log('like')
-        const updateLikesObj = {...post}
-        console.log(updateLikesObj)
-        // fetch(`/posts/${post.id}`,{
-        //     method:"PATCH",
-        //     headers: {
-        //         'Content-type': "application/json",
-        //     },
-        //     body: JSON.stringify(updateLikesObj),
-        // })
-        //     .then(r=>r.json())
-        //     .then((location)=>setLocation(location))
+        const updateLikesObj = {id: post.id, change_likes: 1}
+        fetch(`/posts/${post.id}`,{
+            method:"PATCH",
+            headers: {
+                'Content-type': "application/json",
+            },
+            body: JSON.stringify(updateLikesObj),
+        })
+            .then(r=>r.json())
+            .then((location)=>setLocation(location))
     }
 
     return (
@@ -31,7 +29,8 @@ function Post({post, location, setLocation, username, access}) {
             <Card.Body>
                 <Card.Subtitle>{username} says:</Card.Subtitle>
                 <Card.Text style={{fontSize:'20px'}}>{post.text}</Card.Text>
-                {access ? <Button onClick={handleLike} variant='danger'>Like Post</Button> : <></>}
+                <Card.Subtitle>Likes: {post.likes}</Card.Subtitle>
+                {!access ? <Button onClick={handleLike} variant='danger'>Like Post</Button> : <></>}
                 <Card.Subtitle>Postr'd from {location.name}</Card.Subtitle>
                 {access ? <Button onClick={handleDelete} variant='dark'>Delete Post</Button> : <></>}
             </Card.Body>
