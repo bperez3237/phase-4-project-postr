@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorized, only: [:create, :show]
+    skip_before_action :authorized, only: [:create, :auto_login]
     
     
     def create
