@@ -16,7 +16,6 @@ function LocationList({locations, setLocation}) {
         return <ListGroup.Item 
         key={location.id}
         onClick={()=>handleClick(location)} 
-        // value={location.id}
         style={{
             borderStyle: 'solid',
             backgroundColor: (location.id==selectedId) ? 'red' : 'white'
@@ -25,7 +24,7 @@ function LocationList({locations, setLocation}) {
     })
 
     return (
-       <Container className='h-100' style={{borderStyle:'solid', maxHeight:'900px', overflow: 'scroll'}}>
+       <Container className='' style={{borderStyle:'solid', maxHeight:'500px', overflow: 'scroll'}}>
             <ListGroup>{locationsElements}</ListGroup>
        </Container>
     )

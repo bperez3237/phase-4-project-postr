@@ -23,7 +23,7 @@ function Explore({user}) {
         <Container className="fluid">
             <Row>
                 <Col className="h-50 col-4 p-3">
-                    {allLocations ? <LocationList locations={allLocations} setLocation={setLocation}></LocationList> : <></>}
+                    {allLocations.length>0 ? <LocationList locations={allLocations} setLocation={setLocation}></LocationList> : <></>}
                     {location ? <LocationInfo location={location}></LocationInfo> : <></>}
                 </Col>
                 <Col className="col-8 p-3">

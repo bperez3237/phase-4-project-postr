@@ -4,7 +4,7 @@ import {Container, Row, Col, Card, ListGroup, Image} from 'react-bootstrap'
 function LocationInfo({location}) {
 
     return (
-        <Container className='h-25 d-inline-block m-1' style={{borderStyle:'solid'}}>
+        <Container className='' style={{borderStyle:'solid'}}>
             <Row>
                 <Col className="col-6">
                     <Image ></Image>
