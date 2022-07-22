@@ -30,14 +30,17 @@ function Post({post, location, setLocation, username, userAccess, editable}) {
     return (
         <Card className='m-4'>
             <Card.Body>
-                <Card.Subtitle>{username} says:</Card.Subtitle>
-                <Card.Text style={{fontSize:'20px'}}>{post.text}</Card.Text>
-                <Card.Subtitle>Likes: {post.likes}</Card.Subtitle>
-                {!userAccess && editable ? <Button onClick={handleLike} variant={liked ? 'danger' : 'light'}>Like Post</Button> : <></>}
-                <Card.Subtitle>Postr'd from {location.name}</Card.Subtitle>
-                {userAccess && editable ? <Button onClick={handleDelete} variant='dark'>Delete Post</Button> : <></>}
+                <Card.Title>{username} says:</Card.Title>
+                <br></br>
+                <Card.Text style={{fontSize:'18px'}}>{post.text}</Card.Text>
+                <br></br>
+                <Card.Subtitle style={{fontSize:'12px'}}>Postr'd from {location.name} - {post.created_at.slice(0,10)} - {post.created_at.slice(11,19)}</Card.Subtitle>
             </Card.Body>
-            <Card.Footer className='text-muted'>{post.created_at}</Card.Footer>
+            <Card.Footer className="d-flex justify-content-between">
+                {post.likes} Like{post.likes>1?'s':''}
+                {userAccess && editable ? <Button className="" onClick={handleDelete} variant='dark'>Delete Post</Button> : <></>}
+                {!userAccess && editable ? <Button onClick={handleLike} size="sm" variant={liked ? 'danger' : 'light'}>Like Post</Button> : <></>}
+            </Card.Footer>
         </Card>
     )
 

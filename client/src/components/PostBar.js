@@ -7,7 +7,7 @@ import UserInfo from './UserInfo'
 function PostBar({user, location, setLocation}) {
 
     return (
-        <Container className='fluid h-100' style={{borderStyle:'solid',maxHeight:'900px'}}>
+        <Container className='fluid' style={{borderStyle:'solid',maxHeight:'1000px'}}>
             <Row className="">
                 <LocationInfo location={location}></LocationInfo>
             </Row>
