@@ -39,7 +39,7 @@ function Post({post, location, setLocation, username, userAccess, editable}) {
             <Card.Footer className="d-flex justify-content-between">
                 {post.likes} Like{post.likes>1?'s':''}
                 {userAccess && editable ? <Button className="" onClick={handleDelete} variant='dark'>Delete Post</Button> : <></>}
-                {!userAccess && editable ? <Button onClick={handleLike} size="sm" variant={liked ? 'danger' : 'light'}>Like Post</Button> : <></>}
+                {!userAccess && editable ? <Button onClick={handleLike} size="sm" variant={liked ? 'danger' : 'light'}>{liked ? 'Unlike' : 'Like'} Post</Button> : <></>}
             </Card.Footer>
         </Card>
     )
