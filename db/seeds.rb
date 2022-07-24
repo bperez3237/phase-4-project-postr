@@ -19,6 +19,16 @@ u7 =  User.create(username: Faker::Internet.unique.username, password_digest: Fa
 u8 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
 u9 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
 u10 = User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
+u11 = User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
+u12 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
+u13 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
+u14 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
+u15 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
+u16 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
+u17 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
+u18 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
+u19 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
+u20 = User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
 
 
 puts 'seeding locations'
@@ -32,13 +42,22 @@ l7 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.
 l8 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
 l9 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
 l10 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
+l11 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
+l12 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
+l13 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
+l14 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
+l15 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
+l16 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
+l17 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
+l18 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
+l19 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
+l20 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
 
 
 puts 'seeding posts'
-for i in 1..100 do
+for i in 1..1000 do
     Post.create(user_id: User.order('RANDOM()').first.id, location_id: Location.order('RANDOM()').first.id, text: Faker::Twitter.status[:text], likes: 0)
 end
 
-byebug
 
 puts 'done seeding'

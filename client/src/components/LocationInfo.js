@@ -5,20 +5,13 @@ function LocationInfo({location}) {
 
     return (
         <Container className='' style={{borderStyle:'solid'}}>
-            <Row>
-                <Col className="col-6">
-                    <Image ></Image>
-                </Col>
-                <Col className="col-6">
-                    <Card>
-                        <Card.Header>{location.name}</Card.Header>
-                        <ListGroup>
-                            <ListGroup.Item>Country: {location.country}</ListGroup.Item>
-                            <ListGroup.Item>{location.coordinates}</ListGroup.Item>
-                        </ListGroup>
-                    </Card>
-                </Col>
-            </Row>
+            <Card size='sm'>
+                <Card.Header>{location.name}</Card.Header>
+                <ListGroup>
+                    <ListGroup.Item>Country: {location.country}</ListGroup.Item>
+                    <ListGroup.Item>{location.coordinates}</ListGroup.Item>
+                </ListGroup>
+            </Card>
         </Container>
     )
 }
