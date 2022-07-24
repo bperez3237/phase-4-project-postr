@@ -23,8 +23,12 @@ function Explore({user}) {
         <Container className="fluid">
             <Row>
                 <Col className="h-50 col-4 p-3">
-                    {allLocations.length>0 ? <LocationList locations={allLocations} setLocation={setLocation}></LocationList> : <></>}
-                    {location ? <LocationInfo location={location}></LocationInfo> : <></>}
+                    <Row>
+                        {allLocations.length>0 ? <LocationList locations={allLocations} setLocation={setLocation}></LocationList> : <></>}
+                    </Row>
+                    <Row className='mt-4'>
+                        {location ? <LocationInfo className="" location={location}></LocationInfo> : <></>}
+                    </Row>
                 </Col>
                 <Col className="col-8 p-3">
                     {location ? <PostList location={location} currentUser={user} setLocation={setLocation} editable={false}/> : <></>}
