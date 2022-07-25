@@ -11,7 +11,7 @@ function Navigator({setUser}) {
       }
 
     return (
-        <Navbar bg='dark' variant='dark'>
+        <Navbar bg='primary' variant='dark'>
           <Container>
             <Navbar.Brand href="/">Postr</Navbar.Brand>
             <Nav className='me-auto'>

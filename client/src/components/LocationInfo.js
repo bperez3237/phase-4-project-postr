@@ -5,6 +5,7 @@ function LocationInfo({location}) {
 
     return (
         <Container className='' style={{borderStyle:'solid'}}>
+            <h4>Current Location:</h4>
             <Card size='sm'>
                 <Card.Header>{location.name}</Card.Header>
                 <ListGroup>

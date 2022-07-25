@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-    require 'byebug'
     def index
         posts = Post.all 
         render json: posts, include: [:user,:location]

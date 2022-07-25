@@ -5,6 +5,7 @@ class LocationsController < ApplicationController
         locations = Location.all.map{|location| location.with_posts}
         render json: locations
     end
+    
     def show
         location = Location.find(params[:id]).with_posts
         render json: location

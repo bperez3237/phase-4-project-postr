@@ -44,18 +44,10 @@ l9 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.
 l10 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
 l11 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
 l12 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
-l13 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
-l14 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
-l15 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
-l16 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
-l17 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
-l18 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
-l19 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
-l20 = Location.create(name: Faker::Address.unique.city , country: Faker::Address.country, coordinates: "(#{Faker::Address.latitude},#{Faker::Address.longitude})")
 
 
 puts 'seeding posts'
-for i in 1..400 do
+for i in 1..200 do
     Post.create(user_id: User.order('RANDOM()').first.id, location_id: Location.order('RANDOM()').first.id, text: Faker::Twitter.status[:text], likes: 0)
 end
 
