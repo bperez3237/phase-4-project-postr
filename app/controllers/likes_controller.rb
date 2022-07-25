@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
 
     def create
-        like = Like.create(user_id: params[:user_id, post_id: params[:post_id]])
+        like = Like.create(user_id: params[:user_id], post_id: params[:post_id])
         render json: like
     end
 
