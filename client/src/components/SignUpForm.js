@@ -75,12 +75,8 @@ function SignUpForm({onLogin}) {
             onChange={(e) => setName(e.target.value)}
           />
         </Form.Group>
-       
         <Form.Group>
           <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
-        </Form.Group>
-        <Form.Group>
-            <Alert key={errors}>{errors}</Alert>
         </Form.Group>
       </Form>
     )

@@ -2,7 +2,7 @@ import React from "react";
 import {useState} from 'react'
 import {Button, Card} from 'react-bootstrap'
 
-function Post({post, location, setLocation, username, userAccess, editable}) {
+function Post({post, location, setLocation, currentUser, userAccess, editable}) {
     const [liked, setLiked] = useState(false)
 
     function handleDelete() {
@@ -25,19 +25,30 @@ function Post({post, location, setLocation, username, userAccess, editable}) {
             .then(r=>r.json())
             .then((location)=>setLocation(location))
         setLiked(!liked)
+
+
+        fetch(`/likes`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+                body: JSON.stringify({user_id: currentUser.id, post_id: post.id})
+            })
+                .then(r=>r.json())
+                .then((like)=>console.log(like))
     }
 
     return (
         <Card className='m-4'>
             <Card.Body>
-                <Card.Title>{username} says:</Card.Title>
+                <Card.Title>{currentUser.username} says:</Card.Title>
                 <br></br>
                 <Card.Text style={{fontSize:'18px'}}>{post.text}</Card.Text>
                 <br></br>
                 <Card.Subtitle style={{fontSize:'12px'}}>Postr'd from {location.name} - {post.created_at.slice(0,10)} - {post.created_at.slice(11,19)}</Card.Subtitle>
             </Card.Body>
             <Card.Footer className="d-flex justify-content-between">
-                {post.likes} Like{post.likes>1?'s':''}
+                {/* {post.likes} Like{post.likes>1?'s':''} */}
                 {userAccess && editable ? <Button className="" onClick={handleDelete} variant='dark'>Delete Post</Button> : <></>}
                 {!userAccess && editable ? <Button onClick={handleLike} size="sm" variant={liked ? 'danger' : 'light'}>{liked ? 'Unlike' : 'Like'} Post</Button> : <></>}
             </Card.Footer>

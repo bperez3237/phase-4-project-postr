@@ -9,7 +9,7 @@ function PostList({location, setLocation, currentUser, editable}) {
         key={post.id} 
         post={post} 
         location={location} 
-        username={post.username} 
+        currentUser={currentUser} 
         userAccess={currentUser.username==post.username ? true : false}
         editable={editable}
         setLocation={setLocation}

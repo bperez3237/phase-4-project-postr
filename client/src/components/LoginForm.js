@@ -56,7 +56,6 @@ function LoginForm({onLogin, location, setLocation}) {
 
 
     return (
-        <Container className="d-flex m-3">
             <Form  className="justify-content-center" style={{"width":"300px"}} onSubmit={handleSubmit}>
                 <Form.Group className="mb-4">
                 <Form.Label htmlFor="username">Username</Form.Label>
@@ -88,7 +87,6 @@ function LoginForm({onLogin, location, setLocation}) {
                     {locations ? optionElements : <></>}
                 </Form.Select>
         </Form>
-      </Container>
     );
 }
 

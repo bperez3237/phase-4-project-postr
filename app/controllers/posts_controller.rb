@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     end
 
     def create
-        post = Post.create(user_id: params[:user_id], location_id:params[:location_id], text: params[:text], likes: 0)
+        post = Post.create(user_id: params[:user_id], location_id:params[:location_id], text: params[:text])
         location = Location.find(params[:location_id]).with_posts
         render json: location, status: :created
     end
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
     def update
         post = Post.find(params[:id])
-        post.update(likes: post.likes + params[:change_likes])
+        # post.update(likes: post.likes + params[:change_likes])
         location = Location.find(post.location_id).with_posts
         render json: location
     end
