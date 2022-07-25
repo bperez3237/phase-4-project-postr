@@ -1,9 +1,19 @@
 import React from "react";
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {Button, Card} from 'react-bootstrap'
 
 function Post({post, location, setLocation, userAccess, currentUser, editable}) {
-    const [like, setLike] = useState(null)
+    const [liked, setLiked] = useState(!post.likes.find((like)=>like.user_id==currentUser.id) ? true : false)
+
+    // useEffect(()=>{
+    //     setLiked(!post.likes.find((like)=>like.user_id==currentUser.id) ? true : false)
+    // },liked)
+    // const result = !post.likes.find((like)=>like.user_id==currentUser.id)
+    // console.log(result)
+
+
+    // console.log(post.likes)
+    // console.log(currentUser)
 
     function handleDelete() {
         fetch(`/posts/${post.id}`,{
@@ -25,13 +35,13 @@ function Post({post, location, setLocation, userAccess, currentUser, editable}) 
         //     .then(r=>r.json())
         //     .then((location)=>setLocation(location))
 
-        console.log(post.likes.forEach(postLike=> {
-            console.log(postLike, like)
-            return postLike==like
-        }))
+        // console.log(post.likes.forEach(postLike=> {
+        //     console.log(postLike, like)
+        //     return postLike==like
+        // }))
         
-        const isLiked = post.likes.find(postLike=> postLike==like) ? true : false
-        if (!isLiked) {
+        // const isLiked = like ? true : false
+        if (!like) {
             fetch(`/likes`, {
                 method: 'POST',
                 headers: {
@@ -45,7 +55,7 @@ function Post({post, location, setLocation, userAccess, currentUser, editable}) 
         else {
             console.log('run DELETE')
         }
-        // setLiked(!like)
+        setLike(!like)
 
 
         
