@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import {Card, Container, ListGroup, Row} from 'react-bootstrap'
+import {Card, Container, ListGroup, Row, Accordion} from 'react-bootstrap'
 
 function Account({user_id}) {
     const [userInfo, setUserInfo] = useState(null)
@@ -21,14 +21,28 @@ function Account({user_id}) {
                         <Card.Subtitle as='h2'>{userInfo.name}</Card.Subtitle>
                         <br></br>
                         <Card.Text>
-                            Last Post: {userInfo.posts[0].text}
+                            {/* Last Post: {userInfo.posts[0].text} */}
+                            <br></br>
+                            Joined Postr on: {userInfo.created_at.slice(0,10)}
                         </Card.Text>
                         <br></br>
-                        <ListGroup>
-                            <ListGroup.Item>Number of Locations Posted at: {userInfo.locations.length}</ListGroup.Item>
-                            <ListGroup.Item>Numbr of Posts: {userInfo.posts.length}</ListGroup.Item>
-                            <ListGroup.Item>Joined Postr on: {userInfo.created_at.slice(0,10)} </ListGroup.Item>
-                        </ListGroup>
+                            <Accordion >
+                                <Accordion.Item eventKey='0'>
+                                    <Accordion.Header>
+                                        Number of Locations Posted at: {userInfo.locations.length}
+                                    </Accordion.Header>
+                                    <Accordion.Body>
+                                        {userInfo.locations.map((location)=><p key={location.id}>{location.name}</p>)}
+                                    </Accordion.Body>
+                                    
+                                </Accordion.Item>
+                                <Accordion.Item eventKey='1'>
+                                    <Accordion.Header>Numbr of Posts: {userInfo.posts.length}</Accordion.Header>
+                                    <Accordion.Body>
+                                        {userInfo.posts.map((post)=><p key={post.id}>{post.text}</p>)}
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
                     </Card.Body>
                 </Card>
             </Row>
