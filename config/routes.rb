@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :posts, only: [:index, :create, :destroy, :update]
   resources :locations, only: [:show, :index]
+  resources :likes, only: [:create, :destroy]
   
 
   get '/user-info/:id', to: 'users#user_info'
