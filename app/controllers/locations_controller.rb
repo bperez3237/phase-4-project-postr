@@ -2,7 +2,7 @@ class LocationsController < ApplicationController
     skip_before_action :authorized, only: [:index,:show]
 
     def index
-        locations = Location.all.map{|location| location.with_posts}
+        locations = Location.all
         render json: locations
     end
     

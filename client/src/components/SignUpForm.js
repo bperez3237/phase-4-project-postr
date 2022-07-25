@@ -35,7 +35,7 @@ function SignUpForm({onLogin}) {
     }
 
     return (
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} style={{"width":"300px"}}>
         <Form.Group>
           <Form.Label htmlFor="username">Username</Form.Label>
           <Form.Control

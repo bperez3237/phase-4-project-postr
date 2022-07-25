@@ -1,26 +1,36 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {Card, Container, ListGroup} from 'react-bootstrap'
 import Location from './Location'
 
-function LocationList({locations, setLocation}) {
-    const [selectedId, setSelectedId] = useState(locations[0].id)
+function LocationList({setLocation, location}) {
+    // const [selectedId, setSelectedId] = useState(null)
+    const [allLocations, setAllLocations] = useState([])
+
+    useEffect(()=>{
+        fetch(`/locations`)
+            .then((r)=>r.json())
+            .then((locations)=> {
+                setLocation(locations[0])
+                setAllLocations(locations)
+            })
+    },[])
 
     function handleClick(location) {
         setLocation(location)
-        setSelectedId(location.id)
+        // setSelectedId(location.id)
     }
 
-    const locationsElements = locations.map((location)=> {
+    const locationsElements = allLocations.map((thisLocation)=> {
         return <ListGroup.Item 
-        key={location.id}
-        onClick={()=>handleClick(location)} 
+        key={thisLocation.id}
+        onClick={()=>handleClick(thisLocation)} 
         style={{
             borderStyle: 'solid',
-            backgroundColor: (location.id===selectedId) ? '#4285F4' : 'white',
-            color: (location.id===selectedId) ? 'white' : 'black'
+            backgroundColor: (thisLocation.id===location.id) ? '#4285F4' : 'white',
+            color: (thisLocation.id===location.id) ? 'white' : 'black'
         }}
-        >{location.name}</ListGroup.Item>
+        >{thisLocation.name}</ListGroup.Item>
     })
 
     return (

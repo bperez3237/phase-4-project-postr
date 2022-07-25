@@ -1,11 +1,18 @@
 class PostsController < ApplicationController
+
     def index
-        posts = Post.all 
-        render json: posts, include: [:user,:location]
+        if params[:location_id]
+            location = Location.find(params[:location_id])
+            posts = location.posts 
+        else 
+            posts = Post.all 
+        end
+        render json: posts, include: [:user, :likes]
     end
 
+
     def create
-        post = Post.create(user_id: params[:user_id], location_id:params[:location_id], text: params[:text])
+        post = Post.create(user_id: params[:user_id], location_id: params[:location_id], text: params[:text])
         location = Location.find(params[:location_id]).with_posts
         render json: location, status: :created
     end

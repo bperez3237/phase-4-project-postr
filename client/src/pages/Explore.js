@@ -7,16 +7,6 @@ import LocationInfo from "../components/LocationInfo"
 
 function Explore({user}) {
     const [location, setLocation] = useState(null)
-    const [allLocations, setAllLocations] = useState([])
-
-    useEffect(()=>{
-        fetch(`/locations`)
-            .then((r)=>r.json())
-            .then((locations)=> {
-                setLocation(locations[0])
-                setAllLocations(locations)
-            })
-    },[])
 
     return (
 
@@ -24,7 +14,7 @@ function Explore({user}) {
             <Row>
                 <Col className="h-50 col-4 p-3">
                     <Row>
-                        {allLocations.length>0 ? <LocationList locations={allLocations} setLocation={setLocation}></LocationList> : <></>}
+                        <LocationList setLocation={setLocation} location={location}></LocationList>
                     </Row>
                     <Row className='mt-4'>
                         {location ? <LocationInfo className="" location={location}></LocationInfo> : <></>}
