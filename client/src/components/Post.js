@@ -2,12 +2,17 @@ import React from "react";
 import {useState, useEffect} from 'react'
 import {Button, Card} from 'react-bootstrap'
 
-function Post({post, location, setLocation, userAccess, currentUser, editable}) {
-    const [liked, setLiked] = useState(!post.likes.find((like)=>like.user_id==currentUser.id) ? true : false)
+function Post({id, location, setLocation, userAccess, currentUser, editable, posts, setPosts}) {
+    const [liked, setLiked] = useState(false)
+    const post = posts.filter((post)=>post.id==id)[0]
 
-    // useEffect(()=>{
-    //     setLiked(!post.likes.find((like)=>like.user_id==currentUser.id) ? true : false)
-    // },liked)
+    useEffect(()=>{
+        let result = false
+        post.likes.forEach((like)=>{
+            result = result || like.user_id==currentUser.id
+            setLiked(result)
+        })
+    },[liked])
     // const result = !post.likes.find((like)=>like.user_id==currentUser.id)
     // console.log(result)
 
@@ -15,6 +20,7 @@ function Post({post, location, setLocation, userAccess, currentUser, editable}) 
     // console.log(post.likes)
     // console.log(currentUser)
 
+    
     function handleDelete() {
         fetch(`/posts/${post.id}`,{
             method: 'DELETE'
@@ -41,7 +47,7 @@ function Post({post, location, setLocation, userAccess, currentUser, editable}) 
         // }))
         
         // const isLiked = like ? true : false
-        if (!like) {
+        if (!liked) {
             fetch(`/likes`, {
                 method: 'POST',
                 headers: {
@@ -50,12 +56,20 @@ function Post({post, location, setLocation, userAccess, currentUser, editable}) 
                     body: JSON.stringify({user_id: currentUser.id, post_id: post.id})
                 })
                     .then(r=>r.json())
-                    .then((like)=>setLike(like))
+                    .then((updatedPosts)=>{
+                        setPosts(updatedPosts)
+                    })
         }
         else {
-            console.log('run DELETE')
+            const like_id = post.likes.filter((like)=>like.user_id==currentUser.id)[0].id
+            console.log(like_id)
+            fetch(`/likes/${like_id}`,{
+                method:'DELETE',
+            })
+                .then(r=>r.json())
+                .then((updatedPosts)=>setPosts(updatedPosts))
         }
-        setLike(!like)
+        setLiked(!liked)
 
 
         
@@ -73,7 +87,7 @@ function Post({post, location, setLocation, userAccess, currentUser, editable}) 
             <Card.Footer className="d-flex justify-content-between">
                 {post.likes.length} Like{post.likes.length==1?'':'s'}
                 {/* {userAccess && editable ? <Button className="" onClick={handleDelete} variant='dark'>Delete Post</Button> : <></>} */}
-                {!userAccess && editable ? <Button onClick={handleLike} size="sm" variant={like ? 'danger' : 'black'}>{like ? 'Unlike' : 'Like'} Post</Button> : <></>}
+                {!userAccess && editable ? <Button onClick={handleLike} size="sm" variant={liked ? 'danger' : 'black'}>{liked ? 'Unlike' : 'Like'} Post</Button> : <></>}
             </Card.Footer>
         </Card>
     )

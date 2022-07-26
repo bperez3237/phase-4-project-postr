@@ -15,12 +15,14 @@ function PostList({location, setLocation, currentUser, editable}) {
     const postElements = posts.sort((a,b)=> Date.parse(b.created_at) - Date.parse(a.created_at)).map((post)=>{
         return <Post 
         key={post.id} 
-        post={post} 
+        id={post.id} 
         location={location} 
         currentUser={currentUser}
         userAccess={currentUser.id==post.user.id ? true : false}
         editable={editable}
         setLocation={setLocation}
+        posts={posts}
+        setPosts={setPosts}
         />}
         )
 
