@@ -3,21 +3,17 @@ import { useEffect, useState } from "react";
 import {Container} from 'react-bootstrap'
 import Post from './Post'
 
-function PostList({location, setLocation, currentUser, editable}) {
-    const [posts, setPosts] = useState([])
+function PostList({posts, setPosts, location, currentUser, editable}) {
+    // const [posts, setPosts] = useState([])
 
-    useEffect(()=>{
-        fetch(`/locations/${location.id}/posts`)
-            .then(r=>r.json())
-            .then(data=>setPosts(data))
-    },[])
-
-
+    // useEffect(()=>{
+    //     fetch(`/locations/${location.id}/posts`)
+    //         .then(r=>r.json())
+    //         .then(data=>setPosts(data))
+    // },[])
 
     function handleLike(liked, postId) {
-        console.log(`like ${liked}`)
         if (!liked) {
-            console.log('liked here')
             fetch(`/likes`, {
                 method: 'POST',
                 headers: {
@@ -31,7 +27,6 @@ function PostList({location, setLocation, currentUser, editable}) {
                     })
         }
         else {
-            console.log('unliked here')
             const post = posts.filter((elem)=>elem.id==postId)[0]
             const like_id = post.likes.filter((like)=>like.user_id==currentUser.id)[0].id
             fetch(`/likes/${like_id}`,{
@@ -49,8 +44,6 @@ function PostList({location, setLocation, currentUser, editable}) {
     }
 
     function handleDelete(postId) {
-
-        console.log('delete')
         fetch(`/posts/${postId}`,{
             method: 'DELETE'
         })

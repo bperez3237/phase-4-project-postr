@@ -2,7 +2,7 @@ import React from "react";
 import {useState} from 'react'
 import {Button, Form} from 'react-bootstrap'
 
-function NewPost({userId, locationId, setLocation}) {
+function NewPost({userId, locationId, setPosts}) {
     const [text, setText] = useState('')
 
     function handleChange(e) {
@@ -23,9 +23,9 @@ function NewPost({userId, locationId, setLocation}) {
             })
         })
             .then((r)=>r.json())
-            .then((location)=>{
+            .then((posts)=>{
                 setText('')
-                setLocation(location)
+                setPosts(posts)
             })
     }
 
