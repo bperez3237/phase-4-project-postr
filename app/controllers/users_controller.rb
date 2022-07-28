@@ -16,7 +16,7 @@ class UsersController < ApplicationController
         user = User.find_by(id: session[:user_id])
         location = Location.find_by(id: session[:location_id])
         if user
-            result = {user: user, location: location.with_posts}
+            result = {user: user, location: location}
             render json: result
         else
             render json: { error: 'User not found'}, status: :unauthorized

@@ -4,7 +4,6 @@ import {Card, Container, ListGroup} from 'react-bootstrap'
 import Location from './Location'
 
 function LocationList({setLocation, location}) {
-    // const [selectedId, setSelectedId] = useState(null)
     const [allLocations, setAllLocations] = useState([])
 
     useEffect(()=>{
@@ -18,7 +17,6 @@ function LocationList({setLocation, location}) {
 
     function handleClick(location) {
         setLocation(location)
-        // setSelectedId(location.id)
     }
 
     const locationsElements = allLocations.map((thisLocation)=> {
