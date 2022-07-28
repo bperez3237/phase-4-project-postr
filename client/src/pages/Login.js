@@ -9,9 +9,6 @@ function Login({onLogin, location, setLocation}) {
 
     return (
         <Container className=''>
-            <Row className="">
-            <Col className="">
-            <h1 style={{"color":'white', "backgroundColor":"blue"}} >POSTR</h1>
             {showLogin ? (
                 <div>
                     <LoginForm className='' onLogin={onLogin} location={location} setLocation={setLocation}/>
@@ -33,8 +30,6 @@ function Login({onLogin, location, setLocation}) {
                     </p>
                 </div>
             )}
-            </Col>
-            </Row>
         </Container>
     )
 

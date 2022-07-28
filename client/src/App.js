@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route, useHistory } from "react-router-dom";
+import { Navbar, Nav, Container } from "react-bootstrap";
 
 import Homepage from './pages/Homepage';
 import Explore from './pages/Explore';
@@ -26,7 +27,19 @@ function App() {
   }, []);
 
 
-  if (!user) return <Login onLogin={setUser} location={location} setLocation={setLocation}/>;
+  if (!user) {
+    
+    return (
+      <>
+        <Navbar bg='primary' variant='dark'>
+            <Container>
+              <Navbar.Brand href="/">Postr</Navbar.Brand>
+            </Container>
+          </Navbar>
+        <Login onLogin={setUser} location={location} setLocation={setLocation}/>;
+      </>
+    )
+  }
 
    else {return (
     <BrowserRouter>
