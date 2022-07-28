@@ -26,8 +26,6 @@ There is some code in db/seed.rb file to start. Run the migrations and seed file
 rails db:migrate db:seed
 ```
 
-## Features
-
 
 ## Potential Changes
 
