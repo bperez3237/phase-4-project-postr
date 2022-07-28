@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { BrowserRouter, Switch, Route, useHistory } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
 import Homepage from './pages/Homepage';

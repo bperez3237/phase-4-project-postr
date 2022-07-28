@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import {Card, Container, ListGroup} from 'react-bootstrap'
-import Location from './Location'
+import { Container, ListGroup} from 'react-bootstrap'
 
 function LocationList({setLocation, location}) {
     const [allLocations, setAllLocations] = useState([])

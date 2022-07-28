@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Alert,Button, Form} from 'react-bootstrap'
+import {Button, Form} from 'react-bootstrap'
 
 function SignUpForm({onLogin}) {
     const [username, setUsername] = useState("");

@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Row, Col, Card, ListGroup, Image} from 'react-bootstrap'
+import {Container, Card, ListGroup} from 'react-bootstrap'
 
 function LocationInfo({location}) {
 

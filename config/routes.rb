@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :posts, only: [ :create, :destroy ]
-  resources :locations, only: [:show, :index]
+  resources :locations, only: [:index]
   resources :likes, only: [:create, :destroy]
 
   resources :locations, only: [:show] do

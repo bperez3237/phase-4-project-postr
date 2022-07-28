@@ -20,8 +20,6 @@ function Explore({user}) {
             console.log('loading')
         }
     },[location])
-   
-
 
     return (
 
