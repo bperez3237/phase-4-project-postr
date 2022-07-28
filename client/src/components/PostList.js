@@ -4,13 +4,6 @@ import {Container} from 'react-bootstrap'
 import Post from './Post'
 
 function PostList({posts, setPosts, location, currentUser, editable}) {
-    // const [posts, setPosts] = useState([])
-
-    // useEffect(()=>{
-    //     fetch(`/locations/${location.id}/posts`)
-    //         .then(r=>r.json())
-    //         .then(data=>setPosts(data))
-    // },[])
 
     function handleLike(liked, postId) {
         if (!liked) {

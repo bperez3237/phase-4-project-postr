@@ -7,6 +7,21 @@ import LocationInfo from "../components/LocationInfo"
 
 function Explore({user}) {
     const [location, setLocation] = useState(null)
+    const [posts, setPosts] = useState(null)
+
+
+    useEffect(()=>{
+        if (location!==null) {
+            fetch(`locations/${location.id}/posts`)
+                .then(r=>r.json())
+                .then((posts)=>setPosts(posts))
+        }
+        else {
+            console.log('loading')
+        }
+    },[location])
+   
+
 
     return (
 
@@ -14,14 +29,19 @@ function Explore({user}) {
             <Row>
                 <Col className="h-50 col-4 p-3">
                     <Row>
-                        <LocationList setLocation={setLocation} location={location}></LocationList>
+                        <LocationList setLocation={setLocation} location={location} ></LocationList>
                     </Row>
                     <Row className='mt-4'>
                         {location ? <LocationInfo className="" location={location}></LocationInfo> : <></>}
                     </Row>
                 </Col>
                 <Col className="col-8 p-3">
-                    {location ? <PostList location={location} currentUser={user} setLocation={setLocation} editable={false}/> : <></>}
+                    {posts ? <PostList 
+                    posts={posts}
+                    location={location} 
+                    currentUser={user} 
+                    setLocation={setLocation} 
+                    editable={false}/> : <></>}
                 </Col>
             </Row>
         </Container>
