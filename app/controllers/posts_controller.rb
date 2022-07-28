@@ -32,10 +32,4 @@ class PostsController < ApplicationController
         render json: posts, include: [:user, :likes]
     end
 
-    def update
-        post = Post.find(params[:id])
-        # post.update(likes: post.likes + params[:change_likes])
-        location = Location.find(post.location_id).with_posts
-        render json: location
-    end
 end
