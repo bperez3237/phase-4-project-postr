@@ -6,7 +6,8 @@ class LikesController < ApplicationController
             render json: {error: 'already liked'}
         else
             like = Like.create(user_id: params[:user_id], post_id: params[:post_id])
-            posts = Post.all
+            location = Location.find(params[:location_id])
+            posts = location.posts
             render json: posts, include: [:likes, :user]
         end
     end
@@ -14,7 +15,8 @@ class LikesController < ApplicationController
     def destroy
         like = Like.find(params[:id])
         like.destroy
-        posts = Post.all
+        location = Location.find(params[:location_id])
+        posts = location.posts
         render json: posts, include: [:likes, :user]
     end
 end

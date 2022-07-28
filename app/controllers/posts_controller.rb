@@ -10,6 +10,11 @@ class PostsController < ApplicationController
         render json: posts, include: [:user, :likes]
     end
 
+    def show
+        post = Post.find(params[:id])
+        render json: post, include: [:user, :likes]
+    end
+
 
     def create
         post = Post.create(user_id: params[:user_id], location_id: params[:location_id], text: params[:text])
