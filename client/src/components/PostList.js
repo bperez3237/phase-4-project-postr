@@ -76,7 +76,7 @@ function PostList({posts, setPosts, location, currentUser, editable}) {
         )
 
     return (
-        <Container className="fluid" style={{borderStyle:'solid', maxHeight:'900px', overflow: 'scroll'}}>
+        <Container className="fluid" style={{maxHeight:'900px', overflow: 'scroll'}}>
             {location ? postElements : <></>}
         </Container>
     )

@@ -30,7 +30,7 @@ function NewPost({userId, locationId, setPosts}) {
     }
 
     return (
-        <Form className='' style={{borderStyle:'solid', height: '300px'}}>
+        <Form className='' style={{height: '300px'}}>
             <Form.Group className='h-75'>
                 <Form.Label as='h4'>New Post Here:</Form.Label>
                 <Form.Control value={text} type='text' onChange={handleChange} className="h-75"></Form.Control>

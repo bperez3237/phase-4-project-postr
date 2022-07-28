@@ -32,7 +32,7 @@ function LocationList({setLocation, location}) {
     })
 
     return (
-       <Container className='' style={{borderStyle:'solid', maxHeight:'500px', overflow: 'scroll'}}>
+       <Container className='' style={{maxHeight:'500px', overflow: 'scroll'}}>
             <h4 className="sticky-top" style={{backgroundColor:'white'}}>Locations:</h4>
             <ListGroup>{locationsElements}</ListGroup>
        </Container>
