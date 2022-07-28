@@ -6,6 +6,7 @@ require 'byebug'
 Post.destroy_all
 User.destroy_all
 Location.destroy_all
+Like.destroy_all
 
 puts 'seeding users'
 my_user = User.create(username: 'brian123', password: 'password',name: 'Brian')

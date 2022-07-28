@@ -25,7 +25,9 @@ class UsersController < ApplicationController
 
     def user_info
         user = User.find(params[:id])
-        render json: user, include: [:locations, :posts]
+        liked_posts = user.likes.map {|like| like.post}
+        result = {user: user, locations: user.locations, posts: user.posts, liked_posts: liked_posts}
+        render json: result
     end
 
     private

@@ -1,6 +1,6 @@
 import React from "react";
-import {useState, useEffect} from 'react'
-import {Button, Col, Row, Container} from 'react-bootstrap'
+import {useState} from 'react'
+import {Button, Container} from 'react-bootstrap'
 import LoginForm from "../components/LoginForm";
 import SignUpForm from "../components/SignUpForm";
 
