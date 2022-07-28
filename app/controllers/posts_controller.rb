@@ -26,8 +26,9 @@ class PostsController < ApplicationController
         post = Post.find(params[:id])
         location_id = post.location_id
         post.destroy
-        location = Location.find(location_id).with_posts
-        render json: location
+        location = Location.find(location_id)
+        posts = location.posts
+        render json: posts, include: [:user, :likes]
     end
 
     def update

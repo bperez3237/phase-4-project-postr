@@ -27,7 +27,6 @@ function PostList({location, setLocation, currentUser, editable}) {
                 })
                     .then(r=>r.json())
                     .then((updatedPosts)=>{
-                        console.log(updatedPosts)
                         setPosts(updatedPosts)
                     })
         }
@@ -44,23 +43,20 @@ function PostList({location, setLocation, currentUser, editable}) {
             })
                 .then(r=>r.json())
                 .then((updatedPosts)=>{
-                    console.log(updatedPosts)
                     setPosts(updatedPosts)
                 })
         }
     }
 
-    function handleDelete() {
+    function handleDelete(postId) {
 
         console.log('delete')
-        // fetch(`/posts/${post.id}`,{
-        //     method: 'DELETE'
-        // })
-        //     .then((r=>r.json()))
-        //     .then((location)=>setLocation(location))
+        fetch(`/posts/${postId}`,{
+            method: 'DELETE'
+        })
+            .then((r=>r.json()))
+            .then((posts)=>setPosts(posts))
     }
-
-
 
     const postElements = posts.sort((a,b)=> Date.parse(b.created_at) - Date.parse(a.created_at)).map((post)=>{
         return <Post 
