@@ -1,24 +1,34 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# POSTR App
 
-* Ruby version
+This app mimics a social media website with one main difference; the local posts are based on locations. So users can only interact with the people at the location they log in from. A user can like other users' posts, and delete and edit their own posts. New posts can be created by the user and are added to the top.
 
-* System dependencies
+The app is created used a rails server and react frontend. 
 
-* Configuration
+## Getting Started
 
-* Database creation
+After cloning, to setup the rails server run:
 
-* Database initialization
+```bash
+rails s
+```
 
-* How to run the test suite
+and to setup the react server run:
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+npm start --prefix client
+```
 
-* Deployment instructions
+There is some code in db/seed.rb file to start. Run the migrations and seed files:
 
-* ...
+```bash
+rails db:migrate db:seed
+```
+
+## Features
+
+
+## Potential Changes
+
+Currently, the locations to log in from are selected from a dropdown. It would make sense for a user only to be able to log in from the location they are actually at. This would greatly change the way people use the app since their POSTR networks will be all local.
