@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :posts, only: [ :create, :destroy, :update ]
+  resources :posts, only: [ :create, :destroy ]
   resources :locations, only: [:show, :index]
   resources :likes, only: [:create, :destroy]
 
   resources :locations, only: [:show] do
-    resources :posts, only: [:show, :index]
+    resources :posts, only: [:show, :index, :update]
   end
   
 

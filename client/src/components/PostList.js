@@ -44,6 +44,19 @@ function PostList({posts, setPosts, location, currentUser, editable}) {
             .then((posts)=>setPosts(posts))
     }
 
+    function handleEdit(postId, newText) {
+        fetch(`/locations/${location.id}/posts/${postId}`,{
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+                body: JSON.stringify({text:newText})
+            })
+                .then(r=>r.json())
+                .then((posts)=>setPosts(posts))
+    }
+    
+
     const postElements = posts.sort((a,b)=> Date.parse(b.created_at) - Date.parse(a.created_at)).map((post)=>{
         return <Post 
         key={post.id} 
@@ -58,6 +71,7 @@ function PostList({posts, setPosts, location, currentUser, editable}) {
         liked={Boolean(post.likes.find((like)=>like.user_id==currentUser.id))}
         handleLike={handleLike}
         handleDelete={handleDelete}
+        handleEdit={handleEdit}
         />}
         )
 
