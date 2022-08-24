@@ -42,7 +42,7 @@ function Explore({user}) {
     return (
 
         <Container className="fluid">
-            <Button className='m-3' onClick={handleFilter} >Filter: Greater than 4 likes</Button>
+            <Button className='m-3' onClick={handleFilter} >{`Filter ${toggleFilter ? 'on' : 'off'}: Greater than 4 likes`}</Button>
             <Row>
                 <Col className="h-50 col-4 p-3">
                     <Row>
