@@ -12,6 +12,7 @@ function Explore({user}) {
 
 
     useEffect(()=>{
+        setToggleFilter(false)
         if (location!==null) {
             fetch(`locations/${location.id}/posts`)
                 .then(r=>r.json())
