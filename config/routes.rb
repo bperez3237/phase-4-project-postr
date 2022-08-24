@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   
 
+  get '/locations/:location_id/four_likes', to: 'posts#four_likes'
+
 
   get '*path',
       to: 'fallback#index',

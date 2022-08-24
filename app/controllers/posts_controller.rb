@@ -40,4 +40,16 @@ class PostsController < ApplicationController
         posts = location.posts
         render json: posts, include: [:user, :likes]
     end
+
+
+    def four_likes
+        location = Location.find(params[:location_id])
+        result = []
+        location.posts.select do |post|
+            if post.likes.count > 4
+                result << post
+            end
+        end
+        render json: result, include: [:user, :likes]
+    end
 end

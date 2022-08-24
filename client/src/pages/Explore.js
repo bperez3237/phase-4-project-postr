@@ -2,12 +2,13 @@ import React from "react";
 import {useState, useEffect} from 'react'
 import LocationList from "../components/LocationList";
 import PostList from "../components/PostList";
-import {Container, Row, Col} from 'react-bootstrap'
+import {Container, Row, Col, Button} from 'react-bootstrap'
 import LocationInfo from "../components/LocationInfo"
 
 function Explore({user}) {
     const [location, setLocation] = useState(null)
     const [posts, setPosts] = useState(null)
+    const [toggleFilter, setToggleFilter] = useState(false)
 
 
     useEffect(()=>{
@@ -21,9 +22,26 @@ function Explore({user}) {
         }
     },[location])
 
+    useEffect(()=> {
+        // console.log(`toggle is ${toggleFilter ? 'on' : 'off'}`)
+        if (location !== null && toggleFilter == true) {
+            console.log('here')
+            fetch(`locations/${location.id}/four_likes`).then(r=>r.json()).then(data=>setPosts(data))
+        } else if (location !== null) {
+            fetch(`locations/${location.id}/posts`)
+                .then(r=>r.json())
+                .then((posts)=>setPosts(posts))
+        }
+    },[toggleFilter])
+
+    function handleFilter() {
+        setToggleFilter(!toggleFilter)
+    }
+
     return (
 
         <Container className="fluid">
+            <Button className='m-3' onClick={handleFilter} >Filter: Greater than 4 likes</Button>
             <Row>
                 <Col className="h-50 col-4 p-3">
                     <Row>
