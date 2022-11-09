@@ -54,7 +54,6 @@ function LoginForm({onLogin, location, setLocation}) {
 
     const optionElements = locations.map((location)=><option key={location.id} value={location.id}>{location.name}</option>)
 
-
     return (
             <Form  className="" style={{"width":"300px"}} onSubmit={handleSubmit}>
                 <Form.Group className="mb-4">

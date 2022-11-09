@@ -47,7 +47,7 @@ function Account({user_id}) {
                                         {userInfo.liked_posts.map((post)=><p key={post.id}>{post.text}</p>)}
                                     </Accordion.Body>
                                 </Accordion.Item>
-                            </Accordion>
+                            </Accordion> 
                     </Card.Body>
                 </Card>
             </Row>
