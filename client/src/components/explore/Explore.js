@@ -1,9 +1,9 @@
 import React from "react";
 import {useState, useEffect} from 'react'
-import LocationList from "../components/LocationList";
-import PostList from "../components/PostList";
+import LocationList from "../LocationList";
+import PostList from "../PostList";
 import {Container, Row, Col, Button} from 'react-bootstrap'
-import LocationInfo from "../components/LocationInfo"
+import LocationInfo from "../LocationInfo"
 
 function Explore({user}) {
     const [location, setLocation] = useState(null)

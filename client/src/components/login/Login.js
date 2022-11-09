@@ -1,8 +1,8 @@
 import React from "react";
 import {useState} from 'react'
 import {Button, Container} from 'react-bootstrap'
-import LoginForm from "../components/LoginForm";
-import SignUpForm from "../components/SignUpForm";
+import LoginForm from "../LoginForm";
+import SignUpForm from "../SignUpForm";
 
 function Login({onLogin, location, setLocation}) {
     const [showLogin, setShowLogin] = useState(true);

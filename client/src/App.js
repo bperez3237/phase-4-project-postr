@@ -1,13 +1,12 @@
-
 import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
-import Homepage from './pages/Homepage';
-import Explore from './pages/Explore';
+import Homepage from './components/home/Homepage';
+import Explore from './components/explore/Explore';
 import Navigator from './components/Navigator';
-import Login from './pages/Login';
-import Account from "./pages/Account";
+import Login from './components/login/Login';
+import Account from "./components/account/Account";
 
 
 function App() {
