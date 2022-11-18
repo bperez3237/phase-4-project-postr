@@ -1,7 +1,7 @@
 import React from "react";
 import {useState, useEffect} from 'react'
 import LocationList from "./LocationList";
-import PostList from "../PostList";
+import PostList from "../post/PostList";
 import {Container, Row, Col, Button} from 'react-bootstrap'
 import LocationInfo from "../LocationInfo"
 

@@ -1,6 +1,8 @@
 import React from "react";
-import {Container} from 'react-bootstrap'
 import Post from './Post'
+import './Post.css'
+
+
 
 function PostList({posts, setPosts, location, currentUser, editable}) {
 
@@ -75,9 +77,9 @@ function PostList({posts, setPosts, location, currentUser, editable}) {
         )
 
     return (
-        <Container className="fluid" style={{maxHeight:'900px', overflow: 'scroll'}}>
+        <div className="fluid" style={{maxHeight:'900px', overflow: 'scroll'}}>
             {location ? postElements : <></>}
-        </Container>
+        </div>
     )
 
 

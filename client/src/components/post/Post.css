@@ -1,0 +1,27 @@
+.post-card {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.profile-pic {
+    min-width: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+#pic {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    border-radius: 50%;
+    border-color: black;
+    border-style: solid;
+}
+
+.post-body {
+    padding: 10px;
+}

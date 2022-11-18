@@ -1,5 +1,5 @@
 import React from "react";
-import PostList from "../PostList";
+import PostList from "../post/PostList";
 import {Container, Row, Col} from 'react-bootstrap'
 import NewPost from './NewPost'
 import LocationInfo from '../LocationInfo'
