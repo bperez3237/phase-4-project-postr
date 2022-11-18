@@ -5,6 +5,7 @@ import NewPost from './NewPost'
 import LocationInfo from '../LocationInfo'
 import UserInfo from '../UserInfo'
 import { useEffect, useState } from "react";
+import HomeHeading from "./HomeHeading";
 
 function Homepage({location, user}) {
     const [posts, setPosts] = useState([])
@@ -16,9 +17,8 @@ function Homepage({location, user}) {
     },[])
 
     return (
-        <Container className="fluid">
-            <Row>
-                <Col className="col-4 p-3">
+        <div className="Feed">
+                {/* <Col className="col-4 p-3">
                     <Row className="">
                         <LocationInfo location={location}></LocationInfo>
                     </Row>
@@ -28,12 +28,11 @@ function Homepage({location, user}) {
                     <Row className="mt-4">
                         <UserInfo user={user}></UserInfo>
                     </Row>
-                </Col>
-                <Col className="col-8 p-3">
-                    <PostList location={location} currentUser={user} editable={true} posts={posts} setPosts={setPosts}></PostList>
-                </Col>
-            </Row>
-        </Container>
+                </Col> */}
+            <HomeHeading />
+            <PostList location={location} currentUser={user} editable={true} posts={posts} setPosts={setPosts}></PostList>
+                
+        </div>
     )
 }
 

@@ -1,8 +1,9 @@
 import React from 'react'
+import {SiThunderbird} from 'react-icons/si'
 
 function Sidebar() {
   return (
-    <div>Sidebar</div>
+    <div className='Sidebar'>Sidebar</div>
   )
 }
 

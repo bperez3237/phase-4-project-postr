@@ -9,6 +9,7 @@ import Navigator from './components/Navigator';
 import Login from './components/login/Login';
 import Account from "./components/account/Account";
 import './App.css';
+import Newsfeed from './components/Newsfeed'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -39,11 +40,12 @@ function App() {
    else {return (
     <BrowserRouter>
       <div className="App" >
-        <Navigator setUser={setUser}></Navigator>
+        {/* <Navigator setUser={setUser}></Navigator> */}
         <Sidebar />
         <Switch>
           <Route exact path="/">
-            <Homepage location={location} user={user} setLocation={setLocation} ></Homepage>
+            <Homepage location={location} user={user} setLocation={setLocation} />
+            <Newsfeed />
           </Route>
           <Route path="/explore">
             <Explore user={user}></Explore>
