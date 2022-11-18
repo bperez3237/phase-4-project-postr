@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
+import Sidebar from "./components/Sidebar";
 import Homepage from './components/home/Homepage';
 import Explore from './components/explore/Explore';
 import Navigator from './components/Navigator';
@@ -30,9 +31,6 @@ function App() {
     
     return (
       <div className="Login">
-        {/* <Navbar bg='primary' variant='dark'>
-            <Navbar.Brand href="/">Postr</Navbar.Brand>
-          </Navbar> */}
         <Login onLogin={setUser} location={location} setLocation={setLocation}/>
       </div>
     )
@@ -42,6 +40,7 @@ function App() {
     <BrowserRouter>
       <div className="App" >
         <Navigator setUser={setUser}></Navigator>
+        <Sidebar />
         <Switch>
           <Route exact path="/">
             <Homepage location={location} user={user} setLocation={setLocation} ></Homepage>

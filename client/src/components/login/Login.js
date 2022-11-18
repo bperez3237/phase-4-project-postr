@@ -4,14 +4,14 @@ import {Button, Container} from 'react-bootstrap'
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
 import './Login.css'
-import {GrMapLocation} from 'react-icons/gr'
+import {SiThunderbird} from 'react-icons/si'
 
 function Login({onLogin, location, setLocation}) {
     const [showLogin, setShowLogin] = useState(true);
 
     return (
         <div className='login-container'>
-            <GrMapLocation size='3em' color='white' />
+            <SiThunderbird size='4em' color='black' />
             <h2 className='greeting' >Sign in to Postr</h2>
             {showLogin ? (
                 <div id='login-form'>

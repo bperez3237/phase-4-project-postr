@@ -1,7 +1,7 @@
 import React from 'react'
 
 function RoundedButton(props) {
-    console.log(props)
+
     const style = {
         'height': '40px',
         'width': '300px',
@@ -16,4 +16,4 @@ function RoundedButton(props) {
   )
 }
 
-export default RoundedButton
+export default RoundedButton;
