@@ -41,7 +41,7 @@ function App() {
     <BrowserRouter>
       <div className="App" >
         {/* <Navigator setUser={setUser}></Navigator> */}
-        <Sidebar />
+        <Sidebar setUser={setUser}/>
         <Switch>
           <Route exact path="/">
             <Homepage location={location} user={user} setLocation={setLocation} />

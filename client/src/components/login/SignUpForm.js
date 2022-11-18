@@ -76,7 +76,7 @@ function SignUpForm({onLogin}) {
             onChange={(e) => setName(e.target.value)}
           />
         </Form.Group>
-        <RoundedButton>Sign Up</RoundedButton>
+        <RoundedButton color='black'>Sign Up</RoundedButton>
       </Form>
     )
 
