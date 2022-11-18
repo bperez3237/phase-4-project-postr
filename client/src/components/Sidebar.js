@@ -34,7 +34,7 @@ function Sidebar({setUser}) {
           <h2 id='title'>Profile</h2>
         </li>
         <li id='Post' className='row'>
-          <RoundedButton color='#7fffd0'>Post</RoundedButton>
+          <RoundedButton text='Post' color='#7fffd0' type='button'/>
         </li>
       </ul>
       <button id='logout-button' onClick={handleLogoutClick}>Logout</button>
