@@ -7,7 +7,7 @@ import Explore from './components/explore/Explore';
 import Navigator from './components/Navigator';
 import Login from './components/login/Login';
 import Account from "./components/account/Account";
-
+import './App.css';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -29,14 +29,12 @@ function App() {
   if (!user) {
     
     return (
-      <>
-        <Navbar bg='primary' variant='dark'>
-            <Container>
-              <Navbar.Brand href="/">Postr</Navbar.Brand>
-            </Container>
-          </Navbar>
-        <Login onLogin={setUser} location={location} setLocation={setLocation}/>;
-      </>
+      <div className="Login">
+        {/* <Navbar bg='primary' variant='dark'>
+            <Navbar.Brand href="/">Postr</Navbar.Brand>
+          </Navbar> */}
+        <Login onLogin={setUser} location={location} setLocation={setLocation}/>
+      </div>
     )
   }
 

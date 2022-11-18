@@ -77,14 +77,14 @@ function LoginForm({onLogin, location, setLocation}) {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </Form.Group>
-                <Form.Group className="mb-4">
+                <Form.Select value={location.id} onChange={handleChange}>
+                    {locations ? optionElements : <></>}
+                </Form.Select>
+                <Form.Group className="">
                     <Button variant="primary" type="submit">
                         {isLoading ? "Loading..." : "Login"}
                     </Button>
                 </Form.Group>
-                <Form.Select value={location.id} onChange={handleChange}>
-                    {locations ? optionElements : <></>}
-                </Form.Select>
         </Form>
     );
 }

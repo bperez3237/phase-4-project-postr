@@ -1,7 +1,7 @@
 import React from "react";
 import PostList from "../PostList";
 import {Container, Row, Col} from 'react-bootstrap'
-import NewPost from '../NewPost'
+import NewPost from './NewPost'
 import LocationInfo from '../LocationInfo'
 import UserInfo from '../UserInfo'
 import { useEffect, useState } from "react";
