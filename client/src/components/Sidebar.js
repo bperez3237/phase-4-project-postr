@@ -1,12 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import {SiThunderbird} from 'react-icons/si'
 import {RiHomeSmileFill} from 'react-icons/ri'
 import {MdManageAccounts, MdTravelExplore} from 'react-icons/md'
 import RoundedButton from './login/RoundedButton'
+import NewPost from './home/NewPost'
 
-function Sidebar({setUser}) {
+function Sidebar({location, user, setUser, posts, setPosts}) {
   const history = useHistory()
+  const [toggleNewPost, setToggleNewPost] = useState(false)
 
   function handleLogoutClick() {
     fetch("/logout", { method: "DELETE" }).then((r) => {
@@ -34,9 +36,10 @@ function Sidebar({setUser}) {
           <h2 id='title'>Profile</h2>
         </li>
         <li id='Post' className='row'>
-          <RoundedButton text='Post' color='#7fffd0' type='button'/>
+          <RoundedButton text='Post' color='#7fffd0' type='button' toggleValue={toggleNewPost} setToggle={setToggleNewPost}/>
         </li>
       </ul>
+      {toggleNewPost ? <NewPost className='new-post' locationId={location.id} userId={user.id} setPosts={setPosts}></NewPost> : <></>}
       <button id='logout-button' onClick={handleLogoutClick}>Logout</button>
     </div>
   )

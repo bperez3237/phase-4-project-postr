@@ -14,6 +14,7 @@ import Newsfeed from './components/Newsfeed'
 function App() {
   const [user, setUser] = useState(null);
   const [location, setLocation] = useState({})
+  const [posts, setPosts] = useState([])
 
   useEffect(() => {
     // auto-login
@@ -41,10 +42,10 @@ function App() {
     <BrowserRouter>
       <div className="App" >
         {/* <Navigator setUser={setUser}></Navigator> */}
-        <Sidebar setUser={setUser}/>
+        <Sidebar location={location} user={user} setUser={setUser} posts={posts} setPosts={setPosts}/>
         <Switch>
           <Route exact path="/">
-            <Homepage location={location} user={user} setLocation={setLocation} />
+            <Homepage location={location} user={user} setLocation={setLocation} posts={posts} setPosts={setPosts} />
             <Newsfeed />
           </Route>
           <Route path="/explore">

@@ -7,8 +7,8 @@ import UserInfo from '../UserInfo'
 import { useEffect, useState } from "react";
 import HomeHeading from "./HomeHeading";
 
-function Homepage({location, user}) {
-    const [posts, setPosts] = useState([])
+function Homepage({location, setLocation, user, posts, setPosts}) {
+    // const [posts, setPosts] = useState([])
 
     useEffect(()=>{
         fetch(`/locations/${location.id}/posts`)
@@ -31,7 +31,6 @@ function Homepage({location, user}) {
                 </Col> */}
             <HomeHeading />
             <PostList location={location} currentUser={user} editable={true} posts={posts} setPosts={setPosts}></PostList>
-                
         </div>
     )
 }

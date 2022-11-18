@@ -1,7 +1,7 @@
 import React from 'react'
 import {stringToColor} from '../../utils/Colors'
 
-function RoundedButton({text, color, type, onClick}) {
+function RoundedButton({text, color, type, toggleValue, setToggle}) {
 
   const style = {
       'height': '40px',
@@ -14,7 +14,7 @@ function RoundedButton({text, color, type, onClick}) {
   }
 
   return (
-    <button style={style} type={type}>{text}</button>
+    <button style={style} type={type} onClick={()=>setToggle(!toggleValue)}>{text}</button>
   )
 }
 
