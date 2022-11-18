@@ -1,6 +1,7 @@
 import React from "react";
 import {useState, useEffect} from 'react'
 import { Button, Form} from 'react-bootstrap'
+import RoundedButton from "./RoundedButton";
 
 function LoginForm({onLogin, location, setLocation}) {
     const [username, setUsername] = useState("");
@@ -55,7 +56,7 @@ function LoginForm({onLogin, location, setLocation}) {
     const optionElements = locations.map((location)=><option key={location.id} value={location.id}>{location.name}</option>)
 
     return (
-            <Form  className="" style={{"width":"300px"}} onSubmit={handleSubmit}>
+            <Form  className="form" onSubmit={handleSubmit}>
                 <Form.Group className="mb-4">
                 <Form.Label htmlFor="username">Username</Form.Label>
                     <Form.Control
@@ -80,11 +81,7 @@ function LoginForm({onLogin, location, setLocation}) {
                 <Form.Select value={location.id} onChange={handleChange}>
                     {locations ? optionElements : <></>}
                 </Form.Select>
-                <Form.Group className="">
-                    <Button variant="primary" type="submit">
-                        {isLoading ? "Loading..." : "Login"}
-                    </Button>
-                </Form.Group>
+                <RoundedButton>Login</RoundedButton>
         </Form>
     );
 }

@@ -11,26 +11,22 @@ function Login({onLogin, location, setLocation}) {
 
     return (
         <div className='login-container'>
-            <GrMapLocation size='3em' color='white'/>
+            <GrMapLocation size='3em' color='white' />
             <h2 className='greeting' >Sign in to Postr</h2>
             {showLogin ? (
                 <div id='login-form'>
                     <LoginForm className='' onLogin={onLogin} location={location} setLocation={setLocation}/>
                     <p>
-                        Don't have an account? &nbsp;
-                        <Button color="secondary" onClick={() => setShowLogin(false)}>
-                            Sign Up
-                        </Button>
+                        Don't have an account?
+                        <span onClick={() => setShowLogin(false)}> Sign Up</span>
                     </p>
                 </div>
             ) : (
                 <div id='signup-form'>
                     <SignUpForm onLogin={onLogin}/>
                     <p>
-                        Already have an account? &nbsp;
-                        <Button color="secondary" onClick={() => setShowLogin(true)}>
-                            Log In
-                        </Button>
+                        Have an account already?
+                        <span onClick={() => setShowLogin(true)}> Log In</span>
                     </p>
                 </div>
             )}
