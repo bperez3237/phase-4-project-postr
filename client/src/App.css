@@ -50,6 +50,12 @@
   /* place-items: center; */
 }
 
+#logout-button {
+  height: 60px;
+  /* position: absolute; */
+  bottom: 0;
+}
+
 .Feed {
   flex: 60%;
 }

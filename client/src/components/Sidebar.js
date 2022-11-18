@@ -31,9 +31,11 @@ function Sidebar({setUser}) {
           <MdManageAccounts id='icon' size='1.8em'/>
           <h2 id='title'>Profile</h2>
         </li>
+        <li id='Post' className='row'>
+          <RoundedButton color='#7fffd0'>Post</RoundedButton>
+        </li>
       </ul>
-      <RoundedButton color='#7fffd0'>Post</RoundedButton>
-      <button variant="light" onClick={handleLogoutClick}>Logout</button>
+      <button id='logout-button' onClick={handleLogoutClick}>Logout</button>
     </div>
   )
 }
