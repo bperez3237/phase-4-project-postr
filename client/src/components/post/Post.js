@@ -26,8 +26,8 @@ function Post({id, username, text, locationName, createdAt, userAccess, editable
             <div className="post-body">
                 <h5>{username} says:</h5>
                 {editingToggle ? <Form><Form.Group><Form.Control value={postText} onChange={handleChange}></Form.Control></Form.Group></Form> : <Card.Text style={{fontSize:'18px'}}>{postText}</Card.Text>}
-                <p style={{fontSize:'12px'}}>Postr'd from {locationName} - {createdAt.slice(0,10)} - {createdAt.slice(11,19)}</p>
                 <div className="post-footer">
+                    <p style={{fontSize:'12px'}}>Postr'd from {locationName} - {createdAt.slice(0,10)} - {createdAt.slice(11,19)}</p>
                     {numLikes} Like{numLikes==1?'':'s'}
                     {userAccess && editable ? <Button className="" onClick={()=>onEdit(id)} variant='dark'>{editingToggle ? 'Done Editing' : 'Edit Post'}</Button> : <></>}
                     {userAccess && editable ? <Button className="" onClick={()=>handleDelete(id)} variant='dark'>Delete Post</Button> : <></>}

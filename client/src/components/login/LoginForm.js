@@ -81,7 +81,7 @@ function LoginForm({onLogin, location, setLocation}) {
                 <Form.Select value={location.id} onChange={handleChange}>
                     {locations ? optionElements : <></>}
                 </Form.Select>
-                <RoundedButton color='black'>Login</RoundedButton>
+                <RoundedButton text='Login' color='black' type='submit'/>
         </Form>
     );
 }
