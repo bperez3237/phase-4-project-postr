@@ -24,4 +24,18 @@
 
 .post-body {
     padding: 10px;
+    width: 100%;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    align-items: center;
+    text-align: center;
+}
+
+p {
+    margin: 0;
+    padding: 0
 }
