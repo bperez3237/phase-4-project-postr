@@ -1,0 +1,28 @@
+.Newsfeed {
+  display: grid;
+}
+.Newsfeed .news-card {
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  display: flex;
+}
+.Newsfeed .news-card .card-body {
+  display: grid;
+}
+.Newsfeed .news-card .card-body h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.Newsfeed .news-card .card-body h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.Newsfeed .news-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 25%;
+  margin: 10px;
+}/*# sourceMappingURL=style.css.map */

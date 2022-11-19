@@ -33,7 +33,7 @@ function NewPost({userId, locationId, setPosts, setToggleNewPost}) {
     return (
         <form className=''>
             <h4>New Post Here:</h4>
-            <input value={text} type='text' onChange={handleChange} className="h-75"></input>
+            <input value={text} type='text' onChange={handleChange}></input>
             <Button variant='dark' type='submit' onClick={handleSubmit}>POST!</Button>
         </form>
     )
