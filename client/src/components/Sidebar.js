@@ -39,7 +39,7 @@ function Sidebar({location, user, setUser, posts, setPosts}) {
           <RoundedButton text='Post' color='#7fffd0' type='button' toggleValue={toggleNewPost} setToggle={setToggleNewPost}/>
         </li>
       </ul>
-      {toggleNewPost ? <NewPost className='new-post' locationId={location.id} userId={user.id} setPosts={setPosts}></NewPost> : <></>}
+      {toggleNewPost ? <NewPost className='new-post' locationId={location.id} userId={user.id} setPosts={setPosts} setToggleNewPost={setToggleNewPost}></NewPost> : <></>}
       <button id='logout-button' onClick={handleLogoutClick}>Logout</button>
     </div>
   )

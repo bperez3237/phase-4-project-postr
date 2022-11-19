@@ -2,7 +2,7 @@ import React from "react";
 import {useState} from 'react'
 import {Button, Form} from 'react-bootstrap'
 
-function NewPost({userId, locationId, setPosts}) {
+function NewPost({userId, locationId, setPosts, setToggleNewPost}) {
     const [text, setText] = useState('')
 
     function handleChange(e) {
@@ -26,17 +26,16 @@ function NewPost({userId, locationId, setPosts}) {
             .then((posts)=>{
                 setText('')
                 setPosts(posts)
+                setToggleNewPost(false)
             })
     }
 
     return (
-        <Form className='' style={{height: '300px'}}>
-            <Form.Group className='h-75'>
-                <Form.Label as='h4'>New Post Here:</Form.Label>
-                <Form.Control value={text} type='text' onChange={handleChange} className="h-75"></Form.Control>
-            </Form.Group>
+        <form className=''>
+            <h4>New Post Here:</h4>
+            <input value={text} type='text' onChange={handleChange} className="h-75"></input>
             <Button variant='dark' type='submit' onClick={handleSubmit}>POST!</Button>
-        </Form>
+        </form>
     )
 }
 

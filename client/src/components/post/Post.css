@@ -45,3 +45,7 @@ p {
     margin: 0;
     padding: 0
 }
+
+.post-footer svg {
+    margin: 0 15px;
+}

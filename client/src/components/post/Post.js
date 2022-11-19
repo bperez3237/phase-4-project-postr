@@ -1,8 +1,8 @@
 import React from "react";
 import {useState} from 'react'
 import {Button, Card, Form} from 'react-bootstrap'
-import {FaHeart} from 'react-icons/fa'
-import {FiHeart} from 'react-icons/fi'
+import {FaHeart, FaEdit, FaTrashAlt} from 'react-icons/fa'
+import {FiHeart, FiEdit} from 'react-icons/fi'
 
 function Post({id, name, username, text, locationName, createdAt, userAccess, editable, numLikes, liked, handleLike, handleDelete, handleEdit}) {
     const [postText,setPosttext] = useState(text)
@@ -31,11 +31,12 @@ function Post({id, name, username, text, locationName, createdAt, userAccess, ed
                 <div className="post-footer">
                     <p style={{fontSize:'12px'}}>Postr'd from {locationName} - {createdAt.slice(0,10)} - {createdAt.slice(11,19)}</p>
                     <p>
-                        {numLikes}{" "}
-                        {userAccess && editable ? <Button className="" onClick={()=>onEdit(id)} variant='dark'>{editingToggle ? 'Done Editing' : 'Edit Post'}</Button> : <></>}
-                        {userAccess && editable ? <Button className="" onClick={()=>handleDelete(id)} variant='dark'>Delete Post</Button> : <></>}
+                        {numLikes}{""}
+                        {liked ? <FaHeart onClick={()=>handleLike(liked, id)} color='red'/> : <FiHeart onClick={()=>handleLike(liked, id)} color='black'/>}
+                        {/* {userAccess && editable ? <Button onClick={()=>onEdit(id)} variant='dark'>{editingToggle ? 'Done Editing' : 'Edit Post'}</Button> : <></>} */}
+                        {userAccess && editable ? (editingToggle ? <FaEdit onClick={()=>onEdit(id)} color='#7fffd0'/> : <FiEdit onClick={()=>onEdit(id)} color='black'/>) : <></>}
+                        {userAccess && editable ? <FaTrashAlt onClick={()=>handleDelete(id)} /> : <></>}
                         {/* {!userAccess && editable ? <Button onClick={()=>handleLike(liked, id)} size="sm" variant={liked ? 'danger' : 'black'}>{liked ? 'Unlike' : 'Like'} Post</Button> : <></>} */}
-                        {liked ? <FaHeart onClick={()=>handleLike(liked, id)} size='20px' color='red'/> : <FiHeart onClick={()=>handleLike(liked, id)}  size='20px' color='black'/>}
                     </p>
                 </div>
             </div>
