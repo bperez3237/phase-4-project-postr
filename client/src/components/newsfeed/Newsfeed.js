@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import NewsCard from './NewsCard'
+import api_key from '../../news_key'
 import './styles/style.css'
 
 function Newsfeed() {
@@ -8,16 +9,19 @@ function Newsfeed() {
   const url = (`https://newsapi.org/v2/everything?`+
     `q=Apple&`+
     `sortBy=dat&`+
-    `apiKey=`)
+    `apiKey=${api_key}`)
 
-  // useEffect(() => {
-  //   fetch(url)
-  //     .then(res => res.json())
-  //     .then(data => setNews(data))
-  // },[])
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        setNews(data.articles?.slice(0,3))
+        // console.log(data.artciles.slice(0,3))
+      
+      })
+  },[])
 
-  console.log(news)
-  const newsCards = news.articles?.map((article, index) => {
+  const newsCards = news?.map((article, index) => {
     return <NewsCard key={index} props={article} />
   })
 

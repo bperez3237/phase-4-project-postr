@@ -15,8 +15,8 @@ function App() {
   const [user, setUser] = useState(null);
   const [location, setLocation] = useState({})
   const [posts, setPosts] = useState([])
-  const minMatch = useMediaQuery('(min-width: 800px)')
-  const maxMatch = useMediaQuery('(max-width: 1000px)')
+  const minMatch = useMediaQuery('(min-width: 960px)')
+  const maxMatch = useMediaQuery('(max-width: 1260px)')
 
   useEffect(() => {
     // auto-login
@@ -28,6 +28,7 @@ function App() {
         });
       }
     });
+
   }, []);
 
   const layoutState = maxMatch ? (minMatch ? "medium" : "min") : 'max'

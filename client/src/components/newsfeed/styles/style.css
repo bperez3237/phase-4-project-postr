@@ -4,6 +4,7 @@
   border-style: solid;
   border-color: black;
   border-radius: 20px;
+  margin-top: 10px;
 }
 .Newsfeed h2 {
   padding: 10px;
@@ -19,23 +20,26 @@
   border-style: solid;
   border-color: black;
   display: flex;
+  max-height: 100px;
+  padding: 2.5px;
 }
 .Newsfeed .list .news-card .card-body {
   display: grid;
+  padding: 0;
 }
 .Newsfeed .list .news-card .card-body h4 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  padding: 0;
 }
 .Newsfeed .list .news-card .card-body h2 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  padding: 0;
 }
 .Newsfeed .list .news-card img {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   border-radius: 25%;
   margin: 10px;
 }

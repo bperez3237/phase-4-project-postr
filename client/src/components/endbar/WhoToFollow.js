@@ -10,7 +10,6 @@ function WhoToFollow() {
       .then(res => res.json())
       .then(data => setUsers(data))
   },[])
-  console.log(users)
 
   return (
     <div className='who-to-follow'>
