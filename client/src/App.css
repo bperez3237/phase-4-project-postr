@@ -2,11 +2,13 @@
   display: flex;
   height: 100vh;
   width: 100vw;
+  max-width: 100vw;
 }
 
 
 .Sidebar {
-  flex: 20%;
+  /* flex: 20%; */
+  width: 25%;
   display: grid;
   background-color: #f5f5f5;
 }
@@ -57,10 +59,16 @@
 }
 
 .Feed {
-  flex: 60%;
+  /* flex: 60%; */
+  width: 50%;
+  max-width: 50%;
+  max-height: 100%;
+  overflow: scroll;
 }
 
 .Feed-heading {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -74,7 +82,8 @@
 }
 
 .Extra {
-  flex: 20%;
+  /* flex: 20%; */
+  width: 25%;
   background-color: #f5f5f5;
 }
 

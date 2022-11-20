@@ -46,7 +46,6 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Homepage location={location} user={user} setLocation={setLocation} posts={posts} setPosts={setPosts} />
-            {/* <Newsfeed /> */}
             <Endbar />
           </Route>
           <Route path="/explore">

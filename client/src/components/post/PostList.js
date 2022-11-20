@@ -78,7 +78,7 @@ function PostList({posts, setPosts, location, currentUser, editable}) {
         )
 
     return (
-        <div className="fluid" style={{maxHeight:'900px', overflow: 'scroll'}}>
+        <div className="post-list">
             {location ? postElements : <></>}
         </div>
     )
