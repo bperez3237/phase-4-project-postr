@@ -2,4 +2,52 @@
   border: 1px;
   border-style: solid;
   border-color: black;
+}
+
+.who-to-follow .list {
+  display: grid;
+  width: 100%;
+}
+.who-to-follow .list .row {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+}
+.who-to-follow .list .row .profile-pic {
+  margin: 0;
+  padding: 0;
+  min-width: 80px;
+  max-width: 80px;
+  height: 100%;
+}
+.who-to-follow .list .row .profile-pic .pic {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0px;
+}
+.who-to-follow .list .row .user-info {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  display: grid;
+  flex: 50%;
+}
+.who-to-follow .list .row .user-info h3 {
+  margin: 0px;
+  padding: 0px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.who-to-follow .list .row button {
+  margin: 0px;
+  padding: 0px;
+  float: right;
+  flex: 20%;
 }/*# sourceMappingURL=style.css.map */

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   
+  get '/random-three-users', to: 'users#random_three'
 
   get '/locations/:location_id/four_likes', to: 'posts#four_likes'
 

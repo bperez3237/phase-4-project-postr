@@ -3,3 +3,72 @@
     border-style: solid;
     border-color: black;
 }
+
+.who-to-follow {
+
+    .list {
+        display: grid;
+        // position: relative;
+        width: 100%;
+
+        .row {
+            // position: relative;
+            margin:0px;
+            padding: 0px;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+
+            // justify-content: space-between;
+            // width: 240px;
+            border: 1px;
+            border-style: solid;
+            border-color: black;
+
+            .profile-pic {
+                // display: flex;
+                margin: 0;
+                padding: 0;
+                min-width: 80px;
+                max-width: 80px;
+                height: 100%;
+                // justify-content: center;
+                // float: left;
+
+                .pic {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    margin: 0px;
+                }
+            }
+
+            .user-info {
+                width: 100%; 
+                max-width: 100%;
+                height: 100%;
+                display: grid;
+                flex: 50%;
+                // float: right;
+                h3 {
+                    margin: 0px;
+                    padding: 0px;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+                
+                
+            }
+
+            button {
+                margin: 0px;
+                padding: 0px;
+                float: right;
+
+                flex: 20%
+            }
+        }
+    }
+}

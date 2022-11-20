@@ -30,6 +30,11 @@ class UsersController < ApplicationController
         render json: result
     end
 
+    def random_three
+        users = User.all.sample(3)
+        render json: users
+    end
+
     private
 
     def user_params
