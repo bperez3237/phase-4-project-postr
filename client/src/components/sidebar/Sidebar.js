@@ -21,7 +21,7 @@ function Sidebar({location, user, setUser, posts, setPosts, layout}) {
   }
 
   return (
-    <div className='Sidebar'>
+    <div className={`Sidebar${layout=='max' ? '' : ' short'}`}>
       <ul className='Sidebar-list'>
         <li id='logo' className='row'>
           <SiThunderbird size='2em' color='#7fffd0'/>{layout}
