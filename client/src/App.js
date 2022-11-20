@@ -2,19 +2,21 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/sidebar/Sidebar";
 import Homepage from './components/home/Homepage';
 import Explore from './components/explore/Explore';
 import Login from './components/login/Login';
 import Account from "./components/account/Account";
 import './App.css';
-import Newsfeed from './components/newsfeed/Newsfeed'
 import Endbar from "./components/endbar/Endbar";
+import useMediaQuery from "./hooks/useMediaQuery";
 
 function App() {
   const [user, setUser] = useState(null);
   const [location, setLocation] = useState({})
   const [posts, setPosts] = useState([])
+  const minLayout = useMediaQuery('(min-width: 768px)')
+  const maxLayout = useMediaQuery('(max-width: 1444px)')
 
   useEffect(() => {
     // auto-login
@@ -27,6 +29,8 @@ function App() {
       }
     });
   }, []);
+
+  const text = maxLayout ? (minLayout ? "normal" : "min") : 'max'
 
 
   if (!user) {
@@ -41,8 +45,7 @@ function App() {
    else {return (
     <BrowserRouter>
       <div className="App" >
-        {/* <Navigator setUser={setUser}></Navigator> */}
-        <Sidebar location={location} user={user} setUser={setUser} posts={posts} setPosts={setPosts}/>
+        <Sidebar location={location} user={user} setUser={setUser} posts={posts} setPosts={setPosts} text={text}/>
         <Switch>
           <Route exact path="/">
             <Homepage location={location} user={user} setLocation={setLocation} posts={posts} setPosts={setPosts} />

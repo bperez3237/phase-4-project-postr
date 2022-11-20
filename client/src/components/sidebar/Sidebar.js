@@ -3,10 +3,10 @@ import {useHistory} from 'react-router-dom'
 import {SiThunderbird} from 'react-icons/si'
 import {RiHomeSmileFill} from 'react-icons/ri'
 import {MdManageAccounts, MdTravelExplore} from 'react-icons/md'
-import RoundedButton from './login/RoundedButton'
-import NewPost from './home/NewPost'
+import RoundedButton from '../login/RoundedButton'
+import NewPost from '../home/NewPost'
 
-function Sidebar({location, user, setUser, posts, setPosts}) {
+function Sidebar({location, user, setUser, posts, setPosts, text}) {
   const history = useHistory()
   const [toggleNewPost, setToggleNewPost] = useState(false)
 
@@ -21,7 +21,7 @@ function Sidebar({location, user, setUser, posts, setPosts}) {
     <div className='Sidebar'>
       <ul className='Sidebar-list'>
         <li id='logo' className='row'>
-          <SiThunderbird size='2em' color='#7fffd0'/>
+          <SiThunderbird size='2em' color='#7fffd0'/>{text}
         </li>
         <li id='home' className='row' onClick={()=>history.push('/')}>
           <RiHomeSmileFill id='icon' size='1.8em'/>

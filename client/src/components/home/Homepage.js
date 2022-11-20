@@ -6,6 +6,7 @@ import LocationInfo from '../LocationInfo'
 import UserInfo from '../UserInfo'
 import { useEffect, useState } from "react";
 import HomeHeading from "./HomeHeading";
+import './Home.css'
 
 function Homepage({location, setLocation, user, posts, setPosts}) {
     // const [posts, setPosts] = useState([])
