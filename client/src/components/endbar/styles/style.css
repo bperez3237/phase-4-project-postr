@@ -3,6 +3,7 @@
   border-style: solid;
   border-color: black;
   justify-content: center;
+  padding: 10px;
 }
 
 .Searchbar {
@@ -25,6 +26,15 @@
   outline: none;
   font-size: large;
   margin-left: 5px;
+}
+
+.Searchbar:focus-within {
+  border: 1px;
+  border-style: solid;
+  border-color: rgb(140, 248, 171);
+}
+.Searchbar:focus-within svg {
+  color: rgb(140, 248, 171);
 }
 
 .who-to-follow {

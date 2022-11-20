@@ -1,34 +1,58 @@
 .Newsfeed {
     display: grid;
-    
-    .news-card {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 20px;
+
+    h2 {
+        padding: 10px;
+    }
+
+    .list {
+        display: grid; 
         border: 1px;
         border-style: solid;
         border-color: black;
-        display: flex;
 
-        .card-body {
-            display: grid;
+    
+    
+        .news-card {
+            border: 1px;
+            border-style: solid;
+            border-color: black;
+            display: flex;
 
-            h4 {
-                font-size: 1.5rem;
-                font-weight: 600;
-                margin-bottom: 0.5rem;
+            .card-body {
+                display: grid;
+
+                h4 {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    margin-bottom: 0.5rem;
+                }
+
+                h2 {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    margin-bottom: 0.5rem;
+                }
             }
 
-            h2 {
-                font-size: 1.5rem;
-                font-weight: 600;
-                margin-bottom: 0.5rem;
+            img {
+                width: 100px;  
+                height: 100px;
+                border-radius: 25%;
+                margin: 10px;
             }
         }
+    }
 
-        img {
-            width: 100px;  
-            height: 100px;
-            border-radius: 25%;
-            margin: 10px;
-        }
+    .show-more {
+        padding: 10px;
+        height: auto;
+        color: #7fffd0;
+        cursor: pointer;
     }
 
 }

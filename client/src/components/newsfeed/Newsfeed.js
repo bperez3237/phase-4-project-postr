@@ -25,7 +25,12 @@ function Newsfeed() {
   return (
     <div className='Newsfeed'>
       <h2>What's happening</h2>
-      {newsCards}
+      <div className='list'>
+        {newsCards}
+      </div>
+      <div className='show-more' onClick={()=>console.log('show more')}>
+        <p>Show More</p>
+      </div>
     </div>
   )
 }
