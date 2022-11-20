@@ -33,6 +33,9 @@ function WhoToFollow() {
           )
         })}
       </div>
+      <div className='show-more' onClick={()=>console.log('show more')}>
+        <p>Show More</p>
+      </div>
     </div>
   )
 }

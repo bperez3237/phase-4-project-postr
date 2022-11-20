@@ -48,4 +48,5 @@ p {
 
 .post-footer svg {
     margin: 0 15px;
+    cursor: pointer;
 }

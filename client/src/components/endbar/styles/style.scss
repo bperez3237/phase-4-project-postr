@@ -1,10 +1,46 @@
-.Extra div {
+.Extra {
     border: 1px;
     border-style: solid;
     border-color: black;
+    justify-content: center;
+}
+
+.Searchbar {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+
+    margin: 10px;
+    padding: 5px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+
+    svg {
+        margin: 5px;
+        font-size: x-large;
+    }
+
+    input {
+        border: none;
+        outline: none;
+        font-size: large;
+        margin-left: 5px;
+    }
+    // width: ;
 }
 
 .who-to-follow {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 5%;
+    background-color: white;
+
+    h2 {
+        padding: 10px;
+    }
 
     .list {
         display: grid;
@@ -14,7 +50,7 @@
         .row {
             // position: relative;
             margin:0px;
-            padding: 0px;
+            padding: 5px;
 
             display: flex;
             flex-direction: row;
@@ -70,5 +106,12 @@
                 flex: 20%
             }
         }
+    }
+
+    .show-more {
+        padding: 10px;
+        height: auto;
+        color: #7fffd0;
+        cursor: pointer;
     }
 }

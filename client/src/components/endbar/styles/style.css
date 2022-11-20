@@ -1,16 +1,49 @@
-.Extra div {
+.Extra {
   border: 1px;
   border-style: solid;
   border-color: black;
+  justify-content: center;
 }
 
+.Searchbar {
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  background-color: white;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+}
+.Searchbar svg {
+  margin: 5px;
+  font-size: x-large;
+}
+.Searchbar input {
+  border: none;
+  outline: none;
+  font-size: large;
+  margin-left: 5px;
+}
+
+.who-to-follow {
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5%;
+  background-color: white;
+}
+.who-to-follow h2 {
+  padding: 10px;
+}
 .who-to-follow .list {
   display: grid;
   width: 100%;
 }
 .who-to-follow .list .row {
   margin: 0px;
-  padding: 0px;
+  padding: 5px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -50,4 +83,10 @@
   padding: 0px;
   float: right;
   flex: 20%;
+}
+.who-to-follow .show-more {
+  padding: 10px;
+  height: auto;
+  color: #7fffd0;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
