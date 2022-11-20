@@ -14,7 +14,9 @@ function RoundedButton({text, color, type, toggleValue, setToggle}) {
   }
 
   return (
-    <button style={style} type={type} onClick={()=>setToggle(!toggleValue)}>{text}</button>
+    <button style={style} type={type} onClick={()=>setToggle(!toggleValue)}>
+      {text}
+    </button>
   )
 }
 

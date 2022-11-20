@@ -2,11 +2,13 @@ import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import {SiThunderbird} from 'react-icons/si'
 import {RiHomeSmileFill} from 'react-icons/ri'
-import {MdManageAccounts, MdTravelExplore} from 'react-icons/md'
+import {MdManageAccounts, MdTravelExplore, MdPostAdd} from 'react-icons/md'
 import RoundedButton from '../login/RoundedButton'
 import NewPost from '../home/NewPost'
+import './styles/style.css'
+import UserProfile from './UserProfile'
 
-function Sidebar({location, user, setUser, posts, setPosts, text}) {
+function Sidebar({location, user, setUser, posts, setPosts, layout}) {
   const history = useHistory()
   const [toggleNewPost, setToggleNewPost] = useState(false)
 
@@ -17,30 +19,36 @@ function Sidebar({location, user, setUser, posts, setPosts, text}) {
       }
     });
   }
+
   return (
     <div className='Sidebar'>
       <ul className='Sidebar-list'>
         <li id='logo' className='row'>
-          <SiThunderbird size='2em' color='#7fffd0'/>{text}
+          <SiThunderbird size='2em' color='#7fffd0'/>{layout}
         </li>
         <li id='home' className='row' onClick={()=>history.push('/')}>
           <RiHomeSmileFill id='icon' size='1.8em'/>
-          <h2 id='title'>Home</h2>
+          {layout == 'max' ? <h2 id='title'>Home</h2> : <></>}
         </li>
         <li id='Explore' className='row' onClick={()=>history.push('/explore')}>
           <MdTravelExplore id='icon' size='1.8em'/>
-          <h2 id='title'>Explore</h2>
+          {layout == 'max' ? <h2 id='title'>Explore</h2> : <></>}
         </li>
         <li id='Account' className='row' onClick={()=>history.push('/account')}>
           <MdManageAccounts id='icon' size='1.8em'/>
-          <h2 id='title'>Profile</h2>
+          {layout =='max' ? <h2 id='title'>Profile</h2> : <></>}
         </li>
         <li id='Post' className='row'>
-          <RoundedButton text='Post' color='#7fffd0' type='button' toggleValue={toggleNewPost} setToggle={setToggleNewPost}/>
+          <RoundedButton 
+          text={layout=='max' ? 'Post' : <MdPostAdd id='icon' size='1.8em'></MdPostAdd>} 
+          color='#7fffd0' 
+          type='button' 
+          toggleValue={toggleNewPost} 
+          setToggle={setToggleNewPost}/>
         </li>
       </ul>
       {toggleNewPost ? <NewPost className='new-post' locationId={location.id} userId={user.id} setPosts={setPosts} setToggleNewPost={setToggleNewPost}></NewPost> : <></>}
-      <button id='logout-button' onClick={handleLogoutClick}>Logout</button>
+      <UserProfile layout={layout} user={user} setUser={setUser}></UserProfile>
     </div>
   )
 }

@@ -47,6 +47,10 @@
   align-items: center;
 }
 
+.Sidebar .row:hover {
+  background-color: #b3b3b3;
+}
+
 .row #icon {
   flex: 30%;
   /* display: grid; */

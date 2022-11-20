@@ -15,8 +15,8 @@ function App() {
   const [user, setUser] = useState(null);
   const [location, setLocation] = useState({})
   const [posts, setPosts] = useState([])
-  const minLayout = useMediaQuery('(min-width: 768px)')
-  const maxLayout = useMediaQuery('(max-width: 1444px)')
+  const minMatch = useMediaQuery('(min-width: 800px)')
+  const maxMatch = useMediaQuery('(max-width: 1000px)')
 
   useEffect(() => {
     // auto-login
@@ -30,7 +30,7 @@ function App() {
     });
   }, []);
 
-  const text = maxLayout ? (minLayout ? "normal" : "min") : 'max'
+  const layoutState = maxMatch ? (minMatch ? "medium" : "min") : 'max'
 
 
   if (!user) {
@@ -45,11 +45,11 @@ function App() {
    else {return (
     <BrowserRouter>
       <div className="App" >
-        <Sidebar location={location} user={user} setUser={setUser} posts={posts} setPosts={setPosts} text={text}/>
+        <Sidebar location={location} user={user} setUser={setUser} posts={posts} setPosts={setPosts} layout={layoutState}/>
         <Switch>
           <Route exact path="/">
             <Homepage location={location} user={user} setLocation={setLocation} posts={posts} setPosts={setPosts} />
-            <Endbar />
+            <Endbar layout={layoutState} />
           </Route>
           <Route path="/explore">
             <Explore user={user}></Explore>

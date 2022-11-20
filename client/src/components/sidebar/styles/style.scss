@@ -1,0 +1,91 @@
+.user-profile {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 20px;
+    margin: 10px;
+    background-color: white;
+    max-height: 100px;
+
+    display: flex;
+    cursor: pointer;
+
+    .image {
+        min-width: 100px;
+        min-height: 100px;
+        display: grid;
+        .pic {
+            margin: 10px;
+            border: 1px;
+            border-style: solid;
+            border-color: black;
+            border-radius: 50%;
+        }
+    }
+
+
+    .options {
+        min-width: 200px;
+        border: 1px;
+        border-style: solid;
+        border-color: black;
+        background-color: white;
+        border-radius: 10px;
+
+        position: absolute;
+        bottom: 130px;
+
+        display: grid;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        .arrow {
+            min-width: 30px;
+            max-width: 30px;
+            min-height: 30px;
+            max-height: 30px;
+            background-color: white;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 200px;
+            left: 35px;
+        }
+
+        .option-row {
+            z-index: 1;
+            background-color: white;
+            min-height: 50px;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .option-row:hover {
+            background-color: #e6e6e6;
+        }
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5em;
+        width: 100%;
+
+        h4 {
+            color: gray;
+        }
+    }
+
+    .more-options {
+        min-width: 100px;
+
+        svg {
+            float: right;
+
+            margin: 20px;
+            // margin-right: 25px;
+            // padding: 10px;
+        }
+    }
+
+}

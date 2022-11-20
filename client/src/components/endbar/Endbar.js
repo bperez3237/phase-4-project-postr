@@ -4,12 +4,18 @@ import Searchbar from './Searchbar'
 import WhoToFollow from './WhoToFollow'
 import './styles/style.css'
 
-function Endbar() {
+function Endbar({layout}) {
   return (
     <div className='Extra'>
-        <Searchbar />
-        <Newsfeed />
-        <WhoToFollow />
+        {layout != 'min' ? (
+          <div>
+            <Searchbar />
+            <Newsfeed />
+            <WhoToFollow />
+          </div>
+        ) : (
+          <div className=''></div>
+        )}
     </div>
   )
 }
