@@ -25,7 +25,7 @@ function RoundButton({type, text, setText, posts, setPosts, user, location}) {
           location_id: location.id,
           text: text
       })
-  })
+    })
       .then((r)=>r.json())
       .then((posts)=>{
         console.log('here')
