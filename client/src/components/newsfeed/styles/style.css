@@ -5,6 +5,7 @@
   border-color: black;
   border-radius: 20px;
   margin-top: 10px;
+  background-color: white;
 }
 .Newsfeed h2 {
   padding: 10px;
@@ -21,7 +22,7 @@
   border-color: black;
   display: flex;
   max-height: 100px;
-  padding: 2.5px;
+  padding: 5px;
 }
 .Newsfeed .list .news-card .card-body {
   display: grid;
@@ -42,6 +43,10 @@
   height: 60px;
   border-radius: 25%;
   margin: 10px;
+}
+.Newsfeed .list .news-card:hover {
+  cursor: pointer;
+  background-color: #e6e6e6;
 }
 .Newsfeed .show-more {
   padding: 10px;

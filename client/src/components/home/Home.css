@@ -1,0 +1,30 @@
+.heading-new-post {
+    display: flex;
+
+    min-height: 150px;
+}
+
+.profile-pic {
+    max-width: 80px;
+    min-width: 80px;
+}
+
+.pic {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.post-form {
+    width: 100%;
+}
+
+.post-form input {
+    width: 100%;
+}
+.post-form button {
+    float: right;
+}

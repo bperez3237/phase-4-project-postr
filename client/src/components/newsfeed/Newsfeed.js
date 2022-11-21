@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react'
 import NewsCard from './NewsCard'
 import api_key from '../../news_key'
 import './styles/style.css'
+import { useHistory } from 'react-router-dom'
 
 function Newsfeed() {
   const [news, setNews] = useState([])
+  const history = useHistory()
 
   const url = (`https://newsapi.org/v2/everything?`+
-    `q=Apple&`+
+    `q=New&`+
     `sortBy=dat&`+
     `apiKey=${api_key}`)
 
@@ -16,10 +18,9 @@ function Newsfeed() {
       .then(res => res.json())
       .then(data => {
         setNews(data.articles?.slice(0,3))
-        // console.log(data.artciles.slice(0,3))
-      
       })
   },[])
+
 
   const newsCards = news?.map((article, index) => {
     return <NewsCard key={index} props={article} />
@@ -32,7 +33,7 @@ function Newsfeed() {
       <div className='list'>
         {newsCards}
       </div>
-      <div className='show-more' onClick={()=>console.log('show more')}>
+      <div className='show-more' onClick={()=>history.push('/explore')}>
         <p>Show More</p>
       </div>
     </div>

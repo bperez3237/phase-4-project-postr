@@ -5,6 +5,7 @@
     border-color: black;
     border-radius: 20px;
     margin-top: 10px;
+    background-color: white;
 
     h2 {
         padding: 10px;
@@ -24,7 +25,7 @@
             border-color: black;
             display: flex;
             max-height: 100px;
-            padding: 2.5px;
+            padding: 5px;
 
             .card-body {
                 display: grid;
@@ -51,6 +52,11 @@
                 border-radius: 25%;
                 margin: 10px;
             }
+        }
+
+        .news-card:hover {
+            cursor: pointer;
+            background-color: #e6e6e6;
         }
     }
 

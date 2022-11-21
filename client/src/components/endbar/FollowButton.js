@@ -8,7 +8,7 @@ function FollowButton() {
         'border': 'none',
         'color': 'white',
         'background': 'black',
-        'fontWight': 'bold',
+        'fontWeight': 'bold',
     }
   return (
     <button style={style} onClick={()=>console.log('follow')}>Follow</button>

@@ -5,7 +5,7 @@
     border-radius: 20px;
     margin: 10px;
     background-color: white;
-    max-height: 100px;
+    max-height: 80px;
 
     display: flex;
     cursor: pointer;
@@ -70,8 +70,20 @@
         flex-direction: column;
         padding: 0.5em;
         width: 100%;
+        justify-content: center;
 
+
+        h3 {
+            margin: 0px;
+            padding: 0px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
         h4 {
+            margin: 0px;
+            padding: 0px;
+            font-size: 1rem;
+            font-weight: 600;
             color: gray;
         }
     }
@@ -89,3 +101,8 @@
     }
 
 }
+
+#logo {
+    width: 100%;
+    float: left;
+} 

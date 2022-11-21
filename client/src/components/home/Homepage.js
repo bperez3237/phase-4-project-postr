@@ -7,6 +7,7 @@ import UserInfo from '../UserInfo'
 import { useEffect, useState } from "react";
 import HomeHeading from "./HomeHeading";
 import './Home.css'
+import HeadingNewPost from "./HeadingNewPost";
 
 function Homepage({location, setLocation, user, posts, setPosts}) {
     // const [posts, setPosts] = useState([])
@@ -20,6 +21,7 @@ function Homepage({location, setLocation, user, posts, setPosts}) {
     return (
         <div className="Feed">
             <HomeHeading />
+            <HeadingNewPost posts={posts} setPosts={setPosts} user={user} location={location}/>
             <PostList location={location} currentUser={user} editable={true} posts={posts} setPosts={setPosts}></PostList>
         </div>
     )

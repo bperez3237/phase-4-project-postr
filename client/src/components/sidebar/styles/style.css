@@ -5,7 +5,7 @@
   border-radius: 20px;
   margin: 10px;
   background-color: white;
-  max-height: 100px;
+  max-height: 80px;
   display: flex;
   cursor: pointer;
 }
@@ -61,8 +61,19 @@
   flex-direction: column;
   padding: 0.5em;
   width: 100%;
+  justify-content: center;
+}
+.user-profile .info h3 {
+  margin: 0px;
+  padding: 0px;
+  font-size: 1rem;
+  font-weight: 600;
 }
 .user-profile .info h4 {
+  margin: 0px;
+  padding: 0px;
+  font-size: 1rem;
+  font-weight: 600;
   color: gray;
 }
 .user-profile .more-options {
@@ -71,4 +82,9 @@
 .user-profile .more-options svg {
   float: right;
   margin: 20px;
+}
+
+#logo {
+  width: 100%;
+  float: left;
 }/*# sourceMappingURL=style.css.map */
