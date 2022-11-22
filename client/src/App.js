@@ -56,10 +56,9 @@ function App() {
           <Route path="/explore">
             <Explore user={user}></Explore>
           </Route>
-          <Route 
-          path='/profile/:username'>
-            {/* {console.log(params.username)} */}
+          <Route path='/profile/:username'>
             <Profile />
+            <Endbar layout={layoutState} />
           </Route>
           <Route exact path="/account">
             <Account user_id={user.id} ></Account>
