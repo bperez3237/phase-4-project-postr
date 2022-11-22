@@ -5,7 +5,7 @@ import Heading from './Heading'
 import Banner from './Banner'
 import Feed from './Feed'
 
-function Profile() {
+function Profile({user}) {
     let params = useParams()
 
     useEffect(()=>{
@@ -17,7 +17,7 @@ function Profile() {
     
     return (
         <div className='profile'>
-            <Heading />
+            <Heading user={user}/>
             <Banner />
             <Feed />
         </div>

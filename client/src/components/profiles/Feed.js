@@ -1,10 +1,12 @@
 import React from 'react'
 import {Route, Switch,  useRouteMatch} from 'react-router-dom'
+import FeedHeading from './FeedHeading'
 
 function Feed() {
   let { path, url } = useRouteMatch()
   return (
     <div className='profile-feeds'>
+      <FeedHeading />
       <Switch>
         <Route exact path={path}><h1>Posts</h1></Route>
         <Route path={`${path}/posts & replies`}><h1>Replies</h1></Route>
@@ -15,4 +17,4 @@ function Feed() {
   )
 }
 
-export default Feed
+export default Feed;
