@@ -10,6 +10,7 @@ import Account from "./components/account/Account";
 import './App.css';
 import Endbar from "./components/endbar/Endbar";
 import useMediaQuery from "./hooks/useMediaQuery";
+import Profile from "./components/profiles/Profile";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -54,6 +55,11 @@ function App() {
           </Route>
           <Route path="/explore">
             <Explore user={user}></Explore>
+          </Route>
+          <Route 
+          path='/profile/:username'>
+            {/* {console.log(params.username)} */}
+            <Profile />
           </Route>
           <Route exact path="/account">
             <Account user_id={user.id} ></Account>

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :locations, only: [:show] do
     resources :posts, only: [:show, :index, :update]
   end
+
+  # resources :users, only: [:show]
+  get '/users/:username', to: 'users#show'
   
 
   get '/user-info/:id', to: 'users#user_info'
