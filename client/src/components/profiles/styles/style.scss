@@ -3,4 +3,60 @@
     max-width: 100%;
     max-height: 100%;
     overflow: scroll;
+
+    #label {
+        max-height: 100%;
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin: 5px;
+            font-size: 1.5rem;
+        }
+
+        .heading-label {
+            margin-left: 10px;
+            display: grid;
+        }
+
+    }
+
+
+}
+
+.profile-banner {
+    display: grid;
+    min-height: 500px;
+
+    .banner-image {
+        background-color: gray;
+        
+    }
+
+    .profile-pic {
+        position: absolute;
+    }
+     
+    #details {
+        background-color: white;
+    }
+}
+
+.profile-feed-heading {
+    display: flex;
+    justify-content: space-evenly;
+
+    .option {
+        color: rgb(187, 187, 187);
+        // display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        min-width: 25%;
+    }
+
+    .option:hover {
+        background-color: gray;
+        color: rgb(0, 0, 0);
+    }
 }

@@ -3,4 +3,47 @@
   max-width: 100%;
   max-height: 100%;
   overflow: scroll;
+}
+.profile #label {
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+}
+.profile #label svg {
+  margin: 5px;
+  font-size: 1.5rem;
+}
+.profile #label .heading-label {
+  margin-left: 10px;
+  display: grid;
+}
+
+.profile-banner {
+  display: grid;
+  min-height: 500px;
+}
+.profile-banner .banner-image {
+  background-color: gray;
+}
+.profile-banner .profile-pic {
+  position: absolute;
+}
+.profile-banner #details {
+  background-color: white;
+}
+
+.profile-feed-heading {
+  display: flex;
+  justify-content: space-evenly;
+}
+.profile-feed-heading .option {
+  color: rgb(187, 187, 187);
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  min-width: 25%;
+}
+.profile-feed-heading .option:hover {
+  background-color: gray;
+  color: rgb(0, 0, 0);
 }/*# sourceMappingURL=style.css.map */
