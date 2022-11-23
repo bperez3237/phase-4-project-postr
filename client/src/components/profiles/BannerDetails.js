@@ -1,7 +1,12 @@
 import React from 'react'
 import RoundButton from './RoundButton'
+import {SlLocationPin} from 'react-icons/sl'
+import {AiOutlineLink} from 'react-icons/ai'
+import {BiCalendar} from 'react-icons/bi'
 
 function BannerDetails({user}) {
+
+  console.log(user)
   return (
     <div className='banner-details'>
 
@@ -13,9 +18,13 @@ function BannerDetails({user}) {
         <h4>{user.name}</h4>
         <p>@{user.username}</p>
       </div>
-      <div className='bio'></div>
-      <div className='links'></div>
-      <div className='connections'></div>
+      <div className='bio'><p>user.bio will go here</p></div>
+      <div className='links'>
+        <SlLocationPin /> brooklyn, ny
+        <AiOutlineLink /> links.com
+        <BiCalendar /> Joined on 
+      </div>
+      <div className='connections'># Following  # Followers</div>
     </div>
   )
 }

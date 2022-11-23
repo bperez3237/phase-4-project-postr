@@ -44,7 +44,7 @@
 
     .banner-image {
         background-color: gray;
-        min-height: 100%;
+        min-height: 250px;
         
     }
 
@@ -57,8 +57,12 @@
         flex-direction: column;
 
         .names {
-            margin-top: 40px;
+            margin-top: 20px;
             margin-left: 30px;
+        }
+
+        .bio {
+            margin: 20px 20px;
         }
     }
 }

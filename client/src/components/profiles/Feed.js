@@ -12,6 +12,8 @@ function Feed({user}) {
     .then(r=>r.json())
     .then(data=>console.log(data))
   }, [pathState])
+
+  
   
 
   return (

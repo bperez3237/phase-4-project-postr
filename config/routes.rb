@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   # resources :users, only: [:show]
   get '/users/:username', to: 'users#show'
+  get '/users/:username/posts', to: 'users#user_posts'
+  get '/users/:username/likes', to: 'users#user_likes'
   
 
   get '/user-info/:id', to: 'users#user_info'

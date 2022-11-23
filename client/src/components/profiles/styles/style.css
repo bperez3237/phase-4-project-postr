@@ -36,7 +36,7 @@
 }
 .profile-banner .banner-image {
   background-color: gray;
-  min-height: 100%;
+  min-height: 250px;
 }
 .profile-banner .banner-details {
   background-color: white;
@@ -45,8 +45,11 @@
   flex-direction: column;
 }
 .profile-banner .banner-details .names {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: 30px;
+}
+.profile-banner .banner-details .bio {
+  margin: 20px 20px;
 }
 
 .user-profile-pic {
