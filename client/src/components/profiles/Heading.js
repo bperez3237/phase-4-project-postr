@@ -3,7 +3,7 @@ import {BsArrowLeft} from 'react-icons/bs'
 
 function Heading({user}) {
   return (
-    <div className='Feed-heading'>
+    <div className='profile-heading'>
       <div id='label'>
         <BsArrowLeft />
         <div className='heading-label'>

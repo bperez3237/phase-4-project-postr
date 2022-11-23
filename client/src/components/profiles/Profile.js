@@ -18,8 +18,8 @@ function Profile({user}) {
     return (
         <div className='profile'>
             <Heading user={user}/>
-            <Banner />
-            <Feed />
+            <Banner user={user}/>
+            <Feed user={user}/>
         </div>
     )
 }
