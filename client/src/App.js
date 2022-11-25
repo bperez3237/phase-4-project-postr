@@ -57,7 +57,7 @@ function App() {
             <Explore user={user}></Explore>
           </Route>
           <Route path='/profile/:username'>
-            <Profile user={user} />
+            <Profile location={location} user={user} setLocation={setLocation} />
             <Endbar layout={layoutState} />
           </Route>
           <Route exact path="/account">

@@ -40,13 +40,13 @@ class UsersController < ApplicationController
     def user_posts
         user = User.find_by(username: params[:username])
         posts = user.posts
-        render json: posts
+        render json: posts, include: [:user, :likes]
     end
 
     def user_likes
         user = User.find_by(username: params[:username])
-        likes = user.likes
-        render json: likes
+        posts_liked = user.likes.map {|like| like.post}
+        render json: posts_liked, include: [:user, :likes]
     end
 
     def random_three

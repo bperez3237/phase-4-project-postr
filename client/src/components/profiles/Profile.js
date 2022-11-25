@@ -5,9 +5,8 @@ import Heading from './Heading'
 import Banner from './Banner'
 import Feed from './Feed'
 
-function Profile({user}) {
+function Profile({user, location, setLocation}) {
     let {username} = useParams()
-    console.log(username)
 
     useEffect(()=>{
         fetch(`/users/${username}`)
@@ -20,7 +19,7 @@ function Profile({user}) {
         <div className='profile'>
             <Heading user={user}/>
             <Banner user={user}/>
-            <Feed user={user}/>
+            <Feed user={user} location={location}/>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import {SiThunderbird} from 'react-icons/si'
 import {RiHomeSmileFill} from 'react-icons/ri'
+import {TbDotsCircleHorizontal} from 'react-icons/tb'
 import {MdManageAccounts, MdTravelExplore, MdPostAdd} from 'react-icons/md'
 import RoundedButton from '../login/RoundedButton'
 import NewPost from '../home/NewPost'
@@ -34,9 +35,13 @@ function Sidebar({location, user, setUser, posts, setPosts, layout}) {
           <MdTravelExplore id='icon' size='1.8em'/>
           {layout == 'max' ? <h2 id='title'>Explore</h2> : <></>}
         </li>
-        <li id='Account' className='row' onClick={()=>history.push('/account')}>
+        <li id='Profile' className='row' onClick={()=>history.push(`/profile/${user.username}`)}>
           <MdManageAccounts id='icon' size='1.8em'/>
           {layout =='max' ? <h2 id='title'>Profile</h2> : <></>}
+        </li>
+        <li id='Account' className='row' onClick={()=>history.push('/account')}>
+          <TbDotsCircleHorizontal id='icon' size='1.8em'/>
+          {layout =='max' ? <h2 id='title'>Account</h2> : <></>}
         </li>
         <li id='Post' className='row'>
           <RoundedButton 

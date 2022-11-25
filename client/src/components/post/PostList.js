@@ -56,14 +56,16 @@ function PostList({posts, setPosts, location, currentUser, editable}) {
                 .then(r=>r.json())
                 .then((posts)=>setPosts(posts))
     }
+
+    console.log(posts)
     
 
     const postElements = posts.sort((a,b)=> Date.parse(b.created_at) - Date.parse(a.created_at)).map((post)=>{
         return <Post 
         key={post.id} 
         id={post.id} 
-        name={post.user.name}
-        username={post.user.username}
+        name={post.user?.name}
+        username={post.user?.username}
         text={post.text}
         locationName={location.name}
         createdAt={post.created_at}
@@ -75,7 +77,7 @@ function PostList({posts, setPosts, location, currentUser, editable}) {
         handleDelete={handleDelete}
         handleEdit={handleEdit}
         />}
-        )
+    )
 
     return (
         <div className="post-list">
