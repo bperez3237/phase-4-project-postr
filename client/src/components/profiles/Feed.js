@@ -13,17 +13,17 @@ function Feed({user}) {
     .then(data=>console.log(data))
   }, [pathState])
 
-  
-  
+
+  console.log('path is ',path, url)
 
   return (
     <div className='profile-feeds'>
-      <FeedHeading path={path} setPathState={setPathState} />
+      <FeedHeading url={url} setPathState={setPathState} />
       <Switch>
         <Route exact path={path}><h1>Posts</h1></Route>
-        <Route path={`${path}/with_replies`}><h1>Replies</h1></Route>
-        <Route path={`${path}/media`}><h1>Media</h1></Route>
-        <Route path={`${path}/likes`}><h1>Likes</h1></Route>
+        <Route path={`${url}/with_replies`}><h1>Replies</h1></Route>
+        <Route path={`${url}/media`}><h1>Media</h1></Route>
+        <Route path={`${url}/likes`}><h1>Likes</h1></Route>
       </Switch>
     </div>
   )

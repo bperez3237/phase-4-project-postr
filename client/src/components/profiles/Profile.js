@@ -6,10 +6,11 @@ import Banner from './Banner'
 import Feed from './Feed'
 
 function Profile({user}) {
-    let params = useParams()
+    let {username} = useParams()
+    console.log(username)
 
     useEffect(()=>{
-        fetch(`/users/${params.username}`)
+        fetch(`/users/${username}`)
         .then(r=>r.json())
         .then(data=>console.log(data))
     },[])
