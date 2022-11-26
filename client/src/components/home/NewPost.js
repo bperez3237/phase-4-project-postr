@@ -38,7 +38,7 @@ function NewPost({user, location, setPosts, setToggleNewPost}) {
             </div>
             <form className='post-form'>
                 <input plceholder="What's happening" value={text} onChange={(e)=>setText(e.target.value)}></input>
-            <RoundButton type="submit" text={text} setText={setText} setPosts={setPosts} user={user} location={location}/>
+                <RoundButton type="submit" text={text} setText={setText} setPosts={setPosts} user={user} location={location}/>
             </form>
         </div>
     )

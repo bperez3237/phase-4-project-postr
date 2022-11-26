@@ -52,9 +52,12 @@ p {
     padding: 0
 }
 
-.post-footer div {
-    padding: 5px;
-    border-radius: 50%;
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    text-align: center;
 }
 
 .post-footer svg {
@@ -70,6 +73,38 @@ p {
 .post-footer #like:hover {
     color: #ec4b4b;
     background-color: #ec4b4b3f;
+}
+
+.comment-form {
+    width: 300px;
+    height: 300px;
+}
+
+.post-menu {
+    position: absolute;
+    border: 1px black solid;
+    background-color: white;
+    /* height: 50px; */
+    width: 80px;
+    right: 120px;
+}
+
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    cursor: pointer;
+}
+
+.menu-list .row:hover {
+    background-color: #e6e6e6;
 }
 
 

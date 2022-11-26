@@ -1,6 +1,7 @@
 import React from "react";
 import {useState} from 'react'
 import PostFooter from "./PostFooter";
+import PostHeader from "./PostHeader";
 
 function Post({id, name, username, text, locationName, createdAt, userAccess, editable, numLikes, liked, handleLike, handleDelete, handleEdit}) {
     const [postText,setPosttext] = useState(text)
@@ -25,7 +26,7 @@ function Post({id, name, username, text, locationName, createdAt, userAccess, ed
                 <div id='pic'></div>
             </div>
             <div className="post-body">
-                <h5>{name} <span style={{color:'gray'}}>@{username}</span></h5>
+                <PostHeader name={name} username={username} />
                 {editingToggle ? <form><input value={postText} onChange={handleChange}/></form> : <p>{postText}</p>}
                 <p style={{fontSize:'12px'}}>{locationName} - {createdAt.slice(0,10)} - {createdAt.slice(11,16)}</p>
                 <PostFooter userAccess={userAccess} editable={editable} liked={liked} numLikes={numLikes} id={id} handleLike={handleLike} handleDelete={handleDelete} onEdit={onEdit} editingToggle={editingToggle}/>
