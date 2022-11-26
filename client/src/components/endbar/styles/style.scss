@@ -37,10 +37,10 @@
 .Searchbar:focus-within {
     border: 1px;
     border-style: solid;
-    border-color: rgb(140, 248, 171);
+    border-color: #274d40;
 
     svg {
-        color: rgb(140, 248, 171);
+        color: #274d40;
     }
 
 }
@@ -126,7 +126,7 @@
     .show-more {
         padding: 10px;
         height: auto;
-        color: #7fffd0;
+        color: #274d40;
         cursor: pointer;
     }
 }

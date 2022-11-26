@@ -8,7 +8,7 @@ function RoundButton({type, text, setText, setPosts, user, location}) {
     'borderRadius': '20px',
     'border': 'none',
     'color': 'white',
-    'background': '#7fffd0',
+    'background': '#274d40',
     'fontWeight': 'bold',
   }
 

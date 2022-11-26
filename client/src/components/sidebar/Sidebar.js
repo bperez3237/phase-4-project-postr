@@ -25,7 +25,7 @@ function Sidebar({location, user, setUser, setPosts, layout}) {
     <div className={`Sidebar${layout=='max' ? '' : ' short'}`}>
       <ul className='Sidebar-list'>
         <li id='logo' className='row'>
-          <SiThunderbird size='2em' color='#7fffd0'/>{layout}
+          <SiThunderbird size='2em' color='#274d40'/>{layout}
         </li>
         <li id='home' className='row' onClick={()=>history.push('/')}>
           <RiHomeSmileFill id='icon' size='1.8em'/>
@@ -46,7 +46,7 @@ function Sidebar({location, user, setUser, setPosts, layout}) {
         <li id='Post' className='row'>
           <RoundedButton 
           text={layout=='max' ? 'Post' : <MdPostAdd id='icon' size='1.8em'></MdPostAdd>} 
-          color='#7fffd0' 
+          color='#274d40' 
           type='button' 
           toggleValue={toggleNewPost} 
           setToggle={setToggleNewPost}/>
