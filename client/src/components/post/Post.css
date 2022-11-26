@@ -52,7 +52,24 @@ p {
     padding: 0
 }
 
+.post-footer div {
+    padding: 5px;
+    border-radius: 50%;
+}
+
 .post-footer svg {
-    margin: 0 15px;
     cursor: pointer;
 }
+
+
+.post-footer #comment:hover {
+    color: #5580ff;
+    background-color: #5580ff49;
+}
+
+.post-footer #like:hover {
+    color: #ec4b4b;
+    background-color: #ec4b4b3f;
+}
+
+

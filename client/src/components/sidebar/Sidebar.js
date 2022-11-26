@@ -8,6 +8,7 @@ import RoundedButton from '../login/RoundedButton'
 import NewPost from '../home/NewPost'
 import './styles/style.css'
 import UserProfile from './UserProfile'
+import Popup from '../Popup'
 
 function Sidebar({location, user, setUser, setPosts, layout}) {
   const history = useHistory()
@@ -19,6 +20,11 @@ function Sidebar({location, user, setUser, setPosts, layout}) {
         setUser(null);
       }
     });
+  }
+
+
+  const buttonStyle = {
+    backgroundColor: '#274d40',
   }
 
   return (
@@ -44,15 +50,19 @@ function Sidebar({location, user, setUser, setPosts, layout}) {
           {layout =='max' ? <h2 id='title'>Account</h2> : <></>}
         </li>
         <li id='Post' className='row'>
-          <RoundedButton 
+          {/* <RoundedButton 
           text={layout=='max' ? 'Post' : <MdPostAdd id='icon' size='1.8em'></MdPostAdd>} 
           color='#274d40' 
           type='button' 
           toggleValue={toggleNewPost} 
-          setToggle={setToggleNewPost}/>
+          setToggle={setToggleNewPost}/> */}
+          <button style={buttonStyle} className='round-button' onClick={()=>setToggleNewPost(!toggleNewPost)}>
+            {layout=='max' ? 'Post' : <MdPostAdd id='icon' size='1.8em'></MdPostAdd>}
+          </button>
         </li>
       </ul>
-      {toggleNewPost ? <NewPost className='new-post' locationId={location.id} userId={user.id} setPosts={setPosts} setToggleNewPost={setToggleNewPost} /> : <></>}
+      {toggleNewPost ? <Popup onClose={setToggleNewPost}/> : <></>}
+      {/* {toggleNewPost ? <NewPost className='new-post' locationId={location.id} userId={user.id} setPosts={setPosts} setToggleNewPost={setToggleNewPost} /> : <></>} */}
       <UserProfile layout={layout} user={user} setUser={setUser} />
     </div>
   )

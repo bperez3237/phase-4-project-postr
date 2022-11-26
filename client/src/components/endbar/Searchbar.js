@@ -7,7 +7,8 @@ function Searchbar() {
   return (
     <div className='Searchbar'>
       <HiMagnifyingGlass />
-      <input type='text' 
+      <input 
+        type='text' 
         placeholder='Search Twitter' 
         value={search} 
         onChange={(e)=>setSearch(e.target.value)}/>
