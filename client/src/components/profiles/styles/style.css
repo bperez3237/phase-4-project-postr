@@ -51,6 +51,9 @@
 .profile-banner .banner-details .bio {
   margin: 20px 20px;
 }
+.profile-banner .banner-details #edit-profile-button {
+  float: right;
+}
 
 .user-profile-pic {
   position: relative;
@@ -83,9 +86,4 @@
 .profile-feed-heading .option:hover {
   background-color: gray;
   color: rgb(0, 0, 0);
-}
-
-#edit-profile-button {
-  float: right;
-  margin: 20px;
 }/*# sourceMappingURL=style.css.map */

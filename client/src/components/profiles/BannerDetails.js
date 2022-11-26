@@ -5,14 +5,19 @@ import {AiOutlineLink} from 'react-icons/ai'
 import {BiCalendar} from 'react-icons/bi'
 
 function BannerDetails({user}) {
+  const buttonStyle = {
+    'backgroundColor': 'white',
+    'color':'black',
+    'border':'solid 1px gray',
+  }
 
   return (
     <div className='banner-details'>
 
       <div className='user-profile-pic'>
           <div id='user-pro-pic'></div>
-        </div>
-      <div className='edit-profile'><RoundButton/></div>
+      </div>
+      <button className='round-button' id='edit-profile-button' style={buttonStyle}>Edit Profile</button>
       <div className='names'>
         <h4>{user.name}</h4>
         <p>@{user.username}</p>
