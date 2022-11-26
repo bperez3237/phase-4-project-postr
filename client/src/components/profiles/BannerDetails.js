@@ -17,7 +17,7 @@ function BannerDetails({user}) {
       <div className='user-profile-pic'>
           <div id='user-pro-pic'></div>
       </div>
-      <button className='round-button' id='edit-profile-button' style={buttonStyle}>Edit Profile</button>
+      <div><button className='round-button' id='edit-profile-button' style={buttonStyle}>Edit Profile</button></div>
       <div className='names'>
         <h4>{user.name}</h4>
         <p>@{user.username}</p>
