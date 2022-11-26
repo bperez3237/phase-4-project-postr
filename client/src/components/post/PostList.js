@@ -21,8 +21,8 @@ function PostList({posts, setPosts, location, currentUser, editable}) {
                     })
         }
         else {
-            const post = posts.filter((elem)=>elem.id==postId)[0]
-            const like_id = post.likes.filter((like)=>like.user_id==currentUser.id)[0].id
+            const post = posts.filter((elem)=>elem.id===postId)[0]
+            const like_id = post.likes.filter((like)=>like.user_id===currentUser.id)[0].id
             fetch(`/likes/${like_id}`,{
                 method:'DELETE',
                 headers: {
@@ -66,10 +66,10 @@ function PostList({posts, setPosts, location, currentUser, editable}) {
         text={post.text}
         locationName={location.name}
         createdAt={post.created_at}
-        userAccess={currentUser.id==post.user.id ? true : false}
+        userAccess={currentUser.id===post.user.id ? true : false}
         editable={editable}
         numLikes={post.likes.length}
-        liked={Boolean(post.likes.find((like)=>like.user_id==currentUser.id))}
+        liked={Boolean(post.likes.find((like)=>like.user_id===currentUser.id))}
         handleLike={handleLike}
         handleDelete={handleDelete}
         handleEdit={handleEdit}

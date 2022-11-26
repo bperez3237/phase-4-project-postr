@@ -1,6 +1,4 @@
-import React from "react";
-import {useState} from 'react'
-import {Button, Form} from 'react-bootstrap'
+import React, {useState} from 'react'
 import RoundButton from "./RoundButton";
 
 function NewPost({user, location, setPosts, setToggleNewPost}) {

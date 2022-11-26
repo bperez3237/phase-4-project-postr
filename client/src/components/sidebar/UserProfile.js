@@ -13,7 +13,7 @@ function UserProfile({user, setUser, layout}) {
             </div>
 
             {toggle ? <ProfileOptions setUser={setUser}/> : <></>}
-            {(layout=='max') ? (
+            {(layout==='max') ? (
                 <>
                     <div className='info'>
                         <h3>{user.name}</h3>

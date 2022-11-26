@@ -7,7 +7,7 @@ function NewsCard({props}) {
             <h4>{props.source.name}{props.author}</h4>
             <h2>{props.title}</h2>
         </div>
-        <img alt='article-image' src={props.urlToImage}/>
+        <img alt='article' src={props.urlToImage}/>
     </div>
   )
 }

@@ -60,6 +60,10 @@ p {
     text-align: center;
 }
 
+.post-header svg:hover {
+    cursor: pointer;
+}
+
 .post-footer svg {
     cursor: pointer;
 }

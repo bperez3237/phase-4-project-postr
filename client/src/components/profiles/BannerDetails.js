@@ -1,5 +1,4 @@
 import React from 'react'
-import RoundButton from './RoundButton'
 import {SlLocationPin} from 'react-icons/sl'
 import {AiOutlineLink} from 'react-icons/ai'
 import {BiCalendar} from 'react-icons/bi'

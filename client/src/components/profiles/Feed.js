@@ -5,22 +5,21 @@ import PostList from '../post/PostList'
 
 function Feed({user, location}) {
   let { path, url } = useRouteMatch()
-  const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState(null)
   const [pathState, setPathState] = React.useState('posts')
-  const [elements, setElements] = React.useState([])
 
   useEffect(() => {
     fetch(`/users/${user.username}/${pathState}`)
     .then(r=>r.json())
     .then(data=>setPosts(data))
-  }, [pathState])
+  }, [pathState, user])
 
   return (
     <div className='profile-feeds'>
       <FeedHeading url={url} setPathState={setPathState} />
       <Switch>
         <Route exact path={path}>
-          <PostList location={location} currentUser={user} editable={true} posts={posts} setPosts={setPosts} />
+          <PostList location={location} currentUser={user} editable={true} posts={posts} setPosts={setPosts} /> 
         </Route>
         <Route path={`${url}/with_replies`}><h1>Replies</h1></Route>
         <Route path={`${url}/media`}><h1>Media</h1></Route>
