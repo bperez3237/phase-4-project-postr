@@ -112,5 +112,15 @@
 
 }
 
+.round-button {
+  height: 40px;
+  width: 150px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background: black;
+  font-weight: bold;
+}
+
 
 

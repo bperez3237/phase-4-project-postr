@@ -28,6 +28,12 @@ local:
 #   storage_access_key: <%= Rails.application.credentials.dig(:azure_storage, :storage_access_key) %>
 #   container: your_container_name-<%= Rails.env %>
 
+azure: 
+  service: AzureStoage
+  storage_account_name: ""
+  storage_access_key: ""
+  container: ""
+
 # mirror:
 #   service: Mirror
 #   primary: local

@@ -4,6 +4,7 @@ import {FiMoreHorizontal} from 'react-icons/fi'
 
 function UserProfile({user, setUser, layout}) {
     const [toggle,setToggle] = useState(false)
+    
   return (
         <div className='user-profile' onClick={()=>setToggle(!toggle)}>
             <div className='image'>

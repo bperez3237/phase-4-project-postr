@@ -7,13 +7,6 @@ import Feed from './Feed'
 
 function Profile({user, location, setLocation}) {
     let {username} = useParams()
-
-    useEffect(()=>{
-        fetch(`/users/${username}`)
-        .then(r=>r.json())
-        .then(data=>console.log(data))
-    },[])
-
     
     return (
         <div className='profile'>

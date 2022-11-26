@@ -57,9 +57,6 @@ function PostList({posts, setPosts, location, currentUser, editable}) {
                 .then((posts)=>setPosts(posts))
     }
 
-    console.log(posts)
-    
-
     const postElements = posts.sort((a,b)=> Date.parse(b.created_at) - Date.parse(a.created_at)).map((post)=>{
         return <Post 
         key={post.id} 
@@ -81,7 +78,7 @@ function PostList({posts, setPosts, location, currentUser, editable}) {
 
     return (
         <div className="post-list">
-            {location ? postElements : <></>}
+            {postElements}
         </div>
     )
 

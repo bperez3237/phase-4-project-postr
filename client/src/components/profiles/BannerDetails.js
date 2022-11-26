@@ -6,7 +6,6 @@ import {BiCalendar} from 'react-icons/bi'
 
 function BannerDetails({user}) {
 
-  console.log(user)
   return (
     <div className='banner-details'>
 

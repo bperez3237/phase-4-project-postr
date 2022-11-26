@@ -1,6 +1,6 @@
 import React from 'react'
 
-function RoundButton({type, text, setText, posts, setPosts, user, location}) {
+function RoundButton({type, text, setText, setPosts, user, location}) {
 
     const style = {
     'height': '40px',
@@ -28,7 +28,6 @@ function RoundButton({type, text, setText, posts, setPosts, user, location}) {
     })
       .then((r)=>r.json())
       .then((posts)=>{
-        console.log('here')
         setPosts(posts)
         setText('')
       })

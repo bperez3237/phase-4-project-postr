@@ -9,7 +9,7 @@ import NewPost from '../home/NewPost'
 import './styles/style.css'
 import UserProfile from './UserProfile'
 
-function Sidebar({location, user, setUser, posts, setPosts, layout}) {
+function Sidebar({location, user, setUser, setPosts, layout}) {
   const history = useHistory()
   const [toggleNewPost, setToggleNewPost] = useState(false)
 
@@ -52,8 +52,8 @@ function Sidebar({location, user, setUser, posts, setPosts, layout}) {
           setToggle={setToggleNewPost}/>
         </li>
       </ul>
-      {toggleNewPost ? <NewPost className='new-post' locationId={location.id} userId={user.id} setPosts={setPosts} setToggleNewPost={setToggleNewPost}></NewPost> : <></>}
-      <UserProfile layout={layout} user={user} setUser={setUser}></UserProfile>
+      {toggleNewPost ? <NewPost className='new-post' locationId={location.id} userId={user.id} setPosts={setPosts} setToggleNewPost={setToggleNewPost} /> : <></>}
+      <UserProfile layout={layout} user={user} setUser={setUser} />
     </div>
   )
 }

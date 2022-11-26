@@ -15,9 +15,6 @@ function Feed({user, location}) {
     .then(data=>setPosts(data))
   }, [pathState])
 
-  console.log(posts)
-
-
   return (
     <div className='profile-feeds'>
       <FeedHeading url={url} setPathState={setPathState} />

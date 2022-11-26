@@ -34,7 +34,7 @@ function NewPost({userId, locationId, setPosts, setToggleNewPost}) {
         <form className=''>
             <h4>New Post Here:</h4>
             <input value={text} type='text' onChange={handleChange}></input>
-            <Button variant='dark' type='submit' onClick={handleSubmit}>POST!</Button>
+            <Button variant='dark' type='submit' onClick={handleSubmit}>Post</Button>
         </form>
     )
 }

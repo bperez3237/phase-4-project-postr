@@ -1,6 +1,5 @@
 import React from "react";
 import {useState} from 'react'
-import {Button, Card, Form} from 'react-bootstrap'
 import {FaHeart, FaEdit, FaTrashAlt} from 'react-icons/fa'
 import {FiHeart, FiEdit} from 'react-icons/fi'
 
@@ -19,6 +18,7 @@ function Post({id, name, username, text, locationName, createdAt, userAccess, ed
         }
         setEditingToggle(!editingToggle)
     }
+
     return (
         <div className='post-card'>
             <div className="profile-pic">
@@ -27,9 +27,9 @@ function Post({id, name, username, text, locationName, createdAt, userAccess, ed
             </div>
             <div className="post-body">
                 <h5>{name} <span style={{color:'gray'}}>@{username}</span></h5>
-                {editingToggle ? <Form><Form.Group><Form.Control value={postText} onChange={handleChange}></Form.Control></Form.Group></Form> : <p>{postText}</p>}
+                {editingToggle ? <form><input value={postText} onChange={handleChange}/></form> : <p>{postText}</p>}
                 <div className="post-footer">
-                    <p style={{fontSize:'12px'}}>Postr'd from {locationName} - {createdAt.slice(0,10)} - {createdAt.slice(11,19)}</p>
+                    <p style={{fontSize:'12px'}}>{locationName} - {createdAt.slice(0,10)} - {createdAt.slice(11,16)}</p>
                     <p>
                         {numLikes}{""}
                         {liked ? <FaHeart onClick={()=>handleLike(liked, id)} color='red'/> : <FiHeart onClick={()=>handleLike(liked, id)} color='black'/>}

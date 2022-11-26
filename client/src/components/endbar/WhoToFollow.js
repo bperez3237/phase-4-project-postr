@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import FollowButton from './FollowButton'
-
 
 function WhoToFollow() {
   const [users, setUsers] = useState([])
@@ -27,7 +25,7 @@ function WhoToFollow() {
                   <h5>{user.name}</h5>
                   <h6 style={{color:'gray'}}>@{user.username}</h6>
               </div>
-              <FollowButton />
+              <button className='round-button' onClick={()=>console.log('follow')}>Follow</button>
             </div>
           )
         })}
