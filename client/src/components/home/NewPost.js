@@ -1,8 +1,9 @@
 import React from "react";
 import {useState} from 'react'
 import {Button, Form} from 'react-bootstrap'
+import RoundButton from "./RoundButton";
 
-function NewPost({userId, locationId, setPosts, setToggleNewPost}) {
+function NewPost({user, location, setPosts, setToggleNewPost}) {
     const [text, setText] = useState('')
 
     function handleChange(e) {
@@ -17,8 +18,8 @@ function NewPost({userId, locationId, setPosts, setToggleNewPost}) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                user_id: userId,
-                location_id: locationId,
+                user_id: user.id,
+                location_id: location.id,
                 text: text
             })
         })
@@ -31,11 +32,15 @@ function NewPost({userId, locationId, setPosts, setToggleNewPost}) {
     }
 
     return (
-        <form className=''>
-            <h4>New Post Here:</h4>
-            <input value={text} type='text' onChange={handleChange}></input>
-            <Button variant='dark' type='submit' onClick={handleSubmit}>Post</Button>
-        </form>
+        <div className='popup-new-post'>
+            <div className='profile-pic'>
+                <div className='pic'></div>
+            </div>
+            <form className='post-form'>
+                <input plceholder="What's happening" value={text} onChange={(e)=>setText(e.target.value)}></input>
+            <RoundButton type="submit" text={text} setText={setText} setPosts={setPosts} user={user} location={location}/>
+            </form>
+        </div>
     )
 }
 

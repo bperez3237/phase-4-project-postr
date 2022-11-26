@@ -28,3 +28,7 @@
 .post-form button {
     float: right;
 }
+
+.popup-new-post {
+    display: flex;
+}

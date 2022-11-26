@@ -126,6 +126,7 @@
 
 .popup {
   position: absolute;
+  z-index: 1;
   justify-content: center;
   width: 100vw;
   height: 100vh;
@@ -137,8 +138,7 @@
 .popup-content {
   top: 120px;
   left: 200px;
-  width: 500px;
-  height: 500px;
+  border-radius: 15px;
   background-color: white;
 }
 

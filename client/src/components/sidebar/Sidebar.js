@@ -25,7 +25,10 @@ function Sidebar({location, user, setUser, setPosts, layout}) {
 
   const buttonStyle = {
     backgroundColor: '#274d40',
+    width: '80%',
   }
+
+  const newPostElem = <NewPost user={user} location={location} setPosts={setPosts} setToggleNewPost={setToggleNewPost}/>
 
   return (
     <div className={`Sidebar${layout=='max' ? '' : ' short'}`}>
@@ -50,19 +53,12 @@ function Sidebar({location, user, setUser, setPosts, layout}) {
           {layout =='max' ? <h2 id='title'>Account</h2> : <></>}
         </li>
         <li id='Post' className='row'>
-          {/* <RoundedButton 
-          text={layout=='max' ? 'Post' : <MdPostAdd id='icon' size='1.8em'></MdPostAdd>} 
-          color='#274d40' 
-          type='button' 
-          toggleValue={toggleNewPost} 
-          setToggle={setToggleNewPost}/> */}
           <button style={buttonStyle} className='round-button' onClick={()=>setToggleNewPost(!toggleNewPost)}>
             {layout=='max' ? 'Post' : <MdPostAdd id='icon' size='1.8em'></MdPostAdd>}
           </button>
         </li>
       </ul>
-      {toggleNewPost ? <Popup onClose={setToggleNewPost}/> : <></>}
-      {/* {toggleNewPost ? <NewPost className='new-post' locationId={location.id} userId={user.id} setPosts={setPosts} setToggleNewPost={setToggleNewPost} /> : <></>} */}
+      {toggleNewPost ? <Popup onClose={setToggleNewPost} Component={newPostElem}/> : <></>}
       <UserProfile layout={layout} user={user} setUser={setUser} />
     </div>
   )

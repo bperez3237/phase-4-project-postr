@@ -4,4 +4,5 @@ class Post < ApplicationRecord
     has_many :likes
 
     validates :text, presence: true
+    validates :text, length: { maximum: 420 }
 end
