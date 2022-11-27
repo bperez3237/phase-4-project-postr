@@ -1,5 +1,5 @@
 import React from 'react'
-import Newsfeed from '../newsfeed/Newsfeed'
+import Newsfeed from './Newsfeed'
 import Searchbar from './Searchbar'
 import WhoToFollow from './WhoToFollow'
 import './styles/style.css'

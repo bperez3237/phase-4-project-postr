@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {Button, Form} from 'react-bootstrap'
-import RoundedButton from "./RoundedButton";
 
 function SignUpForm({onLogin}) {
     const [username, setUsername] = useState("");
@@ -76,7 +75,7 @@ function SignUpForm({onLogin}) {
             onChange={(e) => setName(e.target.value)}
           />
         </Form.Group>
-        <RoundedButton text='Signup' color='black' type='submit'/>
+        <button style={{width:'100%'}} className='round-button' type='submit'>Signup</button>
       </Form>
     )
 

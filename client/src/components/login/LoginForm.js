@@ -1,7 +1,6 @@
 import React from "react";
 import {useState, useEffect} from 'react'
 import { Button, Form} from 'react-bootstrap'
-import RoundedButton from "./RoundedButton";
 
 function LoginForm({onLogin, location, setLocation}) {
     const [username, setUsername] = useState("");
@@ -81,7 +80,7 @@ function LoginForm({onLogin, location, setLocation}) {
                 <Form.Select value={location.id} onChange={handleChange}>
                     {locations ? optionElements : <></>}
                 </Form.Select>
-                <RoundedButton text='Login' color='black' type='submit'/>
+                <button style={{width:'100%', fontWeight:'600px'}} className='round-button' type='submit'>Login</button>
         </Form>
     );
 }
