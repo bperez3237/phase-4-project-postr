@@ -5,7 +5,7 @@ import SignUpForm from "./SignUpForm";
 import './Login.css'
 import {SiThunderbird} from 'react-icons/si'
 
-function Login({onLogin, location, setLocation}) {
+function Login({loginState, setLoginState}) {
     const [showLogin, setShowLogin] = useState(true);
 
     return (
@@ -14,7 +14,7 @@ function Login({onLogin, location, setLocation}) {
             <h2 className='greeting' >Sign in to Postr</h2>
             {showLogin ? (
                 <div id='login-form'>
-                    <LoginForm className='' onLogin={onLogin} location={location} setLocation={setLocation}/>
+                    <LoginForm loginState={loginState} setLoginState={setLoginState}/>
                     <p>
                         Don't have an account?
                         <span onClick={() => setShowLogin(false)}> Sign Up</span>
@@ -22,7 +22,7 @@ function Login({onLogin, location, setLocation}) {
                 </div>
             ) : (
                 <div id='signup-form'>
-                    <SignUpForm onLogin={onLogin}/>
+                    <SignUpForm loginState={loginState} setLoginState={setLoginState}/>
                     <p>
                         Have an account already?
                         <span id='login' onClick={() => setShowLogin(true)}> Log In</span>

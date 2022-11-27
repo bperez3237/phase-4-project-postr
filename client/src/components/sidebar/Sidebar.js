@@ -9,7 +9,7 @@ import './styles/style.css'
 import UserProfile from './UserProfile'
 import Popup from '../Popup'
 
-function Sidebar({location, user, setUser, setPosts, layout}) {
+function Sidebar({login, setLogin, setPosts, layout}) {
   const history = useHistory()
   const [toggleNewPost, setToggleNewPost] = useState(false)
 
@@ -18,7 +18,7 @@ function Sidebar({location, user, setUser, setPosts, layout}) {
     width: '80%',
   }
 
-  const newPostElem = <NewPost user={user} location={location} setPosts={setPosts} setToggleNewPost={setToggleNewPost}/>
+  const newPostElem = <NewPost login={login} setPosts={setPosts} setToggleNewPost={setToggleNewPost}/>
 
   return (
     <div className={`Sidebar${layout==='max' ? '' : ' short'}`}>
@@ -34,7 +34,7 @@ function Sidebar({location, user, setUser, setPosts, layout}) {
           <MdTravelExplore id='icon' size='1.8em'/>
           {layout === 'max' ? <h2 id='title'>Explore</h2> : <></>}
         </li>
-        <li id='Profile' className='row' onClick={()=>history.push(`/profile/${user.username}`)}>
+        <li id='Profile' className='row' onClick={()=>history.push(`/profile/${login.user.username}`)}>
           <MdManageAccounts id='icon' size='1.8em'/>
           {layout ==='max' ? <h2 id='title'>Profile</h2> : <></>}
         </li>
@@ -49,7 +49,7 @@ function Sidebar({location, user, setUser, setPosts, layout}) {
         </li>
       </ul>
       {toggleNewPost ? <Popup onClose={setToggleNewPost} Component={newPostElem}/> : <></>}
-      <UserProfile layout={layout} user={user} setUser={setUser} />
+      <UserProfile layout={layout} login={login} setLogin={setLogin} />
     </div>
   )
 }

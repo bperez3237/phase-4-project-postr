@@ -5,14 +5,14 @@ import Heading from './Heading'
 import Banner from './Banner'
 import Feed from './Feed'
 
-function Profile({user, location, setLocation}) {
+function Profile({login, setLogin}) {
     let {username} = useParams()
     
     return (
         <div className='profile'>
-            <Heading user={user}/>
-            <Banner user={user}/>
-            <Feed user={user} location={location}/>
+            <Heading user={login.user}/>
+            <Banner user={login.user}/>
+            <Feed login={login}/>
         </div>
     )
 }

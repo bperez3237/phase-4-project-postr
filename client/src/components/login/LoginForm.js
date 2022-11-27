@@ -1,19 +1,24 @@
 import React from "react";
 import {useState, useEffect} from 'react'
-import { Button, Form} from 'react-bootstrap'
+import useGet from '../../hooks/useGet'
 
-function LoginForm({onLogin, location, setLocation}) {
+function LoginForm({loginState, setLoginState}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+
+    // const {locations, setLocations} = useGet('/locations')
+    // const {data: locations,setData: setLocations } = useGet('/locations')
+    // console.log(locations)
     const [locations, setLocations] = useState([])
 
     useEffect(()=>{
         fetch('/locations')
             .then((r)=>r.json())
             .then((locations)=>{
-                setLocation(locations[0])
+                // setLocation(locations[0])
+                setLoginState({...loginState, location: locations[0]})
                 setLocations(locations)
             })
     },[])
@@ -22,10 +27,11 @@ function LoginForm({onLogin, location, setLocation}) {
         e.preventDefault();
         setIsLoading(true);
 
+        console.log(loginState)
         const loginObj = {
             username: username,
             password: password,
-            location_id: location.id
+            location_id: loginState.location?.id
         }
 
         fetch("/login", {
@@ -38,25 +44,33 @@ function LoginForm({onLogin, location, setLocation}) {
                 setIsLoading(false);
                 if (r.ok) {
                     r.json().then((user) => {
-                        onLogin(user)
+                        // onLogin(user)
+                        console.log({...loginState, user: user})
+                        setLoginState({...loginState, user: user})
                     });
                 } else {
+                    console.log('here2')
                     r.json().then((err) => setErrors(err.errors));
                 }
             });
     }
 
+
+    console.log(errors)
     function handleChange(e) {
         fetch(`/locations/${e.target.value}`)
             .then((r)=>r.json())
-            .then((location)=>setLocation(location))
+            .then((location)=>{
+                // setLocation(location)
+                setLoginState({...loginState, location: location})
+            })
     }
 
     const optionElements = locations.map((location)=><option key={location.id} value={location.id}>{location.name}</option>)
 
     return (
-            <div  className="login-form" onSubmit={handleSubmit}>
-                <div className="mb-4">
+        <form  className="login-form" onSubmit={handleSubmit}>
+            <div className="mb-4">
                 <label>Username</label>
                     <input
                         type="username"
@@ -65,8 +79,8 @@ function LoginForm({onLogin, location, setLocation}) {
                         value={username}
                         placeholder="Enter Email"
                         onChange={(e) => setUsername(e.target.value)}/>
-                </div>
-                <div className="mb-4">
+            </div>
+            <div className="mb-4">
                     <label>Password</label>
                     <input
                         type="password"
@@ -76,12 +90,12 @@ function LoginForm({onLogin, location, setLocation}) {
                         placeholder="Enter Password"
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                </div>
-                <select value={location.id} onChange={handleChange}>
+            </div>
+                <select value={loginState.location?.id} onChange={handleChange}>
                     {locations ? optionElements : <></>}
                 </select>
-                <button style={{width:'100%', fontWeight:'600px'}} className='round-button' type='submit'>Login</button>
-        </div>
+            <button style={{width:'100%', fontWeight:'600px'}} className='round-button' type='submit'>Login</button>
+        </form>
     );
 }
 

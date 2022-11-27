@@ -4,7 +4,7 @@ import './Post.css'
 
 
 
-function PostList({posts, setPosts, location, currentUser, editable}) {
+function PostList({posts, setPosts, login, editable}) {
 
     function handleLike(liked, postId) {
         if (!liked) {
@@ -13,7 +13,7 @@ function PostList({posts, setPosts, location, currentUser, editable}) {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                    body: JSON.stringify({user_id: currentUser.id, post_id: postId, location_id: location.id})
+                    body: JSON.stringify({user_id: login.user.id, post_id: postId, location_id: login.location.id})
                 })
                     .then(r=>r.json())
                     .then((updatedPosts)=>{
@@ -22,13 +22,13 @@ function PostList({posts, setPosts, location, currentUser, editable}) {
         }
         else {
             const post = posts.filter((elem)=>elem.id===postId)[0]
-            const like_id = post.likes.filter((like)=>like.user_id===currentUser.id)[0].id
+            const like_id = post.likes.filter((like)=>like.user_id===login.user.id)[0].id
             fetch(`/likes/${like_id}`,{
                 method:'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({location_id: location.id})
+                body: JSON.stringify({location_id: login.location.id})
             })
                 .then(r=>r.json())
                 .then((updatedPosts)=>{
@@ -46,7 +46,7 @@ function PostList({posts, setPosts, location, currentUser, editable}) {
     }
 
     function handleEdit(postId, newText) {
-        fetch(`/locations/${location.id}/posts/${postId}`,{
+        fetch(`/locations/${login.location.id}/posts/${postId}`,{
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -61,16 +61,16 @@ function PostList({posts, setPosts, location, currentUser, editable}) {
         return <Post 
         key={post.id} 
         id={post.id} 
-        currentUser={currentUser}
+        currentUser={login.user}
         name={post.user?.name}
         username={post.user?.username}
         text={post.text}
-        locationName={location.name}
+        locationName={login.location.name}
         createdAt={post.created_at}
-        userAccess={currentUser.id===post.user.id ? true : false}
+        userAccess={login.user.id===post.user.id ? true : false}
         editable={editable}
         numLikes={post.likes.length}
-        liked={Boolean(post.likes.find((like)=>like.user_id===currentUser.id))}
+        liked={Boolean(post.likes.find((like)=>like.user_id===login.user.id))}
         handleLike={handleLike}
         handleDelete={handleDelete}
         handleEdit={handleEdit}
@@ -82,8 +82,6 @@ function PostList({posts, setPosts, location, currentUser, editable}) {
             {postElements}
         </div>
     )
-
-
 }
 
 export default PostList;

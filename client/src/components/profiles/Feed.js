@@ -4,11 +4,11 @@ import FeedHeading from './FeedHeading'
 import PostList from '../post/PostList'
 import useGet from '../../hooks/useGet'
 
-function Feed({user, location}) {
+function Feed({login}) {
   let { path, url } = useRouteMatch()
   const [pathState, setPathState] = React.useState('posts')
 
-  const {data: posts, setData: setPosts} = useGet(`/users/${user.username}/${pathState}`)
+  const {data: posts, setData: setPosts} = useGet(`/users/${login.user.username}/${pathState}`)
 
 
   return (
@@ -16,12 +16,12 @@ function Feed({user, location}) {
       <FeedHeading url={url} setPathState={setPathState} />
       <Switch>
         <Route exact path={path}>
-          <PostList location={location} currentUser={user} editable={true} posts={posts} setPosts={setPosts} /> 
+          <PostList login={login} editable={true} posts={posts} setPosts={setPosts} /> 
         </Route>
         <Route path={`${url}/with_replies`}><h1>Replies</h1></Route>
         <Route path={`${url}/media`}><h1>Media</h1></Route>
         <Route path={`${url}/likes`}>
-          <PostList location={location} currentUser={user} editable={true} posts={posts} setPosts={setPosts} />
+          <PostList login={login} editable={true} posts={posts} setPosts={setPosts} />
         </Route>
       </Switch>
     </div>

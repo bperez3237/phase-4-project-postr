@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get '/user-info/:id', to: 'users#user_info'
 
   post '/signup', to: 'users#create'
-  get '/me', to: 'users#auto_login'
+  get '/me', to: 'logins#auto_login'
   
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"

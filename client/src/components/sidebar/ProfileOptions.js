@@ -1,11 +1,11 @@
 import React from 'react'
 
-function ProfileOptions({setUser}) {
+function ProfileOptions({setLogin}) {
 
   function handleLogoutClick() {
     fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
-        setUser(null);
+        setLogin({});
       }
     });
   }
