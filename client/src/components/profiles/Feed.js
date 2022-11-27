@@ -10,7 +10,6 @@ function Feed({login}) {
 
   const {data: posts, setData: setPosts} = useGet(`/users/${login.user.username}/${pathState}`)
 
-
   return (
     <div className='profile-feeds'>
       <FeedHeading url={url} setPathState={setPathState} />

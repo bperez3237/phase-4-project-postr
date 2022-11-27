@@ -3,8 +3,9 @@ import {useState} from 'react'
 import PostFooter from "./PostFooter";
 import PostHeader from "./PostHeader";
 
-function Post({id, name, username, text, locationName, createdAt, userAccess, editable, numLikes, liked, handleLike, handleDelete, handleEdit, currentUser}) {
+function Post({id, post , name, username, text, locationName, createdAt, userAccess, editable, numLikes, liked, handleLike, handleDelete, handleEdit, currentUser}) {
     const [postText,setPosttext] = useState(text)
+    // const { id, user,}
     const [editingToggle, setEditingToggle] = useState(false)
 
     function handleChange(e) {
@@ -19,6 +20,7 @@ function Post({id, name, username, text, locationName, createdAt, userAccess, ed
         setEditingToggle(!editingToggle)
     }
 
+    console.log(post)
     return (
         <div className='post-card'>
             <div className="profile-pic">

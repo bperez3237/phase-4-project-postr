@@ -7,12 +7,12 @@ class PostsController < ApplicationController
         else 
             posts = Post.all 
         end
-        render json: posts, include: [:user, :likes]
+        render json: posts
     end
 
     def show
         post = Post.find(params[:id])
-        render json: post, include: [:user, :likes]
+        render json: post
     end
 
 
@@ -39,17 +39,5 @@ class PostsController < ApplicationController
         location = Location.find(params[:location_id])
         posts = location.posts
         render json: posts, include: [:user, :likes]
-    end
-
-
-    def four_likes
-        location = Location.find(params[:location_id])
-        result = []
-        location.posts.select do |post|
-            if post.likes.count > 4
-                result << post
-            end
-        end
-        render json: result, include: [:user, :likes]
     end
 end

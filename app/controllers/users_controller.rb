@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     def user_posts
         user = User.find_by(username: params[:username])
         posts = user.posts
-        render json: posts, include: [:user, :likes]
+        render json: posts, each_serializer: PostSerializer
     end
 
     def user_likes
