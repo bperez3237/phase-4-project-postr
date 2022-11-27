@@ -1,17 +1,23 @@
 import React, {useEffect, useState} from 'react'
 
-function useGet({url}) {
-    const [data, setData] = useState('')
-    const [error,setError]=useState('')
+function useGet(url) {
+    const [data, setData] = useState([])
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
-    useEffect(()=>{
-        fetch(url)
-        .then(r=>r.json())
-        .then(x=>setData(x))
-        .catch(error=>setError(error))
+    useEffect(()=> {
+        setLoading(true)
+        fetch(url).then((r)=>{
+            if (r.ok) {
+                r.json().then((data)=>setData(data))
+            } else {
+                r.json().then((error)=>setError(error))
+            }
+        }).finally(()=>setLoading(false))
     },[url])
 
-    return {data, setData, error}
+
+    return {data, setData, loading, error, setError}
 }
 
 export default useGet;

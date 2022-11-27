@@ -1,6 +1,7 @@
 .heading-new-post {
     display: flex;
 
+    margin: 5px;
     min-height: 150px;
 }
 
@@ -20,10 +21,17 @@
 
 .post-form {
     width: 100%;
+    margin: 10px;
 }
 
 .post-form input {
     width: 100%;
+    border: none;
+}
+
+.post-form input:focus {
+
+    outline: none;
 }
 .post-form button {
     float: right;
@@ -32,3 +40,21 @@
 .popup-new-post {
     display: flex;
 }
+
+.form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+
+.form-footer svg {
+    font-size: 1.5rem;
+}
+
+.image-upload > input {
+    visibility:hidden;
+    width:0;
+    height:0
+  }

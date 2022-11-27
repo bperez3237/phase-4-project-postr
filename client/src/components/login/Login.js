@@ -26,7 +26,7 @@ function Login({onLogin, location, setLocation}) {
                     <SignUpForm onLogin={onLogin}/>
                     <p>
                         Have an account already?
-                        <span onClick={() => setShowLogin(true)}> Log In</span>
+                        <span id='login' onClick={() => setShowLogin(true)}> Log In</span>
                     </p>
                 </div>
             )}

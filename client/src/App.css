@@ -147,6 +147,10 @@
   margin: 10px;
 }
 
+svg {
+  cursor: pointer;
+}
+
 
 
 

@@ -34,7 +34,7 @@ p {
     margin-bottom: 40px;
 }
 
-span {
+span #login {
     color: #5cbb98;
     cursor: pointer;
 }
