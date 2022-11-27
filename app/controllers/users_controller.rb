@@ -25,12 +25,6 @@ class UsersController < ApplicationController
         render json: result
     end
 
-    def user_posts
-        user = User.find_by(username: params[:username])
-        posts = user.posts
-        render json: posts, each_serializer: PostSerializer
-    end
-
     def user_likes
         user = User.find_by(username: params[:username])
         posts_liked = Post.joins(:likes).where('likes.user_id = ?', user.id)
