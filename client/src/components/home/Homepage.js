@@ -3,7 +3,7 @@ import PostList from "../post/PostList";
 import { useEffect } from "react";
 import HomeHeading from "./HomeHeading";
 import './Home.css'
-import HeadingNewPost from "./HeadingNewPost";
+import NewPost from "./NewPost";
 
 function Homepage({location, user, posts, setPosts}) {
 
@@ -17,7 +17,7 @@ function Homepage({location, user, posts, setPosts}) {
     return (
         <div className="Feed">
             <HomeHeading />
-            <HeadingNewPost setPosts={setPosts} user={user} location={location}/>
+            <NewPost user={user} location={location} setPosts={setPosts}/>
             <PostList location={location} currentUser={user} editable={true} posts={posts} setPosts={setPosts}></PostList>
         </div>
     )
