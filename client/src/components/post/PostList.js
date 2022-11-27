@@ -58,19 +58,10 @@ function PostList({posts, setPosts, login, editable}) {
     }
 
     const postElements = posts.sort((a,b)=> Date.parse(b.created_at) - Date.parse(a.created_at)).map((post)=>{
-        // console.log(post)
         return <Post 
         key={post.id} 
         post={post}
-        id={post.id} 
-        name={post.user?.name}
-        username={post.user?.username}
-        createdAt={post.created_at}
-        numLikes={post.likes.length}
-        text={post.text}
-        liked={Boolean(post.likes.find((like)=>like.user_id===login.user.id))}
         currentUser={login.user}
-        locationName={login.location.name}
         userAccess={login.user.id===post.user.id ? true : false}
         editable={editable}
         handleLike={handleLike}

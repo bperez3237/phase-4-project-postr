@@ -3,24 +3,24 @@ import {useState} from 'react'
 import PostFooter from "./PostFooter";
 import PostHeader from "./PostHeader";
 
-function Post({id, post , name, username, text, locationName, createdAt, userAccess, editable, numLikes, liked, handleLike, handleDelete, handleEdit, currentUser}) {
-    const [postText,setPosttext] = useState(text)
-    // const { id, user,}
+function Post({post, userAccess, editable, handleLike, handleDelete, handleEdit, currentUser}) {
+    
+    const { id, user, location, text, created_at } = post
     const [editingToggle, setEditingToggle] = useState(false)
+    const [postText,setPosttext] = useState(text)
 
     function handleChange(e) {
         e.preventDefault()
         setPosttext(e.target.value)
     }
 
-    function onEdit(id) {
+    function onEdit() {
         if (editingToggle) {
             handleEdit(id, postText)
         }
         setEditingToggle(!editingToggle)
     }
 
-    console.log(post)
     return (
         <div className='post-card'>
             <div className="profile-pic">
@@ -28,10 +28,10 @@ function Post({id, post , name, username, text, locationName, createdAt, userAcc
                 <div id='pic'></div>
             </div>
             <div className="post-body">
-                <PostHeader name={name} username={username} />
+                <PostHeader name={user.name} username={user.username} />
                 {editingToggle ? <form><input value={postText} onChange={handleChange}/></form> : <p>{postText}</p>}
-                <p style={{fontSize:'12px'}}>{locationName} - {createdAt.slice(0,10)} - {createdAt.slice(11,16)}</p>
-                <PostFooter postId={id} currentUser={currentUser} userAccess={userAccess} editable={editable} liked={liked} numLikes={numLikes} id={id} handleLike={handleLike} handleDelete={handleDelete} onEdit={onEdit} editingToggle={editingToggle}/>
+                <p style={{fontSize:'12px'}}>{location.name} - {created_at.slice(0,10)} - {created_at.slice(11,16)}</p>
+                <PostFooter currentUser={currentUser} userAccess={userAccess} editable={editable} handleLike={handleLike} handleDelete={handleDelete} onEdit={onEdit} editingToggle={editingToggle} post={post}/>
             </div>
             
         </div>
