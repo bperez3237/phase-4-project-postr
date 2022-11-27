@@ -35,48 +35,48 @@ function SignUpForm({onLogin}) {
     }
 
     return (
-        <Form className='form' onSubmit={handleSubmit}>
-        <Form.Group>
-          <Form.Label htmlFor="username">Username</Form.Label>
-          <Form.Control
+        <form className='login-form' onSubmit={handleSubmit}>
+        <div>
+          <label>Username</label>
+          <input
             type="text"
             id="username"
             autoComplete="off"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label htmlFor="password">Password</Form.Label>
-          <Form.Control
+        </div>
+        <div>
+          <label>Password</label>
+          <input
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             autoComplete="current-password"
           />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label htmlFor="password">Password Confirmation</Form.Label>
-          <Form.Control
+        </div>
+        <div>
+          <label>Password Confirmation</label>
+          <input
             type="password"
             id="password_confirmation"
             value={passwordConfirmation}
             onChange={(e) => setPasswordConfirmation(e.target.value)}
             autoComplete="current-password"
           />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label htmlFor="name">Name</Form.Label>
-          <Form.Control
+        </div>
+        <div>
+          <label>Name</label>
+          <input
             type="name"
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-        </Form.Group>
+        </div>
         <button style={{width:'100%'}} className='round-button' type='submit'>Signup</button>
-      </Form>
+      </form>
     )
 
 

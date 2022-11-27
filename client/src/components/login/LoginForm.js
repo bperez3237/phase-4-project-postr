@@ -55,20 +55,20 @@ function LoginForm({onLogin, location, setLocation}) {
     const optionElements = locations.map((location)=><option key={location.id} value={location.id}>{location.name}</option>)
 
     return (
-            <Form  className="form" onSubmit={handleSubmit}>
-                <Form.Group className="mb-4">
-                <Form.Label htmlFor="username">Username</Form.Label>
-                    <Form.Control
+            <div  className="login-form" onSubmit={handleSubmit}>
+                <div className="mb-4">
+                <label>Username</label>
+                    <input
                         type="username"
                         id="username"
                         autoComplete="off"
                         value={username}
                         placeholder="Enter Email"
                         onChange={(e) => setUsername(e.target.value)}/>
-                </Form.Group>
-                <Form.Group className="mb-4">
-                    <Form.Label htmlFor="password">Password</Form.Label>
-                    <Form.Control
+                </div>
+                <div className="mb-4">
+                    <label>Password</label>
+                    <input
                         type="password"
                         id="password"
                         autoComplete="current-password"
@@ -76,12 +76,12 @@ function LoginForm({onLogin, location, setLocation}) {
                         placeholder="Enter Password"
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                </Form.Group>
-                <Form.Select value={location.id} onChange={handleChange}>
+                </div>
+                <select value={location.id} onChange={handleChange}>
                     {locations ? optionElements : <></>}
-                </Form.Select>
+                </select>
                 <button style={{width:'100%', fontWeight:'600px'}} className='round-button' type='submit'>Login</button>
-        </Form>
+        </div>
     );
 }
 
