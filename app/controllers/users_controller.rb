@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
     def user_likes
         user = User.find_by(username: params[:username])
-        posts_liked = user.likes.map {|like| like.post}
+        posts_liked = Post.joins(:likes).where('likes.user_id = ?', user.id)
         render json: posts_liked, each_serializer: PostSerializer
     end
 

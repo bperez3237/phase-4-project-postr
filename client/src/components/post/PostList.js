@@ -41,8 +41,15 @@ function PostList({posts, setPosts, login, editable}) {
         fetch(`/posts/${postId}`,{
             method: 'DELETE'
         })
-            .then((r=>r.json()))
-            .then((posts)=>setPosts(posts))
+        .then((r)=>{
+            if (r.ok) {
+                setPosts(posts.filter((post)=>post.id!==postId))
+            } else {
+                console.log('delete error')
+            }
+        })
+
+        
     }
 
     function handleEdit(postId, newText) {
@@ -53,8 +60,8 @@ function PostList({posts, setPosts, login, editable}) {
             },
                 body: JSON.stringify({text:newText})
             })
-                .then(r=>r.json())
-                .then((posts)=>setPosts(posts))
+            .then(r=>r.json())
+            .then((posts)=>setPosts(posts))
     }
 
     const postElements = posts.sort((a,b)=> Date.parse(b.created_at) - Date.parse(a.created_at)).map((post)=>{

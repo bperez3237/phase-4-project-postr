@@ -28,7 +28,7 @@ function Post({post, userAccess, editable, handleLike, handleDelete, handleEdit,
                 <div id='pic'></div>
             </div>
             <div className="post-body">
-                <PostHeader name={user.name} username={user.username} />
+                <PostHeader name={user?.name} username={user?.username} />
                 {editingToggle ? <form><input value={postText} onChange={handleChange}/></form> : <p>{postText}</p>}
                 <p style={{fontSize:'12px'}}>{location.name} - {created_at.slice(0,10)} - {created_at.slice(11,16)}</p>
                 <PostFooter currentUser={currentUser} userAccess={userAccess} editable={editable} handleLike={handleLike} handleDelete={handleDelete} onEdit={onEdit} editingToggle={editingToggle} post={post}/>

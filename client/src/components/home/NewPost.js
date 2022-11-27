@@ -23,6 +23,7 @@ function NewPost({login, setPosts}) {
       })
         .then((r)=>r.json())
         .then((posts)=>{
+          console.log('here')
           setPosts(posts)
           setText('')
         })
