@@ -61,6 +61,7 @@ function PostList({posts, setPosts, location, currentUser, editable}) {
         return <Post 
         key={post.id} 
         id={post.id} 
+        currentUser={currentUser}
         name={post.user?.name}
         username={post.user?.username}
         text={post.text}

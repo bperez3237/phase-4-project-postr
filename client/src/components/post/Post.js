@@ -3,7 +3,7 @@ import {useState} from 'react'
 import PostFooter from "./PostFooter";
 import PostHeader from "./PostHeader";
 
-function Post({id, name, username, text, locationName, createdAt, userAccess, editable, numLikes, liked, handleLike, handleDelete, handleEdit}) {
+function Post({id, name, username, text, locationName, createdAt, userAccess, editable, numLikes, liked, handleLike, handleDelete, handleEdit, currentUser}) {
     const [postText,setPosttext] = useState(text)
     const [editingToggle, setEditingToggle] = useState(false)
 
@@ -29,7 +29,7 @@ function Post({id, name, username, text, locationName, createdAt, userAccess, ed
                 <PostHeader name={name} username={username} />
                 {editingToggle ? <form><input value={postText} onChange={handleChange}/></form> : <p>{postText}</p>}
                 <p style={{fontSize:'12px'}}>{locationName} - {createdAt.slice(0,10)} - {createdAt.slice(11,16)}</p>
-                <PostFooter userAccess={userAccess} editable={editable} liked={liked} numLikes={numLikes} id={id} handleLike={handleLike} handleDelete={handleDelete} onEdit={onEdit} editingToggle={editingToggle}/>
+                <PostFooter postId={id} currentUser={currentUser} userAccess={userAccess} editable={editable} liked={liked} numLikes={numLikes} id={id} handleLike={handleLike} handleDelete={handleDelete} onEdit={onEdit} editingToggle={editingToggle}/>
             </div>
             
         </div>

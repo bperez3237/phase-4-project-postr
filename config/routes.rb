@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :reposts
-  resources :replies
+  # resources :reposts
+  resources :replies, only: [:index, :show, :create]
   resources :posts, only: [ :create, :destroy ]
   resources :locations, only: [:index]
   resources :likes, only: [:create, :destroy]

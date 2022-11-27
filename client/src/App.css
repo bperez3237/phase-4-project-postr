@@ -131,6 +131,7 @@
 
 .popup {
   position: absolute;
+  /* margin-top: auto; */
   z-index: 1;
   justify-content: center;
   width: 100vw;
@@ -138,12 +139,19 @@
   display: flex;
   background-color: rgba(0, 0, 0, 0.5);
   align-items: center;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%); 
 }
 
 .popup-content {
   top: 120px;
   left: 200px;
-  height: 100px;
+  /* height: 100px; */
+  min-width: 650px;
+  min-height: 300px;
   border-radius: 15px;
   background-color: white;
 }
