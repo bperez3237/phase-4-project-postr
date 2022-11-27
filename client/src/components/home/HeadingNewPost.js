@@ -5,6 +5,30 @@ import {IoImageOutline} from 'react-icons/io5'
 function HeadingNewPost({ setPosts, user, location}) {
   const [text, setText] = useState('')
 
+  const buttonStyle = text==='' ? {} : {
+    backgroundColor: '#274d40',
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    fetch('/posts', {
+      method: "POST",
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+          user_id: user.id,
+          location_id: location.id,
+          text: text
+      })
+    })
+      .then((r)=>r.json())
+      .then((posts)=>{
+        setPosts(posts)
+        setText('')
+      })
+  }
+
   return (
     <div className='heading-new-post'>
         <div className='profile-pic'>
@@ -19,7 +43,8 @@ function HeadingNewPost({ setPosts, user, location}) {
                 </label>
               <input id='file-input' type='file' />
               </div>
-              <RoundButton type="submit" text={text} setText={setText} setPosts={setPosts} user={user} location={location}/>
+              {/* <RoundButton type="submit" text={text} setText={setText} setPosts={setPosts} user={user} location={location}/> */}
+              <button style={buttonStyle} className='round-button' type='submit' onClick={handleSubmit} disabled={text==='' ? true : false}>Post</button>
             </div>
         </form>
     </div>

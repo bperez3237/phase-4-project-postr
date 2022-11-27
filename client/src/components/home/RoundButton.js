@@ -14,7 +14,6 @@ function RoundButton({type, text, setText, setPosts, user, location}) {
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log('submit') 
     fetch('/posts', {
       method: "POST",
       headers: {
