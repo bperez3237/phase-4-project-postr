@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { Navbar, Nav, Container } from "react-bootstrap";
 
 import Sidebar from "./components/sidebar/Sidebar";
 import Homepage from './components/home/Homepage';
@@ -14,12 +13,7 @@ import Profile from "./components/profiles/Profile";
 import useGet from "./hooks/useGet";
 
 function App() {
-  const [user, setUser] = useState(null);
-  const [location, setLocation] = useState({})
-
-
   const [posts, setPosts] = useState([])
-
 
   const minMatch = useMediaQuery('(min-width: 960px)')
   const maxMatch = useMediaQuery('(max-width: 1260px)')
@@ -52,7 +46,7 @@ function App() {
             <Explore user={login.user}></Explore>
           </Route>
           <Route path='/profile/:username'>
-            <Profile login={login} setLogin={setLogin} />
+            <Profile login={login} />
             <Endbar layout={layoutState} />
           </Route>
           <Route exact path="/account">

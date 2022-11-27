@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import RoundButton from "./RoundButton";
 import {IoImageOutline} from 'react-icons/io5'
 
 function NewPost({login, setPosts}) {

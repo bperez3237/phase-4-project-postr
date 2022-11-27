@@ -1,23 +1,17 @@
 import React from "react";
 import {useState, useEffect} from 'react'
-import useGet from '../../hooks/useGet'
 
 function LoginForm({loginState, setLoginState}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-
-    // const {locations, setLocations} = useGet('/locations')
-    // const {data: locations,setData: setLocations } = useGet('/locations')
-    // console.log(locations)
     const [locations, setLocations] = useState([])
 
     useEffect(()=>{
         fetch('/locations')
             .then((r)=>r.json())
             .then((locations)=>{
-                // setLocation(locations[0])
                 setLoginState({...loginState, location: locations[0]})
                 setLocations(locations)
             })
@@ -27,7 +21,7 @@ function LoginForm({loginState, setLoginState}) {
         e.preventDefault();
         setIsLoading(true);
 
-        console.log(loginState)
+        // console.log(loginState)
         const loginObj = {
             username: username,
             password: password,

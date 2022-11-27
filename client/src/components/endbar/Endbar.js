@@ -6,8 +6,8 @@ import './styles/style.css'
 
 function Endbar({layout}) {
   return (
-    <div className={layout=='min' ? 'Empty' : 'Extra'}>
-        {layout != 'min' ? (
+    <div className={layout==='min' ? 'Empty' : 'Extra'}>
+        {layout !== 'min' ? (
           <div>
             <Searchbar />
             <Newsfeed />

@@ -19,7 +19,7 @@ function Newsfeed() {
       .then(data => {
         setNews(data.articles?.slice(0,3))
       })
-  },[])
+  },[url])
 
 
   const newsCards = news?.map((article, index) => {

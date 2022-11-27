@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import React from 'react'
 import './styles/style.css'
 import Heading from './Heading'
 import Banner from './Banner'
 import Feed from './Feed'
 
-function Profile({login, setLogin}) {
-    let {username} = useParams()
+function Profile({login}) {
     
     return (
         <div className='profile'>

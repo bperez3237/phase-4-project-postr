@@ -11,7 +11,7 @@ function Homepage({login, posts, setPosts}) {
         fetch(`/locations/${login.location.id}/posts`)
             .then(r=>r.json())
             .then(data=>setPosts(data))
-    },[login])
+    },[login, setPosts])
 
 
     return (
