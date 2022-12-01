@@ -21,7 +21,6 @@ function LoginForm({loginState, setLoginState}) {
         e.preventDefault();
         setIsLoading(true);
 
-        // console.log(loginState)
         const loginObj = {
             username: username,
             password: password,
@@ -38,19 +37,15 @@ function LoginForm({loginState, setLoginState}) {
                 setIsLoading(false);
                 if (r.ok) {
                     r.json().then((user) => {
-                        // onLogin(user)
-                        console.log({...loginState, user: user})
                         setLoginState({...loginState, user: user})
                     });
                 } else {
-                    console.log('here2')
                     r.json().then((err) => setErrors(err.errors));
                 }
             });
     }
 
 
-    console.log(errors)
     function handleChange(e) {
         fetch(`/locations/${e.target.value}`)
             .then((r)=>r.json())

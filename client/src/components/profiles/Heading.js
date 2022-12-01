@@ -1,13 +1,13 @@
 import React from 'react'
 import {BsArrowLeft} from 'react-icons/bs'
 
-function Heading({user}) {
+function Heading({username}) {
   return (
     <div className='profile-heading'>
       <div id='label'>
         <BsArrowLeft />
         <div className='heading-label'>
-          <h3>{user.username}</h3>
+          <h3>{username}</h3>
           <p>{'#'} Posts</p>
         </div></div>
       

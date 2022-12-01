@@ -4,13 +4,13 @@ import FeedHeading from './FeedHeading'
 import PostList from '../post/PostList'
 import useGet from '../../hooks/useGet'
 
-function Feed({login}) {
+function Feed({login, pathState, setPathState, posts, setPosts}) {
   let { url } = useRouteMatch()
-  let {username} = useParams()
+  // let {username} = useParams()
 
-  const [pathState, setPathState] = React.useState('posts')
+  // const [pathState, setPathState] = React.useState('posts')
 
-  const {data: posts, setData: setPosts} = useGet(`/users/${username}/${pathState}`)
+  // const {data: posts, setData: setPosts} = useGet(`/users/${username}/${pathState}`)
 
   return (
     <div className='profile-feeds'>

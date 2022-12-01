@@ -5,7 +5,7 @@ import PostList from "../post/PostList";
 import {Container, Row, Col, Button} from 'react-bootstrap'
 import LocationInfo from "../LocationInfo"
 
-function Explore({user}) {
+function Explore({login}) {
     const [location, setLocation] = useState(null)
     const [posts, setPosts] = useState(null)
 
@@ -36,9 +36,8 @@ function Explore({user}) {
                 <Col className="col-8 p-3">
                     {posts ? <PostList 
                     posts={posts}
-                    location={location} 
-                    currentUser={user} 
-                    setLocation={setLocation} 
+                    setPosts={setPosts} 
+                    login={login}
                     editable={false}/> : <></>}
                 </Col>
             </Row>

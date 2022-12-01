@@ -43,7 +43,7 @@ function App() {
             <Endbar layout={layoutState} />
           </Route>
           <Route path="/explore">
-            <Explore user={login.user}></Explore>
+            <Explore login={login}></Explore>
           </Route>
           <Route path='/profile/:username'>
             <Profile login={login} />

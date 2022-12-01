@@ -6,7 +6,11 @@ class PostsController < ApplicationController
             posts = location.posts 
         elsif params[:username]
             user = User.find_by(username: params[:username])
-            posts = user.posts
+            if user
+                posts = user.posts
+            else 
+                return render json: {error: "User not found"}, status: :not_found
+            end
         else 
             posts = Post.all 
         end
