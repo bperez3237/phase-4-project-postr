@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import NewsCard from './NewsCard'
 import api_key from '../../news_key'
 import './styles/style.css'
@@ -13,7 +13,7 @@ function Newsfeed() {
     `sortBy=date&`+
     `apiKey=${api_key}`)
 
-  const {data: news, setData: setNews, error} = useGet(url)
+  const {data: news} = useGet(url)
 
   const newsCards = news.articles?.slice(0,3).map((article, index) => {
     return <NewsCard key={index} props={article} />

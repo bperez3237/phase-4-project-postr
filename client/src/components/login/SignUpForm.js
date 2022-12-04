@@ -8,7 +8,7 @@ function SignUpForm({setLoginState, loginState}) {
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
     const [name,setName] = useState("")
     const [errors, setErrors] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    // const [isLoading, setIsLoading] = useState(false);
     const [avatarUrl, setAvatarUrl] = useState('')
 
     // getDownloadURL(ref(storage, `images/`))
@@ -24,7 +24,7 @@ function SignUpForm({setLoginState, loginState}) {
     function handleSubmit(e) {
       e.preventDefault();
       setErrors(null);
-      setIsLoading(true);
+      // setIsLoading(true);
       fetch("/signup", {
         method: "POST",
         headers: {
@@ -38,7 +38,7 @@ function SignUpForm({setLoginState, loginState}) {
           avatar: avatarUrl
         }),
       }).then((r) => {
-        setIsLoading(false);
+        // setIsLoading(false);
         if (r.ok) {
           r.json().then((user) => {
             setLoginState({...loginState, user: user})
