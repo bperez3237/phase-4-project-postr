@@ -1,46 +1,95 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import {Card, Container, Row, Accordion} from 'react-bootstrap'
+import './Style.css'
+import {storage} from '../../firebase'
+import {ref, uploadBytes, listAll, getDownloadURL} from 'firebase/storage'
+import {v4} from 'uuid'
+import usePatch from "../../hooks/usePatch";
+import useAvatarUpload from "../../hooks/useAvatarUpload";
 
 function Account({user_id}) {
-    const [userInfo, setUserInfo] = useState(null)
+    // const [userInfo, setUserInfo] = useState(null)
+    const [title, setTitle] = useState('')
+    const [avatarUrl, setAvatarUrl] = useState('')
+    const [file, setFile] = useState(null)
+    const [imageList, setImageList] = useState([])
 
-    useEffect(()=>{
-        fetch(`/user-info/${user_id}`)
-            .then(r=>r.json())
-            .then((data)=>setUserInfo(data))
-    },[])
 
-    if (!userInfo) return <></>
-    else {return (
-        <div className="">
-            <h1>{userInfo.user.username}</h1>
-            <h2>{userInfo.user.name}</h2>
-            <p>Joined Postr on: {userInfo.user.created_at.slice(0,10)}</p>
-            <Accordion >
-            <Accordion.Item eventKey='0'>
-                <Accordion.Header>
-                    Number of Locations Posted at: {userInfo.locations.length}
-                </Accordion.Header>
-                <Accordion.Body>
-                    {userInfo.locations.map((location)=><p key={location.id}>{location.name}</p>)}
-                </Accordion.Body>                        
-            </Accordion.Item>
-            <Accordion.Item eventKey='1'>
-                <Accordion.Header>Numbr of Posts: {userInfo.posts.length}</Accordion.Header>
-                <Accordion.Body>
-                    {userInfo.posts.map((post)=><p key={post.id}>{post.text}</p>)}
-                </Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey='2'>
-                <Accordion.Header>Liked Posts: {userInfo.liked_posts.length}</Accordion.Header>
-                <Accordion.Body>
-                    {userInfo.liked_posts.map((post)=><p key={post.id}>{post.text}</p>)}
-                </Accordion.Body>
-            </Accordion.Item>
-            </Accordion>        
+    const imageListRef = ref(storage, `images/`)
+
+
+    const uploadImage = (e) => {
+        e.preventDefault()
+        if (file==null) return;
+        const imageRef = ref(storage, `images/${file.name+v4()}`)
+        // useAvatarUpload(imageRef, file)
+
+        uploadBytes(imageRef, file).then((snapshot) => {
+            getDownloadURL(snapshot.ref).then((url) => {
+                // POST to users avatar
+                // const {data} = usePatch(`users/${user_id}`, {avatar: url})
+                // setImageList((prev) => [...prev, url])
+                setAvatarUrl(url)
+            })
+        })
+
+    }
+
+    // useEffect(()=>{
+    //     fetch(`users/${user_id}`,{
+    //         method: 'PATCH',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({avatar: avatarUrl})
+    //     }).then((r)=>{
+    //         if (r.ok) {
+    //             r.json().then((data)=>console.log(data))
+    //         } else {
+    //             r.json().then((error)=>console.log(error))
+    //         }
+    //     })
+    // },[avatarUrl])
+
+    // useEffect(() => {
+    //     setImageList([])
+    //     listAll(imageListRef).then((res) => {
+    //         res.items.forEach((itemRef) => {
+    //             // console.log(itemRef)
+    //             getDownloadURL(itemRef).then((url) => {
+    //                 // POST the URL to your app
+    //                 setImageList((prev) => [...prev, url])
+    //             })
+            
+    //         })
+    //     })
+    // },[])
+    // console.log(imageList)
+
+    // function handleSubmit(e) {
+    //     e.preventDefault()
+    //     const data = new FormData()
+    //     data.append("user[avatar]", file)
+    // }
+
+  
+
+    return (
+        <div className="account">
+            <form id='profile-pic-upload'>
+                <label>Title: </label>
+                <input type='text' name='title' value={title} onChange={(e)=>setTitle(e.target.value)}/>
+                <br />
+                <label>{'Upload Picture: '}</label>
+                <input type="file" name='image' onChange={(e)=>setFile(e.target.files[0])} />
+                <button onClick={uploadImage}>Upload</button>
+                {/* {imageList.map((image) => {
+                    return <img key={image} src={image} alt='image' />
+                })} */}
+            </form>
         </div>
-    )}
+    )
 }
 
 export default Account;

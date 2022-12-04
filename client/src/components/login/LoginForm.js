@@ -57,8 +57,10 @@ function LoginForm({loginState, setLoginState}) {
 
     const optionElements = locations.map((location)=><option key={location.id} value={location.id}>{location.name}</option>)
 
+    console.log(errors)
     return (
         <form  className="login-form" onSubmit={handleSubmit}>
+
             <div className="mb-4">
                 <label>Username</label>
                     <input

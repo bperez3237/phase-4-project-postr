@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :posts, only: [ :create, :destroy ]
   resources :locations, only: [:index]
   resources :likes, only: [:create, :destroy]
+  resources :users, only: [:update]
 
   resources :locations, only: [:show] do
     resources :posts, only: [:show, :index, :update]

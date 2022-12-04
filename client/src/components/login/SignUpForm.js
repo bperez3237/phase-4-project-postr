@@ -10,7 +10,7 @@ function SignUpForm({setLoginState, loginState}) {
   
     function handleSubmit(e) {
       e.preventDefault();
-      setErrors([]);
+      setErrors(null);
       setIsLoading(true);
       fetch("/signup", {
         method: "POST",
@@ -35,7 +35,7 @@ function SignUpForm({setLoginState, loginState}) {
         }
       });
     }
-
+    console.log(errors)
     return (
         <form className='login-form' onSubmit={handleSubmit}>
         <div>

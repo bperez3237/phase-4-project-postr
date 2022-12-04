@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Sidebar from "./components/sidebar/Sidebar";
@@ -23,6 +23,7 @@ function App() {
 
   const layoutState = maxMatch ? (minMatch ? "medium" : "min") : 'max'
 
+  console.log(login)
 
   if (!login.user) {
     
