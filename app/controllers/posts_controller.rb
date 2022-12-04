@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+    skip_before_action :authorized, only: [:show]
 
     def index
         if params[:location_id]

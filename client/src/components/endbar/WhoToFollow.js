@@ -1,13 +1,9 @@
 import React, {useState, useEffect} from 'react'
+import useGet from '../../hooks/useGet'
 
 function WhoToFollow() {
-  const [users, setUsers] = useState([])
 
-  useEffect(() => {
-    fetch('/random-three-users')
-      .then(res => res.json())
-      .then(data => setUsers(data))
-  },[])
+  const {data: users, setData: setUsers} = useGet(`/random-three-users`)
 
   return (
     <div className='who-to-follow'>

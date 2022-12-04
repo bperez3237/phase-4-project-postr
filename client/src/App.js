@@ -44,7 +44,7 @@ function App() {
               <Homepage login={login} posts={posts} setPosts={setPosts} />
               <Endbar layout={layoutState} />
             </Route>
-            <Route path='/post/:post_id'>
+            <Route path='/full-post/:post_id'>
               <FullPost login={login} />
               <Endbar layout={layoutState} />
             </Route>
