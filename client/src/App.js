@@ -51,7 +51,7 @@ function App() {
             <Endbar layout={layoutState} />
           </Route>
           <Route exact path="/account">
-            <Account user_id={login.user.id} ></Account>
+            <Account login={login} setLogin={setLogin}></Account>
           </Route>
         </Switch>
       </div>

@@ -8,7 +8,7 @@ import {v4} from 'uuid'
 import usePatch from "../../hooks/usePatch";
 import useAvatarUpload from "../../hooks/useAvatarUpload";
 
-function Account({user_id}) {
+function Account({login, setLogin}) {
     // const [userInfo, setUserInfo] = useState(null)
     const [title, setTitle] = useState('')
     const [avatarUrl, setAvatarUrl] = useState('')
@@ -36,21 +36,26 @@ function Account({user_id}) {
 
     }
 
-    // useEffect(()=>{
-    //     fetch(`users/${user_id}`,{
-    //         method: 'PATCH',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({avatar: avatarUrl})
-    //     }).then((r)=>{
-    //         if (r.ok) {
-    //             r.json().then((data)=>console.log(data))
-    //         } else {
-    //             r.json().then((error)=>console.log(error))
-    //         }
-    //     })
-    // },[avatarUrl])
+    useEffect(()=>{
+        if (avatarUrl!=='') {
+            fetch(`users/${login.user.id}`,{
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({avatar: avatarUrl})
+            }).then((r)=>{
+                if (r.ok) {
+                    r.json().then((data)=>{
+                        setLogin({...login, user: data})
+                        setAvatarUrl('')
+                    })
+                } else {
+                    r.json().then((error)=>console.log(error))
+                }
+            })
+        }
+    },[avatarUrl])
 
     // useEffect(() => {
     //     setImageList([])

@@ -24,8 +24,7 @@ function Post({post, userAccess, editable, handleLike, handleDelete, handleEdit,
     return (
         <div className='post-card'>
             <div className="profile-pic">
-                {/* add pfp here */}
-                <div id='pic'></div>
+                <img className='pic' src={user.avatar} alt='user profile'/>
             </div>
             <div className="post-body">
                 <PostHeader name={user?.name} username={user?.username} />
