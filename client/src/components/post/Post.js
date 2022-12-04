@@ -2,9 +2,10 @@ import React from "react";
 import {useState} from 'react'
 import PostFooter from "./PostFooter";
 import PostHeader from "./PostHeader";
+import { useHistory } from "react-router-dom";
 
 function Post({post, userAccess, editable, handleLike, handleDelete, handleEdit, currentUser}) {
-    
+    const history = useHistory()
     const { id, user, location, text, created_at } = post
     const [editingToggle, setEditingToggle] = useState(false)
     const [postText,setPosttext] = useState(text)
@@ -22,7 +23,7 @@ function Post({post, userAccess, editable, handleLike, handleDelete, handleEdit,
     }
 
     return (
-        <div className='post-card'>
+        <div className='post-card' onClick={()=>history.push(`/post/${id}`)}>
             <div className="profile-pic">
                 <img className='pic' src={user.avatar} alt='user profile'/>
             </div>

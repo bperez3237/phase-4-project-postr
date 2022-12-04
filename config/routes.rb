@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # resources :reposts
   resources :replies, only: [:index, :show, :create]
-  resources :posts, only: [ :create, :destroy ]
+  resources :posts, only: [ :create, :destroy, :show, :index ]
   resources :locations, only: [:index]
   resources :likes, only: [:create, :destroy]
   resources :users, only: [:update]

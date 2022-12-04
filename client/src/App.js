@@ -11,6 +11,7 @@ import Endbar from "./components/endbar/Endbar";
 import useMediaQuery from "./hooks/useMediaQuery";
 import Profile from "./components/profiles/Profile";
 import useGet from "./hooks/useGet";
+import FullPost from "./components/post/FullPost";
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -39,6 +40,10 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Homepage login={login} posts={posts} setPosts={setPosts} />
+            <Endbar layout={layoutState} />
+          </Route>
+          <Route path='/post/:post_id'>
+            <FullPost login={login} />
             <Endbar layout={layoutState} />
           </Route>
           <Route path="/explore">
