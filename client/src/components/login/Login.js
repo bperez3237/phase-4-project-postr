@@ -2,7 +2,7 @@ import React from "react";
 import {useState} from 'react'
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
-import './Login.css'
+import './styles/style.css'
 import {SiThunderbird} from 'react-icons/si'
 
 function Login({loginState, setLoginState}) {
@@ -17,7 +17,7 @@ function Login({loginState, setLoginState}) {
                     <LoginForm loginState={loginState} setLoginState={setLoginState}/>
                     <p>
                         Don't have an account?
-                        <span onClick={() => setShowLogin(false)}> Sign Up</span>
+                        <span id='login' onClick={() => setShowLogin(false)}> Sign Up</span>
                     </p>
                 </div>
             ) : (

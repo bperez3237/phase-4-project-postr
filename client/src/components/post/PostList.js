@@ -1,9 +1,6 @@
 import React from "react";
 import Post from './Post'
-// import './Post.css'
 import './styles/style.css'
-
-
 
 function PostList({posts, setPosts, login, editable}) {
 
