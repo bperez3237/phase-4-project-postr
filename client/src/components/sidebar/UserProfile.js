@@ -1,9 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
+import { LoginContext } from '../../context/LoginContext'
 import ProfileOptions from './ProfileOptions'
 import {FiMoreHorizontal} from 'react-icons/fi'
 
-function UserProfile({login, setLogin, layout}) {
+function UserProfile({ layout}) {
     const [toggle,setToggle] = useState(false)
+    const {login, setLogin} = useContext(LoginContext)
     
   return (
         <div className='user-profile' onClick={()=>setToggle(!toggle)}>

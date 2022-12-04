@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import {SiThunderbird} from 'react-icons/si'
 import {RiHomeSmileFill} from 'react-icons/ri'
@@ -8,9 +8,11 @@ import NewPost from '../post/NewPost'
 import './styles/style.css'
 import UserProfile from './UserProfile'
 import Popup from '../Popup'
+import { LoginContext } from '../../context/LoginContext'
 
-function Sidebar({login, setLogin, posts, setPosts, layout}) {
+function Sidebar({ posts, setPosts, layout}) {
   const history = useHistory()
+  const {login} = useContext(LoginContext)
   const [toggleNewPost, setToggleNewPost] = useState(false)
 
   const buttonStyle = {
@@ -18,7 +20,7 @@ function Sidebar({login, setLogin, posts, setPosts, layout}) {
     width: '80%',
   }
 
-  const newPostElem = <NewPost login={login} posts={posts} setPosts={setPosts} setToggleNewPost={setToggleNewPost}/>
+  const newPostElem = <NewPost posts={posts} setPosts={setPosts} setToggleNewPost={setToggleNewPost}/>
 
   return (
     <div className={`Sidebar${layout==='max' ? '' : ' short'}`}>
@@ -49,7 +51,7 @@ function Sidebar({login, setLogin, posts, setPosts, layout}) {
         </li>
       </ul>
       {toggleNewPost ? <Popup onClose={setToggleNewPost} Component={newPostElem}/> : <></>}
-      <UserProfile layout={layout} login={login} setLogin={setLogin} />
+      <UserProfile layout={layout} />
     </div>
   )
 }

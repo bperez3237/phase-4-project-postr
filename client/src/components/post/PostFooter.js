@@ -4,7 +4,7 @@ import {FiHeart, FiEdit} from 'react-icons/fi'
 import Popup from '../Popup'
 import CommentForm from './CommentForm'
 
-function PostFooter({userAccess, editable, handleLike, handleDelete, onEdit, editingToggle, currentUser, post}) {
+function PostFooter({userAccess, editable, handleLike, handleDelete, onEdit, editingToggle, currentUser, post, setPosts}) {
   const {id, replies, likes} = post
   const [toggle,setToggle] = useState(false)
 
@@ -15,7 +15,7 @@ function PostFooter({userAccess, editable, handleLike, handleDelete, onEdit, edi
     setToggle(!toggle)
   }
 
-  const commentFormElement = <CommentForm postId={id} currentUser={currentUser}/>
+  const commentFormElement = <CommentForm post={post} setPosts={setPosts} currentUser={currentUser}/>
 
   return (
     <div className="post-footer">

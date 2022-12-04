@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {IoImageOutline} from 'react-icons/io5'
 
-function CommentForm({postId, currentUser}) {
+function CommentForm({post, setPosts, currentUser}) {
     const [comment, setComment] = useState('')
 
     const buttonStyle ={
@@ -18,16 +18,15 @@ function CommentForm({postId, currentUser}) {
             },
             body: JSON.stringify({
                 'text_content': comment,
-                'post_id': postId,
+                'post_id': post.id,
                 'user_id': currentUser.id
             })})
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                // setPosts() need to update posts to include new replies
                 setComment('')
             })
-
-        
     }
 
 

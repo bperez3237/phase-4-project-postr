@@ -135,6 +135,12 @@
         height: auto;
         color: #274d40;
         cursor: pointer;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .show-more:hover {
+        background-color: #86cab3;
     }
 }
 
@@ -200,6 +206,11 @@
         height: auto;
         color: #274d40;
         cursor: pointer;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
     }
 
+    .show-more:hover {
+        background-color: #86cab3;
+    }
 }

@@ -68,6 +68,7 @@ function PostList({posts, setPosts, login, editable}) {
         return <Post 
         key={post.id} 
         post={post}
+        setPosts={setPosts}
         currentUser={login.user}
         userAccess={login.user.id===post.user.id ? true : false}
         editable={editable}

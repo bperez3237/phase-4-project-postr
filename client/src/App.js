@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Sidebar from "./components/sidebar/Sidebar";
@@ -12,6 +12,7 @@ import useMediaQuery from "./hooks/useMediaQuery";
 import Profile from "./components/profiles/Profile";
 import useGet from "./hooks/useGet";
 import FullPost from "./components/post/FullPost";
+import {LoginContext} from './context/LoginContext'
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -36,27 +37,29 @@ function App() {
    else {return (
     <BrowserRouter>
       <div className="App" >
-        <Sidebar login={login} setLogin={setLogin} posts={posts} setPosts={setPosts} layout={layoutState}/>
-        <Switch>
-          <Route exact path="/">
-            <Homepage login={login} posts={posts} setPosts={setPosts} />
-            <Endbar layout={layoutState} />
-          </Route>
-          <Route path='/post/:post_id'>
-            <FullPost login={login} />
-            <Endbar layout={layoutState} />
-          </Route>
-          <Route path="/explore">
-            <Explore login={login}></Explore>
-          </Route>
-          <Route path='/profile/:username'>
-            <Profile login={login} />
-            <Endbar layout={layoutState} />
-          </Route>
-          <Route exact path="/account">
-            <Account login={login} setLogin={setLogin}></Account>
-          </Route>
-        </Switch>
+        <LoginContext.Provider value={{login, setLogin}}>
+          <Sidebar posts={posts} setPosts={setPosts} layout={layoutState}/>
+          <Switch>
+            <Route exact path="/">
+              <Homepage login={login} posts={posts} setPosts={setPosts} />
+              <Endbar layout={layoutState} />
+            </Route>
+            <Route path='/post/:post_id'>
+              <FullPost login={login} />
+              <Endbar layout={layoutState} />
+            </Route>
+            <Route path="/explore">
+              <Explore login={login}></Explore>
+            </Route>
+            <Route path='/profile/:username'>
+              <Profile login={login} />
+              <Endbar layout={layoutState} />
+            </Route>
+            <Route exact path="/account">
+              <Account login={login} setLogin={setLogin}></Account>
+            </Route>
+          </Switch>
+        </LoginContext.Provider>
       </div>
     </BrowserRouter>
   );

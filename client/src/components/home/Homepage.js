@@ -17,7 +17,7 @@ function Homepage({login, posts, setPosts}) {
     return (
         <div className="Feed">
             <HomeHeading />
-            <NewPost login={login} posts={posts} setPosts={setPosts}/>
+            <NewPost posts={posts} setPosts={setPosts}/>
             <PostList login={login} editable={true} posts={posts} setPosts={setPosts}></PostList>
         </div>
     )

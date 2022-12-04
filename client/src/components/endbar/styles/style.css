@@ -96,6 +96,11 @@
   height: auto;
   color: #274d40;
   cursor: pointer;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.who-to-follow .show-more:hover {
+  background-color: #86cab3;
 }
 
 .Newsfeed {
@@ -144,4 +149,9 @@
   height: auto;
   color: #274d40;
   cursor: pointer;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.Newsfeed .show-more:hover {
+  background-color: #86cab3;
 }/*# sourceMappingURL=style.css.map */

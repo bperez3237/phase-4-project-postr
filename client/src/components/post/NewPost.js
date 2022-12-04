@@ -1,8 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
+import {LoginContext} from '../../context/LoginContext'
 import {IoImageOutline} from 'react-icons/io5'
 
-function NewPost({login, posts, setPosts}) {
+function NewPost({ posts, setPosts}) {
     const [text, setText] = useState('')
+    const {login} = useContext(LoginContext)
+
 
     const buttonStyle = text==='' ? {} : {
       backgroundColor: '#274d40',
