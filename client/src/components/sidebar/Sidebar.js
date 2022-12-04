@@ -40,7 +40,7 @@ function Sidebar({ posts, setPosts, layout}) {
           <MdManageAccounts id='icon' size='1.8em'/>
           {layout ==='max' ? <h2 id='title'>Profile</h2> : <></>}
         </li>
-        <li id='Account' className='row' onClick={()=>history.push('/account')}>
+        <li id='Account' className='row' onClick={()=>history.push('/settings/account')}>
           <TbDotsCircleHorizontal id='icon' size='1.8em'/>
           {layout ==='max' ? <h2 id='title'>Account</h2> : <></>}
         </li>

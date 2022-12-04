@@ -1,0 +1,32 @@
+.settings {
+    display: flex;
+    width: 100%;
+
+    .sidebar {
+        min-width: 40%;
+
+        border-right: 1px solid #eaeaea;
+
+        .sidebar-container {
+            width: 100%;
+            .sidebar-option {
+                padding: 10px;
+            }
+            .sidebar-option:hover {
+                cursor: pointer;
+                background-color: gray;
+            }
+        }
+    }
+
+    .content {
+        min-width: 60%;
+        padding: 0 1rem;
+    }
+
+}
+
+.your-account {
+    display: flex;
+    flex-direction: column;
+}

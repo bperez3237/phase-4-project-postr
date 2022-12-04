@@ -3,7 +3,6 @@ import {FaHeart, FaEdit, FaTrashAlt, FaRegComment} from 'react-icons/fa'
 import {FiHeart, FiEdit} from 'react-icons/fi'
 
 function FullPostFooter({post}) {
-    console.log(post)
     
   return (
     <div className='full-post-footer'>

@@ -29,6 +29,18 @@
     float: right;
 }
 
+
+.post-form button {
+    border: none;
+    background-color: #274d40;
+    
+}
+.post-from button:disabled,
+.post-form button[disabled] {
+    cursor: mouse;
+    background-color: #5a6b66;
+}
+
 .popup-new-post {
     display: flex;
 }

@@ -1,0 +1,27 @@
+.settings {
+  display: flex;
+  width: 100%;
+}
+.settings .sidebar {
+  min-width: 40%;
+  border-right: 1px solid #eaeaea;
+}
+.settings .sidebar .sidebar-container {
+  width: 100%;
+}
+.settings .sidebar .sidebar-container .sidebar-option {
+  padding: 10px;
+}
+.settings .sidebar .sidebar-container .sidebar-option:hover {
+  cursor: pointer;
+  background-color: gray;
+}
+.settings .content {
+  min-width: 60%;
+  padding: 0 1rem;
+}
+
+.your-account {
+  display: flex;
+  flex-direction: column;
+}/*# sourceMappingURL=style.css.map */

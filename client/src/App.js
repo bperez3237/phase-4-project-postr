@@ -5,7 +5,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Homepage from './components/home/Homepage';
 import Explore from './components/explore/Explore';
 import Login from './components/login/Login';
-import Account from "./components/account/Account";
+import Settings from "./components/account/Settings";
 import './App.css';
 import Endbar from "./components/endbar/Endbar";
 import useMediaQuery from "./hooks/useMediaQuery";
@@ -55,8 +55,8 @@ function App() {
               <Profile />
               <Endbar layout={layoutState} />
             </Route>
-            <Route exact path="/account">
-              <Account login={login} setLogin={setLogin}></Account>
+            <Route path="/settings">
+              <Settings login={login} setLogin={setLogin}></Settings>
             </Route>
           </Switch>
         </LoginContext.Provider>
