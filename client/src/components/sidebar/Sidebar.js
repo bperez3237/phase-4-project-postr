@@ -4,12 +4,12 @@ import {SiThunderbird} from 'react-icons/si'
 import {RiHomeSmileFill} from 'react-icons/ri'
 import {TbDotsCircleHorizontal} from 'react-icons/tb'
 import {MdManageAccounts, MdTravelExplore, MdPostAdd} from 'react-icons/md'
-import NewPost from '../home/NewPost'
+import NewPost from '../post/NewPost'
 import './styles/style.css'
 import UserProfile from './UserProfile'
 import Popup from '../Popup'
 
-function Sidebar({login, setLogin, setPosts, layout}) {
+function Sidebar({login, setLogin, posts, setPosts, layout}) {
   const history = useHistory()
   const [toggleNewPost, setToggleNewPost] = useState(false)
 
@@ -18,7 +18,7 @@ function Sidebar({login, setLogin, setPosts, layout}) {
     width: '80%',
   }
 
-  const newPostElem = <NewPost login={login} setPosts={setPosts} setToggleNewPost={setToggleNewPost}/>
+  const newPostElem = <NewPost login={login} posts={posts} setPosts={setPosts} setToggleNewPost={setToggleNewPost}/>
 
   return (
     <div className={`Sidebar${layout==='max' ? '' : ' short'}`}>

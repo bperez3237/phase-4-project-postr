@@ -3,24 +3,28 @@ import NewsCard from './NewsCard'
 import api_key from '../../news_key'
 import './styles/style.css'
 import { useHistory } from 'react-router-dom'
+import useGet from '../../hooks/useGet'
 
 function Newsfeed() {
   const [news, setNews] = useState([])
   const history = useHistory()
 
   const url = (`https://newsapi.org/v2/everything?`+
-    `q=New&`+
-    `sortBy=dat&`+
+    `q=News&`+
+    `sortBy=date&`+
     `apiKey=${api_key}`)
 
   useEffect(() => {
     fetch(url)
       .then(res => res.json())
       .then(data => {
+        console.log(data)
         setNews(data.articles?.slice(0,3))
       })
+      .catch(err => console.log(err))
   },[url])
 
+  // const {data: news, setData: setNews, error} = useGet(url)
 
   const newsCards = news?.map((article, index) => {
     return <NewsCard key={index} props={article} />

@@ -3,7 +3,7 @@ import PostList from "../post/PostList";
 import { useEffect } from "react";
 import HomeHeading from "./HomeHeading";
 import './Home.css'
-import NewPost from "./NewPost";
+import NewPost from "../post/NewPost";
 
 function Homepage({login, posts, setPosts}) {
 
@@ -17,7 +17,7 @@ function Homepage({login, posts, setPosts}) {
     return (
         <div className="Feed">
             <HomeHeading />
-            <NewPost login={login} setPosts={setPosts}/>
+            <NewPost login={login} posts={posts} setPosts={setPosts}/>
             <PostList login={login} editable={true} posts={posts} setPosts={setPosts}></PostList>
         </div>
     )

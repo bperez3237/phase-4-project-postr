@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {IoImageOutline} from 'react-icons/io5'
 
-function NewPost({login, setPosts}) {
+function NewPost({login, posts, setPosts}) {
     const [text, setText] = useState('')
 
     const buttonStyle = text==='' ? {} : {
@@ -10,23 +10,40 @@ function NewPost({login, setPosts}) {
   
     function handleSubmit(e) {
       e.preventDefault()
+
+      const obj = {
+        user_id: login.user.id,
+        location_id: login.location.id,
+        text: text
+      }
+
+    
       fetch('/posts', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            user_id: login.user.id,
-            location_id: login.location.id,
-            text: text
-        })
+        body: JSON.stringify(obj)
       })
-        .then((r)=>r.json())
-        .then((posts)=>{
-          console.log('here')
-          setPosts(posts)
-          setText('')
-        })
+        .then((r)=>{
+          if (r.ok) {
+            r.json().then((data)=>{
+              setPosts([...posts, data])
+              setText('')
+            })
+          } 
+          else {
+            r.json().then((error)=>{
+              console.log(error)
+            })
+          }
+          //   r.json())
+          // .then((posts)=>{
+          //   console.log('here')
+          //   setPosts(posts)
+          //   setText('')
+          // })
+      })
     }
   
     return (

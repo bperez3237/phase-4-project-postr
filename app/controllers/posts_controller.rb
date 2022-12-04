@@ -25,9 +25,11 @@ class PostsController < ApplicationController
 
     def create
         post = Post.create(user_id: params[:user_id], location_id: params[:location_id], text: params[:text])
-        location = Location.find(params[:location_id])
-        posts = location.posts
-        render json: posts, serializer: PostSerializer, status: :created
+        if post.valid?
+            render json: post, serializer: PostSerializer
+        else
+            render json: {error: "Post not created"}, status: :not_acceptable
+        end
     end
 
     def destroy
