@@ -1,11 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { LoginContext } from '../../context/LoginContext'
 import {Route, Switch,  useRouteMatch, useParams} from 'react-router-dom'
 import FeedHeading from './FeedHeading'
 import PostList from '../post/PostList'
 import useGet from '../../hooks/useGet'
 
-function Feed({login, pathState, setPathState, posts, setPosts}) {
+function Feed({ pathState, setPathState, posts, setPosts}) {
   let { url } = useRouteMatch()
+  const {login} = useContext(LoginContext)
   // let {username} = useParams()
 
   // const [pathState, setPathState] = React.useState('posts')

@@ -52,7 +52,7 @@ function App() {
               <Explore login={login}></Explore>
             </Route>
             <Route path='/profile/:username'>
-              <Profile login={login} />
+              <Profile />
               <Endbar layout={layoutState} />
             </Route>
             <Route exact path="/account">

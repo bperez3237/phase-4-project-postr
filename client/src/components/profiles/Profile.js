@@ -6,7 +6,7 @@ import Feed from './Feed'
 import {useParams} from 'react-router-dom'
 import useGet from '../../hooks/useGet'
 
-function Profile({login}) {
+function Profile() {
     let {username} = useParams()
 
     const [pathState, setPathState] = React.useState('posts')
@@ -19,7 +19,7 @@ function Profile({login}) {
         <div className='profile'>
             <Heading username={username}/>
             <Banner user={posts[0].user}/>
-            <Feed login={login} pathState={pathState} setPathState={setPathState} posts={posts} setPosts={setPosts}/>
+            <Feed pathState={pathState} setPathState={setPathState} posts={posts} setPosts={setPosts}/>
         </div>
     )}
 }
