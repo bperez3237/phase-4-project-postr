@@ -4,11 +4,12 @@ import {FiHeart, FiEdit} from 'react-icons/fi'
 
 function FullPostFooter({post}) {
     console.log(post)
+    
   return (
     <div className='full-post-footer'>
         <div className='footer-details'>
-            {post.replies.length} Replies
-            {post.likes.length} Likes
+            <p>{post.replies?.length} Replies</p>
+            <p>{post.likes?.length} Likes</p>
         </div>
         <div className='footer-icons'>
             <div>

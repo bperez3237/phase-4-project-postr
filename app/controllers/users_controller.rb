@@ -24,8 +24,15 @@ class UsersController < ApplicationController
 
 
     def show 
-        user = User.find_by(username: params[:username])
-        render json: user
+        user_by_username = User.find_by(username: params[:username]) 
+        user_by_id = User.find(params[:username])
+        if user_by_username
+            render json: user_by_username
+        elsif user_by_id
+            render json: user_by_id
+        else
+            render json: { errors: "User not found" }, status: :not_found
+        end
     end
 
     def user_info

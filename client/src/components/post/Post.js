@@ -23,7 +23,7 @@ function Post({post, setPosts, userAccess, editable, handleLike, handleDelete, h
     }
 
     return (
-        <div className='post-card' >
+        <div className='post-card' onClick={()=>history.push(`/full-post/${id}`)} >
             <div className="profile-pic">
                 <img className='pic' src={user.avatar} alt='user profile'/>
             </div>

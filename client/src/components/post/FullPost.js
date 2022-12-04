@@ -4,12 +4,16 @@ import useGet from '../../hooks/useGet'
 import PostHeader from './PostHeader'
 import {BsArrowLeft} from 'react-icons/bs'
 import FullPostFooter from './FullPostFooter'
+import Reply from './Reply'
 
 function FullPost() {
     let {post_id} = useParams()
+    const [value, setValue] = useState('')
+
 
     const {data: post, setData: setPost} = useGet(`/posts/${post_id}`)
     const { id, user, location, text, created_at } = post
+
 
 
     return (
@@ -37,29 +41,14 @@ function FullPost() {
 
             </div>
 
-
-
-
-
-
-            {/* <div className='post-card'>
-                <div className="profile-pic">
-                    <img className='pic' src={user?.avatar} alt='user profile'/>
-                </div>
-
-                <div className="post-body">
-                    <PostHeader name={user?.name} username={user?.username} /> */}
-                    {/* {editingToggle ? <form><input value={postText} onChange={handleChange}/></form> : <p>{postText}</p>} */}
-                {/* </div>
-            </div> */}
-
-
             <div className='new-comment-form'>
-                Comment form
+                <img className='pic' src={user?.avatar} alt='user profile'/>
+                <input type='text' placeholder='Post your reply' value={value} onChange={(e)=>setValue(e.target.value)}/>
+                <button className='round-button' disabled={value==='' ? true : false}>Reply</button>
             </div>
         
             <div className='comments-list'>
-                Comments
+                {post?.replies?.map((reply)=><Reply atUser={user.username} reply={reply} />)}
             </div>
         </div>
     )

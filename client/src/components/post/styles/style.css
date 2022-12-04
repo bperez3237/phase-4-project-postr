@@ -89,6 +89,7 @@
 .full-post-page-header {
   display: flex;
   align-items: center;
+  position: top;
 }
 .full-post-page-header svg {
   cursor: pointer;
@@ -121,6 +122,7 @@
 }
 .full-post .full-post-body {
   padding: 10px;
+  padding-bottom: 0;
 }
 .full-post .full-post-body p#post-text {
   font-size: 18px;
@@ -136,8 +138,75 @@
 }
 .full-post .full-post-footer .footer-details {
   display: flex;
+  align-items: center;
+  height: 50px;
+  border-top: 1px solid #e6e6e6;
+}
+.full-post .full-post-footer .footer-details p {
+  margin: 0px 10px;
+  padding: 0;
 }
 .full-post .full-post-footer .footer-icons {
   display: flex;
+  align-items: center;
+  height: 50px;
   justify-content: space-around;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.new-comment-form {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+.new-comment-form img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.new-comment-form input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin: 0 20px;
+}
+.new-comment-form button {
+  border: none;
+  background-color: #274d40;
+}
+.new-comment-form button:disabled,
+.new-comment-form button[disabled] {
+  cursor: mouse;
+  background-color: #5a6b66;
+}
+
+.comments-list {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.reply {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #eff6f4;
+  border-bottom: 1px solid #eff6f4;
+  padding: 10px 0px;
+}
+.reply p {
+  margin: 0;
+  padding: 0;
+}
+.reply p.text-content {
+  margin: 10px 0px;
+}
+.reply img.pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 10px;
+}
+.reply .reply-body span {
+  color: gray;
 }/*# sourceMappingURL=style.css.map */

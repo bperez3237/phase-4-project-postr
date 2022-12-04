@@ -130,6 +130,7 @@
 
 .round-button:disabled,
 .round-button[disabled] {
+  cursor: mouse;
   background: gray;
 }
 
