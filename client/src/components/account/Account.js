@@ -16,7 +16,7 @@ function Account({login, setLogin}) {
     const [imageList, setImageList] = useState([])
 
 
-    const imageListRef = ref(storage, `images/`)
+    // const imageListRef = ref(storage, `images/`)
 
 
     const uploadImage = (e) => {

@@ -55,6 +55,7 @@
 .who-to-follow .list .row {
   margin: 0px;
   padding: 5px;
+  max-width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -72,6 +73,7 @@
 }
 .who-to-follow .list .row .profile-pic .pic {
   width: 60px;
+  max-width: 60px;
   height: 60px;
   border-radius: 50%;
   margin: 0px;

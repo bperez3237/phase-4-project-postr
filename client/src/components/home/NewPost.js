@@ -32,7 +32,7 @@ function NewPost({login, setPosts}) {
     return (
       <div className='new-post'>
           <div className='profile-pic'>
-              <div className='pic'></div>
+              <img className='pic' src={login.user.avatar} alt='user profile'/>
           </div>
           <form className='post-form'>
               <input placeholder="What's happening?" value={text} onChange={(e)=>setText(e.target.value)}></input>

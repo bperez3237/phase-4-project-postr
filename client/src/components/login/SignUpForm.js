@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import {storage} from '../../firebase'
+import {ref, getDownloadURL} from 'firebase/storage'
 
 function SignUpForm({setLoginState, loginState}) {
     const [username, setUsername] = useState("");
@@ -7,6 +9,17 @@ function SignUpForm({setLoginState, loginState}) {
     const [name,setName] = useState("")
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [avatarUrl, setAvatarUrl] = useState('')
+
+    // getDownloadURL(ref(storage, `images/`))
+    // .then((url)=>setAvatarUrl(url))
+    // .catch((error)=>console.log(error))
+
+    getDownloadURL(ref(storage, `images/default_image/twitter-avi-gender-balanced-figure.png`))
+    .then((url)=>setAvatarUrl(url))
+    .catch((error)=>console.log(error))
+
+
   
     function handleSubmit(e) {
       e.preventDefault();
@@ -21,7 +34,8 @@ function SignUpForm({setLoginState, loginState}) {
           username,
           password,
           password_confirmation: passwordConfirmation,
-          name: name
+          name: name,
+          avatar: avatarUrl
         }),
       }).then((r) => {
         setIsLoading(false);

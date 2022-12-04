@@ -23,8 +23,6 @@ function App() {
 
   const layoutState = maxMatch ? (minMatch ? "medium" : "min") : 'max'
 
-  console.log(login)
-
   if (!login.user) {
     
     return (

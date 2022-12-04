@@ -17,9 +17,7 @@ function WhoToFollow() {
           return (
             <div className='row' key={user.id}>
               <div className='profile-pic'>
-                {/* <img className='profile-pic' src={user.profile_pic} alt='profile pic' /> */}
-
-                <div id='pic'></div>
+                <img className='pic' src={user.avatar} alt='user profile'/>
               </div>
               <div className='user-info'>
                   <h5>{user.name}</h5>

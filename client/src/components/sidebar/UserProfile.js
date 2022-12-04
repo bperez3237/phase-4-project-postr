@@ -10,7 +10,6 @@ function UserProfile({login, setLogin, layout}) {
         <div className='user-profile' onClick={()=>setToggle(!toggle)}>
             <div className='image'>
                 <img className='pic' src={login.user.avatar} alt='user profile'/>
-                {/* <div className='pic'></div> */}
             </div>
 
             {toggle ? <ProfileOptions setLogin={setLogin}/> : <></>}
