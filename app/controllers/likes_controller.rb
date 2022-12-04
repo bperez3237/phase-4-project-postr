@@ -8,7 +8,7 @@ class LikesController < ApplicationController
             like = Like.create(user_id: params[:user_id], post_id: params[:post_id])
             location = Location.find(params[:location_id])
             posts = location.posts
-            render json: posts, include: [:likes, :user]
+            render json: posts, each_serializer: PostSerializer
         end
     end
 
@@ -17,6 +17,6 @@ class LikesController < ApplicationController
         like.destroy
         location = Location.find(params[:location_id])
         posts = location.posts
-        render json: posts, include: [:likes, :user]
+        render json: posts, each_serializer: PostSerializer
     end
 end

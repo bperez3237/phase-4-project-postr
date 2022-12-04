@@ -34,7 +34,7 @@ function CommentForm({postId, currentUser}) {
     return (
         <div className='comment-form'>
             <div className='profile-pic'>
-              <div className='pic'></div>
+              <img className='pic' src={currentUser.avatar} alt='user profile'/>
             </div>
             <div className='comment-body'>
                 <form>

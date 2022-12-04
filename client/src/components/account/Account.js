@@ -1,12 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import {Card, Container, Row, Accordion} from 'react-bootstrap'
 import './Style.css'
 import {storage} from '../../firebase'
-import {ref, uploadBytes, listAll, getDownloadURL} from 'firebase/storage'
+import {ref, uploadBytes, getDownloadURL} from 'firebase/storage'
 import {v4} from 'uuid'
-import usePatch from "../../hooks/usePatch";
-import useAvatarUpload from "../../hooks/useAvatarUpload";
 
 function Account({login, setLogin}) {
     // const [userInfo, setUserInfo] = useState(null)
@@ -14,10 +11,6 @@ function Account({login, setLogin}) {
     const [avatarUrl, setAvatarUrl] = useState('')
     const [file, setFile] = useState(null)
     const [imageList, setImageList] = useState([])
-
-
-    // const imageListRef = ref(storage, `images/`)
-
 
     const uploadImage = (e) => {
         e.preventDefault()
