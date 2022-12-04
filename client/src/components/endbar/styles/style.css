@@ -1,16 +1,11 @@
 .Extra {
-  border: 1px;
-  border-style: solid;
-  border-color: black;
+  border-left: solid #eff6f4 1px;
   justify-content: center;
   padding: 10px;
 }
 
 .Searchbar {
-  border: 1px;
-  border-style: solid;
-  border-color: black;
-  background-color: white;
+  background-color: #eff6f4;
   margin: 10px;
   padding: 5px;
   border-radius: 30px;
@@ -23,6 +18,7 @@
 }
 .Searchbar input {
   border: none;
+  background-color: #eff6f4;
   outline: none;
   font-size: large;
   margin-left: 5px;
@@ -31,16 +27,13 @@
 .Searchbar:focus-within {
   border: 1px;
   border-style: solid;
-  border-color: #274d40;
+  border-color: #489278;
 }
 .Searchbar:focus-within svg {
   color: #489278;
 }
 
 .who-to-follow {
-  border: 1px;
-  border-style: solid;
-  border-color: black;
   border-radius: 5%;
   background-color: #eff6f4;
   margin-top: 10px;
@@ -52,6 +45,10 @@
   display: grid;
   width: 100%;
 }
+.who-to-follow .list .row:hover {
+  background-color: #86cab3;
+  cursor: pointer;
+}
 .who-to-follow .list .row {
   margin: 0px;
   padding: 5px;
@@ -60,9 +57,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  border: 1px;
-  border-style: solid;
-  border-color: black;
 }
 .who-to-follow .list .row .profile-pic {
   margin: 0;
@@ -106,9 +100,6 @@
 
 .Newsfeed {
   display: grid;
-  border: 1px;
-  border-style: solid;
-  border-color: black;
   border-radius: 20px;
   margin-top: 10px;
   background-color: #eff6f4;
@@ -118,17 +109,11 @@
 }
 .Newsfeed .list {
   display: grid;
-  border: 1px;
-  border-style: solid;
-  border-color: black;
 }
 .Newsfeed .list .news-card {
-  border: 1px;
-  border-style: solid;
-  border-color: black;
   display: flex;
   max-height: 100px;
-  padding: 5px;
+  padding: 10px;
 }
 .Newsfeed .list .news-card .card-body {
   display: grid;
@@ -152,7 +137,7 @@
 }
 .Newsfeed .list .news-card:hover {
   cursor: pointer;
-  background-color: #e6e6e6;
+  background-color: #86cab3;
 }
 .Newsfeed .show-more {
   padding: 10px;

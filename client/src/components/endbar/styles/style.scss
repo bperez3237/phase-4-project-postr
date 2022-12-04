@@ -1,16 +1,15 @@
 .Extra {
-    border: 1px;
-    border-style: solid;
-    border-color: black;
+    border-left: solid #eff6f4 1px;
     justify-content: center;
     padding: 10px;
 }
 
 .Searchbar {
-    border: 1px;
-    border-style: solid;
-    border-color: black;
-    background-color: white;
+    // border: 1px;
+    // border-style: solid;
+    // border-color: black;
+    // background-color: white;
+    background-color: #eff6f4;
 
     margin: 10px;
     padding: 5px;
@@ -25,6 +24,7 @@
 
     input {
         border: none;
+        background-color: #eff6f4;
         outline: none;
         font-size: large;
         margin-left: 5px;
@@ -37,7 +37,7 @@
 .Searchbar:focus-within {
     border: 1px;
     border-style: solid;
-    border-color: #274d40;
+    border-color: #489278;
 
     svg {
         color: #489278;
@@ -46,9 +46,9 @@
 }
 
 .who-to-follow {
-    border: 1px;
-    border-style: solid;
-    border-color: black;
+    // border: 1px;
+    // border-style: solid;
+    // border-color: black;
     border-radius: 5%;
     background-color: #eff6f4;
     margin-top: 10px;
@@ -61,6 +61,11 @@
         display: grid;
         // position: relative;
         width: 100%;
+
+        .row:hover {
+            background-color: #86cab3;
+            cursor: pointer;
+        }
 
         .row {
             // position: relative;
@@ -75,9 +80,9 @@
 
             // justify-content: space-between;
             // width: 240px;
-            border: 1px;
-            border-style: solid;
-            border-color: black;
+            // border: 1px;
+            // border-style: solid;
+            // border-color: black;
 
             .profile-pic {
                 // display: flex;
@@ -135,9 +140,9 @@
 
 .Newsfeed {
     display: grid;
-    border: 1px;
-    border-style: solid;
-    border-color: black;
+    // border: 1px;
+    // border-style: solid;
+    // border-color: black;
     border-radius: 20px;
     margin-top: 10px;
     background-color: #eff6f4;
@@ -148,19 +153,14 @@
 
     .list {
         display: grid; 
-        border: 1px;
-        border-style: solid;
-        border-color: black;
-
-    
     
         .news-card {
-            border: 1px;
-            border-style: solid;
-            border-color: black;
+            // border: 1px;
+            // border-style: solid;
+            // border-color: black;
             display: flex;
             max-height: 100px;
-            padding: 5px;
+            padding: 10px;
 
             .card-body {
                 display: grid;
@@ -191,7 +191,7 @@
 
         .news-card:hover {
             cursor: pointer;
-            background-color: #e6e6e6;
+            background-color: #86cab3;
         }
     }
 

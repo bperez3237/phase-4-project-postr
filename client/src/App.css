@@ -11,6 +11,7 @@
   flex-direction: column;
   height: 100%;
   background-color: white;
+  border-right: 1px solid #eff6f4;
 }
 
 .short {
@@ -73,6 +74,8 @@
   max-width: 100%;
   max-height: 100%;
   overflow: scroll;
+  border-right: solid #eff6f4 1px;
+  border-left: solid #eff6f4 1px;
 }
 
 .Feed-heading {

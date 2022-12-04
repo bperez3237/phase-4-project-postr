@@ -7,7 +7,7 @@
   align-items: center;
   padding: 10px;
   max-height: 80px;
-  background-color: #e9e8e8;
+  background-color: #eff6f4;
 }
 
 .profile {
@@ -45,16 +45,21 @@
   flex-direction: column;
 }
 .profile-banner .banner-details .names {
-  margin-top: 20px;
-  margin-left: 30px;
+  margin: 10px 20px;
 }
 .profile-banner .banner-details .bio {
-  margin: 20px 20px;
+  margin: 10px 20px;
 }
 .profile-banner .banner-details #edit-profile-button {
   float: right;
   right: 10px;
   margin: 10px;
+}
+.profile-banner .banner-details .links {
+  margin: 10px 20px;
+}
+.profile-banner .banner-details .connections {
+  margin: 10px 20px;
 }
 
 .user-profile-pic {
@@ -69,7 +74,8 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border-color: black;
+  border-color: white;
+  border-width: 3px;
   border-style: solid;
   position: absolute;
 }

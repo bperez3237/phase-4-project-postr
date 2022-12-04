@@ -1,11 +1,11 @@
 .user-profile {
   border: 1px;
-  border-style: solid;
-  border-color: black;
-  border-radius: 20px;
+  border-radius: 40px;
   margin: 10px;
+  padding: 20px 10px;
   background-color: white;
   max-height: 80px;
+  align-items: center;
   display: flex;
   cursor: pointer;
 }
@@ -18,8 +18,10 @@
   margin: 10px;
   border: 1px;
   border-style: solid;
-  border-color: black;
+  border-color: white;
   border-radius: 50%;
+  width: 60px;
+  height: 60px;
 }
 .user-profile .options {
   min-width: 200px;
@@ -82,6 +84,10 @@
 .user-profile .more-options svg {
   float: right;
   margin: 20px;
+}
+
+.user-profile:hover {
+  background-color: #e6e6e6;
 }
 
 #logo {

@@ -8,7 +8,7 @@
     padding: 10px;
     max-height: 80px;
   
-    background-color: #e9e8e8;
+    background-color: #eff6f4;
   }
 
 
@@ -57,18 +57,25 @@
         flex-direction: column;
 
         .names {
-            margin-top: 20px;
-            margin-left: 30px;
+            margin: 10px 20px;
         }
 
         .bio {
-            margin: 20px 20px;
+            margin: 10px 20px;
         }
 
         #edit-profile-button {
             float: right;
             right: 10px;
             margin: 10px;;
+        }
+
+        .links {
+            margin: 10px 20px;
+        }
+
+        .connections {
+            margin: 10px 20px;
         }
     }
 }
@@ -87,7 +94,8 @@
         width: 150px;
         height: 150px;
         border-radius: 50%;
-        border-color: black;
+        border-color: white;
+        border-width: 3px;
         border-style: solid;
         position: absolute;
     }

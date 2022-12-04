@@ -7,7 +7,7 @@ function BannerDetails({user}) {
   const buttonStyle = {
     'backgroundColor': 'white',
     'color':'black',
-    'border':'solid 1px gray',
+    'border':'solid 1px #eff6f4',
   }
 
   return (

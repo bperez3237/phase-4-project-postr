@@ -12,7 +12,6 @@ function Profile({login}) {
     const [pathState, setPathState] = React.useState('posts')
     const {data: posts, setData: setPosts, error, setError, loading} = useGet(`/users/${username}/${pathState}`)
   
-    console.log(error)
     if (posts.length === 0) {
         return <div>user not found</div>
     }
