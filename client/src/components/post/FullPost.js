@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, useHistory} from 'react-router-dom'
 import useGet from '../../hooks/useGet'
 import PostHeader from './PostHeader'
 import {BsArrowLeft} from 'react-icons/bs'
@@ -8,6 +8,7 @@ import Reply from './Reply'
 
 function FullPost() {
     let {post_id} = useParams()
+    const history = useHistory()
     const [value, setValue] = useState('')
 
 
@@ -19,7 +20,7 @@ function FullPost() {
     return (
         <div className='Feed'>
             <div className='full-post-page-header'>
-                <BsArrowLeft />
+                <BsArrowLeft onClick={()=>history.goBack()} />
                 <h2>Post</h2>
             </div>
 

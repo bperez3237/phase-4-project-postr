@@ -22,8 +22,14 @@ function Post({post, setPosts, userAccess, editable, handleLike, handleDelete, h
         setEditingToggle(!editingToggle)
     }
 
+    function handlePostClick(e) {
+        if (e.target.localName!=='svg' && e.target.localName!=='path') {
+            history.push(`/full-post/${id}`)
+        }
+    }
+
     return (
-        <div className='post-card' onClick={()=>history.push(`/full-post/${id}`)} >
+        <div className='post-card' onClick={handlePostClick} >
             <div className="profile-pic">
                 <img className='pic' src={user.avatar} alt='user profile'/>
             </div>

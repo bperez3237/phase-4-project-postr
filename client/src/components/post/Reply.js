@@ -13,7 +13,7 @@ function Reply({reply, atUser}) {
             <div className='reply-body'>
                 <div className='reply-header'>
                     <p>{user.name}<span> @{user.username}{' · '}{created_at.slice(0,10)}</span></p>
-                    <p>Replying to @{atUser}</p>
+                    <p><span>Replying to </span><span>@{atUser}</span></p>
                 </div>
                 <p className='text-content'>{text_content}</p>
             </div>  
