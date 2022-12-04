@@ -61,7 +61,7 @@ function NewPost({ posts, setPosts}) {
                   <label htmlFor='file-input'>
                     <IoImageOutline />
                   </label>
-                <input id='file-input' type='file' />
+                  <input id='file-input' type='file' />
                 </div>
                 <button style={buttonStyle} className='round-button' type='submit' onClick={handleSubmit} disabled={text==='' ? true : false}>Post</button>
               </div>

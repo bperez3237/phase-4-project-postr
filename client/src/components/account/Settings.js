@@ -11,7 +11,7 @@ import Account from "./Account";
 import Notifications from "./Notifications";
 
 function Settings({login, setLogin}) {
-    let {url} = useRouteMatch()
+    // let {url} = useRouteMatch()
     const [title, setTitle] = useState('')
     const [avatarUrl, setAvatarUrl] = useState('')
     const [file, setFile] = useState(null)
@@ -23,6 +23,7 @@ function Settings({login, setLogin}) {
         uploadBytes(imageRef, file).then((snapshot) => {
             getDownloadURL(snapshot.ref).then((url) => {
                 setAvatarUrl(url)
+
             })
         })
 
@@ -30,7 +31,7 @@ function Settings({login, setLogin}) {
 
     useEffect(()=>{
         if (avatarUrl!=='') {
-            fetch(`users/${login.user.id}`,{
+            fetch(`/users/${login.user.id}`,{
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
@@ -41,6 +42,7 @@ function Settings({login, setLogin}) {
                     r.json().then((data)=>{
                         setLogin({...login, user: data})
                         setAvatarUrl('')
+                        setFile(null)
                     })
                 } else {
                     r.json().then((error)=>console.log(error))
@@ -55,22 +57,13 @@ function Settings({login, setLogin}) {
             <div className="content">
                 <Switch>
                     <Route path='/settings/account' >
-                        <Account/>
+                        <Account title={title} setTitle={setTitle} file={file} setFile={setFile} uploadImage={uploadImage}/>
                     </Route>
                     <Route path='/settings/notifications' >
                         <Notifications/>
                     </Route>
                 </Switch>
             </div>
-        
-            {/* <form id='profile-pic-upload'>
-                <label>Title: </label>
-                <input type='text' name='title' value={title} onChange={(e)=>setTitle(e.target.value)}/>
-                <br />
-                <label>{'Upload Picture: '}</label>
-                <input type="file" name='image' onChange={(e)=>setFile(e.target.files[0])} />
-                <button onClick={uploadImage}>Upload</button>
-            </form> */}
         </div>
     )
 }
