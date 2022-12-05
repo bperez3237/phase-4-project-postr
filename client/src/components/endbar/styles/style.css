@@ -27,15 +27,15 @@
 .Searchbar:focus-within {
   border: 1px;
   border-style: solid;
-  border-color: #489278;
+  border-color: var(--main-link-color);
 }
 .Searchbar:focus-within svg {
-  color: #489278;
+  color: var(--main-link-color);
 }
 
 .who-to-follow {
   border-radius: 5%;
-  background-color: #eff6f4;
+  background-color: var(--main-light-color);
   margin-top: 10px;
 }
 .who-to-follow h2 {
@@ -46,7 +46,7 @@
   width: 100%;
 }
 .who-to-follow .list .row:hover {
-  background-color: #86cab3;
+  background-color: var(--hover-light-color);
   cursor: pointer;
 }
 .who-to-follow .list .row {
@@ -94,20 +94,20 @@
 .who-to-follow .show-more {
   padding: 10px;
   height: auto;
-  color: #274d40;
+  color: var(--main-link-color);
   cursor: pointer;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 .who-to-follow .show-more:hover {
-  background-color: #86cab3;
+  background-color: var(--hover-light-color);
 }
 
 .Newsfeed {
   display: grid;
   border-radius: 20px;
   margin-top: 10px;
-  background-color: #eff6f4;
+  background-color: var(--main-light-color);
 }
 .Newsfeed h2 {
   padding: 10px;
@@ -142,16 +142,16 @@
 }
 .Newsfeed .list .news-card:hover {
   cursor: pointer;
-  background-color: #86cab3;
+  background-color: var(--hover-light-color);
 }
 .Newsfeed .show-more {
   padding: 10px;
   height: auto;
-  color: #274d40;
+  color: var(--main-link-color);
   cursor: pointer;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 .Newsfeed .show-more:hover {
-  background-color: #86cab3;
+  background-color: var(--hover-light-color);
 }/*# sourceMappingURL=style.css.map */

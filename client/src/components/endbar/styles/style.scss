@@ -5,10 +5,6 @@
 }
 
 .Searchbar {
-    // border: 1px;
-    // border-style: solid;
-    // border-color: black;
-    // background-color: white;
     background-color: #eff6f4;
 
     margin: 10px;
@@ -30,27 +26,22 @@
         margin-left: 5px;
     }
 
-    
-    // width: ;
 }
 
 .Searchbar:focus-within {
     border: 1px;
     border-style: solid;
-    border-color: #489278;
+    border-color: var(--main-link-color);
 
     svg {
-        color: #489278;
+        color: var(--main-link-color);
     }
 
 }
 
 .who-to-follow {
-    // border: 1px;
-    // border-style: solid;
-    // border-color: black;
     border-radius: 5%;
-    background-color: #eff6f4;
+    background-color: var(--main-light-color);
     margin-top: 10px;
 
     h2 {
@@ -59,16 +50,14 @@
 
     .list {
         display: grid;
-        // position: relative;
         width: 100%;
 
         .row:hover {
-            background-color: #86cab3;
+            background-color: var(--hover-light-color);
             cursor: pointer;
         }
 
         .row {
-            // position: relative;
             margin:0px;
             padding: 5px;
             max-width: 100%;
@@ -78,21 +67,12 @@
             flex-wrap: wrap;
             align-items: center;
 
-            // justify-content: space-between;
-            // width: 240px;
-            // border: 1px;
-            // border-style: solid;
-            // border-color: black;
-
             .profile-pic {
-                // display: flex;
                 margin: 0;
                 padding: 0;
                 min-width: 80px;
                 max-width: 80px;
                 height: 100%;
-                // justify-content: center;
-                // float: left;
 
                 .pic {
                     width: 60px;
@@ -109,7 +89,6 @@
                 height: 100%;
                 display: grid;
                 flex: 50%;
-                // float: right;
                 h3 {
                     margin: 0px;
                     padding: 0px;
@@ -133,25 +112,22 @@
     .show-more {
         padding: 10px;
         height: auto;
-        color: #274d40;
+        color: var(--main-link-color);
         cursor: pointer;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
     }
 
     .show-more:hover {
-        background-color: #86cab3;
+        background-color: var(--hover-light-color);
     }
 }
 
 .Newsfeed {
     display: grid;
-    // border: 1px;
-    // border-style: solid;
-    // border-color: black;
     border-radius: 20px;
     margin-top: 10px;
-    background-color: #eff6f4;
+    background-color: var(--main-light-color);
 
     h2 {
         padding: 10px;
@@ -161,9 +137,6 @@
         display: grid; 
     
         .news-card {
-            // border: 1px;
-            // border-style: solid;
-            // border-color: black;
             display: flex;
             max-height: 100px;
             padding: 10px;
@@ -175,7 +148,6 @@
                 h4 {
                     font-size: 1rem;
                     font-weight: 600;
-                    // margin-bottom: 0.5rem;
                     padding: 0;
                 }
 
@@ -183,7 +155,6 @@
                     font-size: 1rem;
                     font-weight: 600;
                     padding: 0;
-                    // margin-bottom: 0.5rem;
                 }
             }
 
@@ -197,20 +168,20 @@
 
         .news-card:hover {
             cursor: pointer;
-            background-color: #86cab3;
+            background-color: var(--hover-light-color);
         }
     }
 
     .show-more {
         padding: 10px;
         height: auto;
-        color: #274d40;
+        color: var(--main-link-color);
         cursor: pointer;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
     }
 
     .show-more:hover {
-        background-color: #86cab3;
+        background-color: var(--hover-light-color);
     }
 }

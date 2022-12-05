@@ -11,13 +11,10 @@ function FullPost() {
     const history = useHistory()
     const [value, setValue] = useState('')
     const {login} = useContext(LoginContext)
-
-
     const {data: post, setData: setPost} = useGet(`/posts/${post_id}`)
     const { id, user, location, text, created_at } = post
     const [replies, setReplies] = useState(post.replies)
 
-    console.log(replies)
 
     useEffect(() => {
         setReplies(post.replies)
@@ -38,8 +35,7 @@ function FullPost() {
             .then(res=> {
                 if (res.ok) {
                     res.json().then(data=> {
-                        // console.log(replies, [...replies, data])
-                        setReplies([...post.replies, data])
+                        setReplies([...replies, data])
                         setValue('')
                     })
                 }
@@ -80,7 +76,7 @@ function FullPost() {
             </div>
 
             <div className='new-comment-form'>
-                <img className='pic' src={user?.avatar} alt='user profile'/>
+                <img className='pic' src={login.user?.avatar} alt='user profile'/>
                 <input type='text' placeholder='Post your reply' value={value} onChange={(e)=>setValue(e.target.value)}/>
                 <button className='round-button' onClick={handleSubmit} disabled={value==='' ? true : false}>Reply</button>
             </div>

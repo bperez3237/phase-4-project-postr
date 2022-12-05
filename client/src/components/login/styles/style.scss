@@ -50,18 +50,17 @@
         margin-bottom: 40px;
     }
 
-    span #login {
-        color: #5cbb98;
-        cursor: pointer;
-    }
-
-
     button {
         margin-top: 40px;
         margin-bottom: 40px;
-}
+    }
 }
 
+
+span#login {
+    color: var(--main-link-color);
+    cursor: pointer;
+}
 
 
 

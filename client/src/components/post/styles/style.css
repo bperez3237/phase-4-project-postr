@@ -6,7 +6,7 @@
 .post-card {
   border: 1px;
   border-style: solid;
-  border-color: #eff6f4;
+  border-color: var(--main-light-color);
   display: flex;
   flex-direction: row;
   padding: 10px;
@@ -82,7 +82,6 @@
   position: absolute;
   border: 1px black solid;
   background-color: white;
-  /* height: 50px; */
   width: 80px;
   right: 120px;
 }
@@ -156,7 +155,7 @@
   display: flex;
   align-items: center;
   height: 50px;
-  border-top: 1px solid #e6e6e6;
+  border-top: 1px solid var(--main-light-color);
 }
 .full-post .full-post-footer .footer-details p {
   margin: 0px 10px;
@@ -167,8 +166,8 @@
   align-items: center;
   height: 50px;
   justify-content: space-around;
-  border-top: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
+  border-top: 1px solid var(--main-light-color);
+  border-bottom: 1px solid var(--main-light-color);
 }
 
 .new-post {
@@ -192,7 +191,7 @@
 .new-post .post-form button {
   float: right;
   border: none;
-  background-color: #274d40;
+  background-color: var(--main-dark-color);
 }
 .new-post .post-form button:disabled,
 .new-post .post-form button[disabled] {

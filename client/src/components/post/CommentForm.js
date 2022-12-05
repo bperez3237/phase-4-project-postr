@@ -41,7 +41,7 @@ function CommentForm({post, setPosts, currentUser}) {
                 </form>
                 <div className='form-footer'>
                     <div className='image-upload'>
-                    <label for='file-input'>
+                    <label htmlFor='file-input'>
                         <IoImageOutline />
                     </label>
                     <input id='file-input' type='file' />

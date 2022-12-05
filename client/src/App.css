@@ -1,3 +1,11 @@
+:root {
+  --main-dark-color: #274d40;
+  --main-light-color: #eff6f4;
+  --main-link-color: #5cbb98;
+  --hover-light-color: #c4d1cd;
+  --gray-hover-color: #ccc;
+}
+
 .App {
   display: flex;
   height: 100vh;
@@ -11,7 +19,7 @@
   flex-direction: column;
   height: 100%;
   background-color: white;
-  border-right: 1px solid #eff6f4;
+  border-right: 1px solid var(--main-light-color);
 }
 
 .short {
@@ -50,32 +58,24 @@
 
 .row #icon {
   flex: 30%;
-  /* display: grid; */
-  /* place-items: center; */
-
 }
 
 .row #title {
   flex: 70%;
-
-  /* display: grid; */
-  /* place-items: center; */
 }
 
 #logout-button {
   height: 60px;
-  /* position: absolute; */
   bottom: 0;
 }
 
 .Feed {
-  /* flex: 60%; */
   width: 100%;
   max-width: 100%;
   max-height: 100%;
   overflow: scroll;
-  border-right: solid #eff6f4 1px;
-  border-left: solid #eff6f4 1px;
+  border-right: solid var(--main-light-color) 1px;
+  border-left: solid var(--main-light-color) 1px;
 }
 
 .Feed-heading {
@@ -109,7 +109,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #274d40;
+  background-color: var(--main-dark-color);
 
   height: 100vh;
   width: 100vw;
@@ -179,6 +179,10 @@ svg {
   cursor: pointer;
 
   
+}
+
+.post-card:hover {
+  background-color: var(--main-light-color)
 }
 
 .profile-pic {

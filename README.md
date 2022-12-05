@@ -30,3 +30,4 @@ rails db:migrate db:seed
 ## Potential Changes
 
 Currently, the locations to log in from are selected from a dropdown. It would make sense for a user only to be able to log in from the location they are actually at. This would greatly change the way people use the app since their POSTR networks will be all local.
+
