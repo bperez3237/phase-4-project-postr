@@ -38,6 +38,13 @@
   align-items: center;
   text-align: center;
 }
+.post-card .post-body .post-footer .icon-container {
+  border-radius: 50%;
+  align-items: center;
+  padding: 5px;
+  height: 40px;
+  width: 40px;
+}
 .post-card .post-body .post-footer .icon-container#comment:hover {
   color: #5580ff;
   background-color: rgba(85, 128, 255, 0.2862745098);
@@ -45,14 +52,17 @@
 }
 .post-card .post-body .post-footer .icon-container#like:hover {
   color: #ec4b4b;
+  background-color: rgba(236, 75, 75, 0.2862745098);
   cursor: pointer;
 }
 .post-card .post-body .post-footer .icon-container#edit:hover {
   color: #64c982;
+  background-color: rgba(100, 201, 130, 0.2862745098);
   cursor: pointer;
 }
 .post-card .post-body .post-footer .icon-container#delete:hover {
-  color: #a669b1;
+  color: #d48fe0;
+  background-color: rgba(212, 143, 224, 0.2862745098);
   cursor: pointer;
 }
 

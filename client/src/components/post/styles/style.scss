@@ -41,6 +41,14 @@
             height: 40px;
             align-items: center;
             text-align: center;
+
+            .icon-container {
+                border-radius: 50%;
+                align-items: center;
+                padding: 5px;
+                height: 40px;
+                width: 40px;
+            }
     
             .icon-container#comment:hover {
                 color: #5580ff;
@@ -49,15 +57,18 @@
             }
             .icon-container#like:hover {
                 color: #ec4b4b;
+                background-color: #ec4b4b49;
                 cursor: pointer;
             }
-            
+
             .icon-container#edit:hover {
                 color: #64c982;
+                background-color: #64c98249;
                 cursor: pointer;
             }
             .icon-container#delete:hover {
-                color: #a669b1;
+                color: #d48fe0;
+                background-color: #d48fe049;
                 cursor: pointer;
             }
     

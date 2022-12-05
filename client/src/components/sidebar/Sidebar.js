@@ -3,6 +3,7 @@ import {useHistory} from 'react-router-dom'
 import {SiThunderbird} from 'react-icons/si'
 import {RiHomeSmileFill} from 'react-icons/ri'
 import {TbDotsCircleHorizontal} from 'react-icons/tb'
+import {BsFillPersonFill} from 'react-icons/bs'
 import {MdManageAccounts, MdTravelExplore, MdPostAdd} from 'react-icons/md'
 import NewPost from '../post/NewPost'
 import './styles/style.css'
@@ -26,7 +27,7 @@ function Sidebar({ posts, setPosts, layout}) {
     <div className={`Sidebar${layout==='max' ? '' : ' short'}`}>
       <ul className='Sidebar-list'>
         <li id='logo' className='row'>
-          <SiThunderbird size='2em' color='#274d40'/>{layout}
+          <SiThunderbird size='2em' color='#274d40' onClick={()=>history.push('/')}/>
         </li>
         <li id='home' className='row' onClick={()=>history.push('/')}>
           <RiHomeSmileFill id='icon' size='1.8em'/>
@@ -37,7 +38,7 @@ function Sidebar({ posts, setPosts, layout}) {
           {layout === 'max' ? <h2 id='title'>Explore</h2> : <></>}
         </li>
         <li id='Profile' className='row' onClick={()=>history.push(`/profile/${login.user.username}`)}>
-          <MdManageAccounts id='icon' size='1.8em'/>
+          <BsFillPersonFill id='icon' size='1.8em'/>
           {layout ==='max' ? <h2 id='title'>Profile</h2> : <></>}
         </li>
         <li id='Account' className='row' onClick={()=>history.push('/settings/account')}>

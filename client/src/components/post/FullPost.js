@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
+import { LoginContext } from '../../context/LoginContext'
 import {useParams, useHistory} from 'react-router-dom'
 import useGet from '../../hooks/useGet'
 import {BsArrowLeft} from 'react-icons/bs'
@@ -9,11 +10,48 @@ function FullPost() {
     let {post_id} = useParams()
     const history = useHistory()
     const [value, setValue] = useState('')
+    const {login} = useContext(LoginContext)
 
 
     const {data: post, setData: setPost} = useGet(`/posts/${post_id}`)
     const { id, user, location, text, created_at } = post
+    const [replies, setReplies] = useState(post.replies)
 
+    console.log(replies)
+
+    useEffect(() => {
+        setReplies(post.replies)
+    },[post])
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        fetch(`/replies`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                'post_id': id,
+                'user_id': login.user.id,
+                'text_content': value
+            })})
+            .then(res=> {
+                if (res.ok) {
+                    res.json().then(data=> {
+                        // console.log(replies, [...replies, data])
+                        setReplies([...post.replies, data])
+                        setValue('')
+                    })
+                }
+                else {
+                    res.json().then(error=> {
+                        console.log(error)
+                    })
+                }
+            })
+
+        
+    }
 
 
     return (
@@ -44,11 +82,11 @@ function FullPost() {
             <div className='new-comment-form'>
                 <img className='pic' src={user?.avatar} alt='user profile'/>
                 <input type='text' placeholder='Post your reply' value={value} onChange={(e)=>setValue(e.target.value)}/>
-                <button className='round-button' disabled={value==='' ? true : false}>Reply</button>
+                <button className='round-button' onClick={handleSubmit} disabled={value==='' ? true : false}>Reply</button>
             </div>
         
             <div className='comments-list'>
-                {post?.replies?.map((reply)=><Reply atUser={user.username} reply={reply} />)}
+                {replies?.map((reply)=><Reply key={reply.id} atUser={user.username} reply={reply} />)}
             </div>
         </div>
     )

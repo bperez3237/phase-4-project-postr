@@ -1,7 +1,10 @@
 import React from 'react'
 import useGet from '../../hooks/useGet'
+import {useHistory} from 'react-router-dom'
 
 function WhoToFollow() {
+
+  const history = useHistory()
 
   const {data: users, setData: setUsers} = useGet(`/random-three-users`)
 
@@ -11,7 +14,7 @@ function WhoToFollow() {
       <div className='list'>
         {users.map((user) => {
           return (
-            <div className='row' key={user.id}>
+            <div className='row' key={user.id} onClick={()=>history.push(`/profile/${user.username}`)}>
               <div className='profile-pic'>
                 <img className='pic' src={user.avatar} alt='user profile'/>
               </div>
