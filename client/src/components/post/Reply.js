@@ -1,6 +1,5 @@
 import React from 'react'
 import useGet from '../../hooks/useGet'
-import PostFooter from './PostFooter'
 
 function Reply({reply, atUser}) {
     const { text_content, created_at} = reply

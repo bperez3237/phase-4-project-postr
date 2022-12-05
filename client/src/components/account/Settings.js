@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import {Route, Switch,  useRouteMatch, useParams} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 
 import './styles/style.css'
 import {storage} from '../../firebase'
@@ -11,7 +11,6 @@ import Account from "./Account";
 import Notifications from "./Notifications";
 
 function Settings({login, setLogin}) {
-    // let {url} = useRouteMatch()
     const [title, setTitle] = useState('')
     const [avatarUrl, setAvatarUrl] = useState('')
     const [file, setFile] = useState(null)

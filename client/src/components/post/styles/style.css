@@ -34,20 +34,26 @@
 .post-card .post-body .post-footer {
   display: flex;
   justify-content: space-between;
-  height: 30px;
+  height: 40px;
   align-items: center;
   text-align: center;
 }
-.post-card .post-body .post-footer svg {
-  cursor: pointer;
-}
-.post-card .post-body .post-footer #comment:hover {
+.post-card .post-body .post-footer .icon-container#comment:hover {
   color: #5580ff;
   background-color: rgba(85, 128, 255, 0.2862745098);
+  cursor: pointer;
 }
-.post-card .post-body .post-footer #like:hover {
+.post-card .post-body .post-footer .icon-container#like:hover {
   color: #ec4b4b;
-  background-color: rgba(236, 75, 75, 0.2470588235);
+  cursor: pointer;
+}
+.post-card .post-body .post-footer .icon-container#edit:hover {
+  color: #64c982;
+  cursor: pointer;
+}
+.post-card .post-body .post-footer .icon-container#delete:hover {
+  color: #a669b1;
+  cursor: pointer;
 }
 
 .comment-form {

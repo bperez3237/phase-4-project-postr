@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {useParams, useHistory} from 'react-router-dom'
 import useGet from '../../hooks/useGet'
-import PostHeader from './PostHeader'
 import {BsArrowLeft} from 'react-icons/bs'
 import FullPostFooter from './FullPostFooter'
 import Reply from './Reply'

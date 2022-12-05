@@ -45,6 +45,6 @@ class PostsController < ApplicationController
         post.update(text: params[:text])
         location = Location.find(params[:location_id])
         posts = location.posts
-        render json: posts, include: [:user, :likes]
+        render json: posts, each_serializer: PostSerializer
     end
 end

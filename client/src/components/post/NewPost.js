@@ -40,12 +40,6 @@ function NewPost({ posts, setPosts}) {
               console.log(error)
             })
           }
-          //   r.json())
-          // .then((posts)=>{
-          //   console.log('here')
-          //   setPosts(posts)
-          //   setText('')
-          // })
       })
     }
   

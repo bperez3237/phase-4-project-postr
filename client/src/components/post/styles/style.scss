@@ -38,23 +38,30 @@
         .post-footer {
             display: flex;
             justify-content: space-between;
-            height: 30px;
+            height: 40px;
             align-items: center;
             text-align: center;
     
-            svg {
+            .icon-container#comment:hover {
+                color: #5580ff;
+                background-color: #5580ff49;
+                cursor: pointer;
+            }
+            .icon-container#like:hover {
+                color: #ec4b4b;
+                cursor: pointer;
+            }
+            
+            .icon-container#edit:hover {
+                color: #64c982;
+                cursor: pointer;
+            }
+            .icon-container#delete:hover {
+                color: #a669b1;
                 cursor: pointer;
             }
     
-            #comment:hover {
-                color: #5580ff;
-                background-color: #5580ff49;
-            }
-            
-            #like:hover {
-                color: #ec4b4b;
-                background-color: #ec4b4b3f;
-            }
+        
         }
     }
 
