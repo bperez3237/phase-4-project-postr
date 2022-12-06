@@ -3,6 +3,7 @@ import Post from './Post'
 import './styles/style.css'
 
 function PostList({posts, setPosts, login, editable}) {
+    
 
     function handleLike(liked, postId) {
         if (!liked) {

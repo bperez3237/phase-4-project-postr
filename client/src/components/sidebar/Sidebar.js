@@ -4,7 +4,7 @@ import {SiThunderbird} from 'react-icons/si'
 import {RiHomeSmileFill} from 'react-icons/ri'
 import {TbDotsCircleHorizontal} from 'react-icons/tb'
 import {BsFillPersonFill} from 'react-icons/bs'
-import {MdManageAccounts, MdTravelExplore, MdPostAdd} from 'react-icons/md'
+import {MdTravelExplore, MdPostAdd} from 'react-icons/md'
 import NewPost from '../post/NewPost'
 import './styles/style.css'
 import UserProfile from './UserProfile'
@@ -27,7 +27,7 @@ function Sidebar({ posts, setPosts, layout}) {
     <div className={`Sidebar${layout==='max' ? '' : ' short'}`}>
       <ul className='Sidebar-list'>
         <li id='logo' className='row'>
-          <SiThunderbird size='2em' color='#274d40' onClick={()=>history.push('/')}/>
+          <SiThunderbird size='2em' onClick={()=>history.push('/')}/>
         </li>
         <li id='home' className='row' onClick={()=>history.push('/')}>
           <RiHomeSmileFill id='icon' size='1.8em'/>

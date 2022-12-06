@@ -93,4 +93,8 @@
 #logo {
   width: 100%;
   float: left;
+}
+
+li#logo svg {
+  color: var(--main-dark-color);
 }/*# sourceMappingURL=style.css.map */

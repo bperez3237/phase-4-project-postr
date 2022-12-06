@@ -86,7 +86,7 @@
   align-items: center;
   padding: 10px;
 
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 .Feed-heading h2 {

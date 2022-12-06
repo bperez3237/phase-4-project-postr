@@ -3,6 +3,7 @@ import {useState} from 'react'
 import PostFooter from "./PostFooter";
 import PostHeader from "./PostHeader";
 import { useHistory } from "react-router-dom";
+import { ConvertTime } from "./utils/ConvertTime";
 
 function Post({post, setPosts, userAccess, editable, handleLike, handleDelete, handleEdit, currentUser}) {
     const history = useHistory()
@@ -34,9 +35,9 @@ function Post({post, setPosts, userAccess, editable, handleLike, handleDelete, h
                 <img className='pic' src={user.avatar} alt='user profile'/>
             </div>
             <div className="post-body">
-                <PostHeader name={user.name} username={user.username} />
+                <PostHeader name={user.name} username={user.username} time={ConvertTime(post.created_at)}/>
                 {editingToggle ? <form><input value={postText} onChange={handleChange}/></form> : <p>{postText}</p>}
-                <p style={{fontSize:'12px'}}>{location.name} - {created_at.slice(0,10)} - {created_at.slice(11,16)}</p>
+                {/* <p style={{fontSize:'12px'}}>{location.name} - {created_at.slice(0,10)} - {created_at.slice(11,16)}</p> */}
                 <PostFooter currentUser={currentUser} userAccess={userAccess} editable={editable} handleLike={handleLike} handleDelete={handleDelete} onEdit={onEdit} editingToggle={editingToggle} post={post} setPosts={setPosts} />
             </div>
             
