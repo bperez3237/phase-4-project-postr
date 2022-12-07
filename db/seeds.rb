@@ -9,27 +9,26 @@ Location.destroy_all
 Like.destroy_all
 
 puts 'seeding users'
-my_user = User.create(username: 'brian123', password_digest: 'password',name: 'Brian')
-u1 = User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u2 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u3 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u4 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u5 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u6 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u7 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u8 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u9 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u10 = User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u11 = User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u12 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u13 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u14 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u15 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u16 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u17 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u18 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u19 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
-u20 = User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name )
+u1 = User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916')
+u2 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u3 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u4 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u5 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u6 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u7 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u8 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u9 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u10 = User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u11 = User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u12 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u13 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u14 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u15 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u16 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u17 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u18 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u19 =  User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
+u20 = User.create(username: Faker::Internet.unique.username, password_digest: Faker::Internet.unique.password, name: Faker::Name.name, avatar: 'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916' )
 
 
 puts 'seeding locations'
@@ -48,7 +47,7 @@ l12 = Location.create(name: Faker::Address.unique.city , country: Faker::Address
 
 
 puts 'seeding posts'
-for i in 1..100 do
+for i in 1..500 do
     Post.create(user_id: User.order('RANDOM()').first.id, location_id: Location.order('RANDOM()').first.id, text: Faker::Twitter.status[:text])
 end
 
