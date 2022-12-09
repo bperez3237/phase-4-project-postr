@@ -6,7 +6,6 @@ function NewPost({ posts, setPosts}) {
     const [text, setText] = useState('')
     const {login} = useContext(LoginContext)
 
-
     const buttonStyle = text==='' ? {} : {
       backgroundColor: '#274d40',
     }

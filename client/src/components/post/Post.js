@@ -7,7 +7,7 @@ import { ConvertTime } from "./utils/ConvertTime";
 
 function Post({post, setPosts, userAccess, editable, handleLike, handleDelete, handleEdit, currentUser}) {
     const history = useHistory()
-    const { id, user, location, text, created_at } = post
+    const { id, user, text } = post
     const [editingToggle, setEditingToggle] = useState(false)
     const [postText,setPosttext] = useState(text)
 
@@ -24,10 +24,6 @@ function Post({post, setPosts, userAccess, editable, handleLike, handleDelete, h
     }
 
     function handlePostClick(e) {
-        console.log(`${e.target.className}`)
-        // console.log(`${e.target.parentNode.className}`)
-        // console.log(e)
-        // console.log(e.target == 'div.post-body')
         if (e.target.className==='post-body' ||
          e.target.className==='post-card' ||
          e.target.className==='profile-pic' ||

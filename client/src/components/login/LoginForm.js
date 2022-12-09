@@ -1,10 +1,11 @@
 import React from "react";
 import {useState, useEffect} from 'react'
+import ErrorMessage from "../errors/ErrorMessage";
 
 function LoginForm({loginState, setLoginState}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [errors, setErrors] = useState([]);
+    const [errors, setErrors] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [locations, setLocations] = useState([])
 
@@ -59,7 +60,7 @@ function LoginForm({loginState, setLoginState}) {
 
     return (
         <form  className="login-form" onSubmit={handleSubmit}>
-
+            {errors ? <ErrorMessage errors={errors} setErrors={setErrors}/> : null}
             <div className="mb-4">
                 <label>Username</label>
                     <input

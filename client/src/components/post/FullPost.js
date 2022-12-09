@@ -11,7 +11,7 @@ function FullPost() {
     const history = useHistory()
     const [value, setValue] = useState('')
     const {login} = useContext(LoginContext)
-    const {data: post, setData: setPost} = useGet(`/posts/${post_id}`)
+    const {data: post} = useGet(`/posts/${post_id}`)
     const { id, user, location, text, created_at } = post
     const [replies, setReplies] = useState(post.replies)
 

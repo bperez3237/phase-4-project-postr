@@ -1,19 +1,16 @@
 import React, {useState} from "react";
 import {storage} from '../../firebase'
 import {ref, getDownloadURL} from 'firebase/storage'
+import ErrorMessage from "../errors/ErrorMessage";
 
 function SignUpForm({setLoginState, loginState}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
     const [name,setName] = useState("")
-    const [errors, setErrors] = useState([]);
-    // const [isLoading, setIsLoading] = useState(false);
+    const [errors, setErrors] = useState(null);
     const [avatarUrl, setAvatarUrl] = useState('')
 
-    // getDownloadURL(ref(storage, `images/`))
-    // .then((url)=>setAvatarUrl(url))
-    // .catch((error)=>console.log(error))
 
     getDownloadURL(ref(storage, `images/default_image/twitter-avi-gender-balanced-figure.png`))
     .then((url)=>setAvatarUrl(url))
@@ -52,6 +49,7 @@ function SignUpForm({setLoginState, loginState}) {
     console.log(errors)
     return (
         <form className='login-form' onSubmit={handleSubmit}>
+        {errors ? <ErrorMessage errors={errors} setErrors={setErrors}/> : null}
         <div>
           <label>Username</label>
           <input

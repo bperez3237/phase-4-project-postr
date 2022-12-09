@@ -4,7 +4,7 @@ import {IoImageOutline} from 'react-icons/io5'
 function CommentForm({post, setPosts, currentUser}) {
     const [comment, setComment] = useState('')
 
-    const buttonStyle ={
+    const buttonStyle = comment==='' ? {} : {
         backgroundColor: 'black',
     }
 
@@ -31,25 +31,22 @@ function CommentForm({post, setPosts, currentUser}) {
 
 
     return (
-        <div className='comment-form'>
+        <div className='comment-card'>
             <div className='profile-pic'>
               <img className='pic' src={currentUser.avatar} alt='user profile'/>
             </div>
-            <div className='comment-body'>
-                <form>
-                    <input placeholder='Post here' value={comment} onChange={(e)=>setComment(e.target.value)} />
-                </form>
+            <form className='comment-form'>
+                <input placeholder='Post here' value={comment} onChange={(e)=>setComment(e.target.value)} />
                 <div className='form-footer'>
                     <div className='image-upload'>
-                    <label htmlFor='file-input'>
-                        <IoImageOutline />
-                    </label>
-                    <input id='file-input' type='file' />
+                        <label htmlFor='file-input'>
+                            <IoImageOutline />
+                        </label>
+                        <input id='file-input' type='file' />
                     </div>
-                    {/* <RoundButton type="submit" text={text} setText={setText} setPosts={setPosts} user={user} location={location}/> */}
                     <button style={buttonStyle} className='round-button' type='submit' onClick={handleSubmit} disabled={comment==='' ? true : false}>Reply</button>
                 </div>
-            </div>
+            </form>
         </div>
   )
 }

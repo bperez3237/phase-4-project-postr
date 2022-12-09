@@ -20,17 +20,17 @@ function PostFooter({userAccess, editable, handleLike, handleDelete, onEdit, edi
   return (
     <div className="post-footer">
         {toggle ? <Popup onClose={setToggle} Component={commentFormElement}/> : <></>}
-        <div id='comment' className='icon-container'>
-         <FaRegComment id='comment' onClick={handleComment}/>{"  "}{replies.length}
+        <div id='comment' className='icon-container' onClick={handleComment}>
+         <FaRegComment id='comment' />{"  "}{replies.length}
         </div>
-        <div id='like' className='icon-container'>
-          {liked ? <FaHeart id='like' onClick={()=>handleLike(liked, id)} color='red'/> : <FiHeart id='like' onClick={()=>handleLike(liked, id)} />}{"  "}{likes.length}
+        <div id='like' className='icon-container' onClick={()=>handleLike(liked, id)}>
+          {liked ? <FaHeart id='like' color='red'/> : <FiHeart id='like' onClick={()=>handleLike(liked, id)} />}{"  "}{likes.length}
         </div>
-        <div id='edit' className='icon-container'>
-          {userAccess && editable ? (editingToggle ? <FaEdit id='edit' onClick={()=>onEdit(id)} color='#64c982'/> : <FiEdit id='edit' onClick={()=>onEdit(id)}/>) : <></>}
+        <div id='edit' className='icon-container' onClick={()=>onEdit(id)}>
+          {userAccess && editable ? (editingToggle ? <FaEdit id='edit' color='#64c982'/> : <FiEdit id='edit' onClick={()=>onEdit(id)}/>) : <></>}
         </div>
-        <div id='delete' className='icon-container'>
-          {userAccess && editable ? <FaTrashAlt id='delete' onClick={()=>handleDelete(id)} /> : <></>}
+        <div id='delete' className='icon-container' onClick={()=>handleDelete(id)} >
+          {userAccess && editable ? <FaTrashAlt id='delete' /> : <></>}
         </div>
     </div>
   )
