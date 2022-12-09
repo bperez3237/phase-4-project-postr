@@ -11,9 +11,11 @@ One thing to note. The React front-end is stored in the client folder. '--prefix
 After cloning, make sure to first install all dependencies:
 
 ```bash
-bundle install```
+bundle install
+```
 ```bash
-npm install --prefix client```
+npm install --prefix client
+```
 
 To open the application setup the rails server:
 
