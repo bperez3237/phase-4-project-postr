@@ -54,7 +54,6 @@ function Settings({login, setLogin}) {
     return (
         <div className="settings">
             <SettingsSidebar/>
-            {/* <img src={'https://firebasestorage.googleapis.com/v0/b/postr-f650a.appspot.com/o/images%2Fdefault_image%2Ftwitter-avi-gender-balanced-figure.png?alt=media&token=b7b78059-9b81-46d6-b5fb-63f37a714916'} /> */}
             <div className="content">
                 <Switch>
                     <Route path='/settings/account' >

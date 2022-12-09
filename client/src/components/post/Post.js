@@ -24,7 +24,16 @@ function Post({post, setPosts, userAccess, editable, handleLike, handleDelete, h
     }
 
     function handlePostClick(e) {
-        if (e.target.localName!=='svg' && e.target.localName!=='path') {
+        console.log(`${e.target.className}`)
+        // console.log(`${e.target.parentNode.className}`)
+        // console.log(e)
+        // console.log(e.target == 'div.post-body')
+        if (e.target.className==='post-body' ||
+         e.target.className==='post-card' ||
+         e.target.className==='profile-pic' ||
+         e.target.className==='post-text' ||
+         e.target.className==='post-footer' ||
+         e.target.className==='post-header') {
             history.push(`/full-post/${id}`)
         }
     }
@@ -36,7 +45,7 @@ function Post({post, setPosts, userAccess, editable, handleLike, handleDelete, h
             </div>
             <div className="post-body">
                 <PostHeader name={user.name} username={user.username} time={ConvertTime(post.created_at)}/>
-                {editingToggle ? <form><input value={postText} onChange={handleChange}/></form> : <p>{postText}</p>}
+                {editingToggle ? <form><input value={postText} onChange={handleChange}/></form> : <p className='post-text'>{postText}</p>}
                 {/* <p style={{fontSize:'12px'}}>{location.name} - {created_at.slice(0,10)} - {created_at.slice(11,16)}</p> */}
                 <PostFooter currentUser={currentUser} userAccess={userAccess} editable={editable} handleLike={handleLike} handleDelete={handleDelete} onEdit={onEdit} editingToggle={editingToggle} post={post} setPosts={setPosts} />
             </div>
