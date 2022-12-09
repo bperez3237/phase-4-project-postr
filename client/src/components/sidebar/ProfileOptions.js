@@ -5,7 +5,10 @@ function ProfileOptions({setLogin}) {
   function handleLogoutClick() {
     fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
-        setLogin({});
+        setLogin({
+          location: null,
+          user: null,
+        });
       }
     });
   }

@@ -6,26 +6,25 @@ function LoginForm({loginState, setLoginState}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
-    const [locations, setLocations] = useState([])
+    const [selectedLocation, setSelectedLocation] = useState(null)
+    const [allLocations, setAllLocations] = useState([])
 
     useEffect(()=>{
         fetch('/locations')
             .then((r)=>r.json())
             .then((locations)=>{
-                setLoginState({...loginState, location: locations[0]})
-                setLocations(locations)
+                setAllLocations(locations)
+                setSelectedLocation(locations[0])
             })
     },[])
    
     function handleSubmit(e) {
         e.preventDefault();
-        setIsLoading(true);
 
         const loginObj = {
             username: username,
             password: password,
-            location_id: loginState.location?.id
+            location_id: selectedLocation.id
         }
 
         fetch("/login", {
@@ -35,10 +34,9 @@ function LoginForm({loginState, setLoginState}) {
             },
             body: JSON.stringify(loginObj),
             }).then((r) => {
-                setIsLoading(false);
                 if (r.ok) {
-                    r.json().then((user) => {
-                        setLoginState({...loginState, user: user})
+                    r.json().then((login) => {
+                        setLoginState(login)
                     });
                 } else {
                     r.json().then((err) => setErrors(err.errors));
@@ -56,7 +54,7 @@ function LoginForm({loginState, setLoginState}) {
             })
     }
 
-    const optionElements = locations.map((location)=><option key={location.id} value={location.id}>{location.name}</option>)
+    const optionElements = allLocations.map((location)=><option key={location.id} value={location.id}>{location.name}</option>)
 
     return (
         <form  className="login-form" onSubmit={handleSubmit}>
@@ -83,7 +81,7 @@ function LoginForm({loginState, setLoginState}) {
                     />
             </div>
                 <select value={loginState.location?.id} onChange={handleChange}>
-                    {locations ? optionElements : <></>}
+                    {allLocations ? optionElements : <></>}
                 </select>
             <button style={{width:'100%', fontWeight:'600px'}} className='round-button' type='submit'>Login</button>
         </form>

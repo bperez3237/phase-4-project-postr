@@ -39,14 +39,13 @@ function SignUpForm({setLoginState, loginState}) {
         if (r.ok) {
           r.json().then((user) => {
             setLoginState({...loginState, user: user})
-            // onLogin(user)
           });
         } else {
           r.json().then((err) => setErrors(err.errors));
         }
       });
     }
-    console.log(errors)
+
     return (
         <form className='login-form' onSubmit={handleSubmit}>
         {errors ? <ErrorMessage errors={errors} setErrors={setErrors}/> : null}

@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
         if user&.authenticate(params[:password])
             session[:user_id] = user.id
             session[:location_id] = location.id
-            render json: user, status: :created
+            login_state = {user: user, location: location}
+            render json: login_state, status: :created
         else
             render json: { errors: "Invalid username or password" }, status: :unauthorized
         end
@@ -15,8 +16,10 @@ class SessionsController < ApplicationController
 
     def destroy
         user = User.find_by(id: session[:user_id])
-        if user
+        location = Location.find_by(id: session[:location_id])
+        if user && location
             session.delete :user_id
+            session.delete :location_id
             head :no_content
         else
             render json: {errors: user.errors.full_messages}, status: :unauthorized
