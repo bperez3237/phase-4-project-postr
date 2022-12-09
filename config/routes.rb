@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:show, :index, :update]
   end
 
-  get '/users/:username', to: 'users#show'
+  get '/users/:user', to: 'users#show'
   get '/users/:username/posts', to: 'posts#index'
   get '/users/:username/likes', to: 'users#user_likes'
   

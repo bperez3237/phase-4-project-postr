@@ -1,9 +1,8 @@
 import React, {useContext} from 'react'
 import { LoginContext } from '../../context/LoginContext'
-import {Route, Switch,  useRouteMatch, useParams} from 'react-router-dom'
+import {Route, Switch,  useRouteMatch} from 'react-router-dom'
 import FeedHeading from './FeedHeading'
 import PostList from '../post/PostList'
-import useGet from '../../hooks/useGet'
 
 function Feed({ pathState, setPathState, posts, setPosts}) {
   let { url } = useRouteMatch()

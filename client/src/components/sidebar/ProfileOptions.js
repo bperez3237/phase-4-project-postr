@@ -18,9 +18,9 @@ function ProfileOptions({setLogin}) {
     <div className='options'>
         <div className='arrow'></div>
         <div id='logout' className='option-row' onClick={handleLogoutClick}>Logout</div>
-        <div className='option-row'>1</div>
+        {/* <div className='option-row'>1</div>
         <div className='option-row'>2</div> 
-        <div className='option-row'>3ejrnvkerjnvkrejfv</div>
+        <div className='option-row'>3ejrnvkerjnvkrejfv</div> */}
     </div>
   )
 }
