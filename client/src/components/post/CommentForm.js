@@ -36,7 +36,7 @@ function CommentForm({post, setPosts, currentUser}) {
               <img className='pic' src={currentUser.avatar} alt='user profile'/>
             </div>
             <form className='comment-form'>
-                <input placeholder='Post here' value={comment} onChange={(e)=>setComment(e.target.value)} />
+                <input placeholder='Post reply here' value={comment} onChange={(e)=>setComment(e.target.value)} />
                 <div className='form-footer'>
                     <div className='image-upload'>
                         <label htmlFor='file-input'>

@@ -10,12 +10,11 @@
   cursor: pointer;
 }
 .user-profile .image {
-  min-width: 80px;
-  min-height: 80px;
   display: grid;
+  justify-content: center;
+  align-items: center;
 }
 .user-profile .image .pic {
-  margin: 10px;
   border: 1px;
   border-style: solid;
   border-color: white;

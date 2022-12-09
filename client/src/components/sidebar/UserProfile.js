@@ -24,9 +24,7 @@ function UserProfile({ layout}) {
                         <FiMoreHorizontal size='1.5em' color=''/>
                     </div>
                 </>
-            ) : (
-                <></>
-            )}
+            ) : null}
         </div>
   )
 }

@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
-import {HiMagnifyingGlass} from 'react-icons/hi2'
+import {BiSearch} from 'react-icons/bi'
 
 function Searchbar() {
   const [search, setSearch] = useState('')
   
   return (
     <div className='Searchbar'>
-      <HiMagnifyingGlass />
+      <BiSearch />
       <input 
         type='text' 
         placeholder='Search Twitter' 

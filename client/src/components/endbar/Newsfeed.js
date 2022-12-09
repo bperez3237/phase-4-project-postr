@@ -15,7 +15,7 @@ function Newsfeed() {
 
   const {data: news} = useGet(url)
 
-  const newsCards = news.articles?.slice(0,3).map((article, index) => {
+  const newsCards = news.articles?.slice(0,6).map((article, index) => {
     return <NewsCard key={index} props={article} />
   })
 

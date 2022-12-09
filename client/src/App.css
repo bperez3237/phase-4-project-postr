@@ -165,6 +165,8 @@
 
 .popup-content svg {
   margin: 10px;
+  position: relative;
+  left: 0;
   /* float: left; */
 }
 

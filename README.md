@@ -2,19 +2,26 @@
 
 # POSTR App
 
-This app mimics a social media website with one main difference; the local posts are based on locations. So users can only interact with the people at the location they log in from. A user can like other users' posts, and delete and edit their own posts. New posts can be created by the user and are added to the top.
-
-The app is created used a rails server and react frontend. 
+Postr is a Ruby on Rails & React Twitter clone with one main difference: posts are separated by location. Users can post and comment on posts in their current location, but only view posts in different locations. Otherwise, the application style is meant to mimic twitter except green is used instead of blue. 
 
 ## Getting Started
 
-After cloning, to setup the rails server run:
+One thing to note. The React front-end is stored in the client folder. '--prefix client' must be added to npm commands to run.
+
+After cloning, make sure to first install all dependencies:
+
+```bash
+bundle install```
+```bash
+npm install --prefix client```
+
+To open the application setup the rails server:
 
 ```bash
 rails s
 ```
 
-and to setup the react server run:
+And to setup the react server run:
 
 ```bash
 npm start --prefix client
@@ -27,7 +34,15 @@ rails db:migrate db:seed
 ```
 
 
-## Potential Changes
+## Current Features
 
-Currently, the locations to log in from are selected from a dropdown. It would make sense for a user only to be able to log in from the location they are actually at. This would greatly change the way people use the app since their POSTR networks will be all local.
+Currently, users are able to post text, like posts, and comment on posts. A user is able to edit and delete their own tweets, but only if they are logged in from the correct location. 
+
+The explore page allows users to see all the other locations and view the posts there. Editng and deleting posts is disabled from this page.
+
+Each username will have its own profile, and just like on twitter, each profile shows the users posts and likes. 
+
+## Upcoming Features
+
+Re-posting, following/followers, and direct messages are still to be added. Also, account settings will have more optinons beyond just uploading a profile picture. Banner images and editing User data will be included as well.
 
