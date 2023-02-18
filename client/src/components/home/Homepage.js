@@ -8,7 +8,7 @@ import NewPost from "../post/NewPost";
 function Homepage({login, posts, setPosts}) {
 
     useEffect(()=>{
-        fetch(`/locations/${login.location.id}/posts`)
+        fetch(`/locations/${login.location?.id}/posts`)
             .then(r=>r.json())
             .then(data=>setPosts(data))
     },[login, setPosts])
