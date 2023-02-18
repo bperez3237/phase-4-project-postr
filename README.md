@@ -1,50 +1,43 @@
 
+# Postr Application
 
-# POSTR App
-
-Postr is a Ruby on Rails & React Twitter clone with one main difference: posts are separated by location. Users can post and comment on posts in their current location, but only view posts in different locations. Otherwise, the application style is meant to mimic twitter except green is used instead of blue. 
+Postr is a Twitter-like app built with Ruby on Rails and React, which sorts posts based on their location. Users can create and comment on posts in their current location, but can only view posts from different locations. The app's design is similar to Twitter, but with green instead of blue as the primary color.
 
 ## Getting Started
 
-One thing to note. The React front-end is stored in the client folder. '--prefix client' must be added to npm commands to run.
+Note that the React front-end is located in the client folder, so "--prefix client" must be included in npm commands to run.
 
-After cloning, make sure to first install all dependencies:
+After cloning, make sure to install all dependencies:
 
 ```bash
 bundle install
-```
-```bash
 npm install --prefix client
 ```
 
-To open the application setup the rails server:
+To start the application, run the Rails server:
 
 ```bash
 rails s
 ```
-
-And to setup the react server run:
+And run the React server:
 
 ```bash
 npm start --prefix client
 ```
-
-There is some code in db/seed.rb file to start. Run the migrations and seed files:
+To populate the database with initial data, run the migrations and seed files located in the db/seed.rb file:
 
 ```bash
 rails db:migrate db:seed
 ```
 
-
 ## Current Features
 
-Currently, users are able to post text, like posts, and comment on posts. A user is able to edit and delete their own tweets, but only if they are logged in from the correct location. 
+Currently, users can create text posts, like posts, and comment on posts. Users can edit and delete their own posts, but only if they are logged in from the correct location.
 
-The explore page allows users to see all the other locations and view the posts there. Editng and deleting posts is disabled from this page.
+The Explore page enables users to view posts from all other locations. Editing and deleting posts are disabled from this page.
 
-Each username will have its own profile, and just like on twitter, each profile shows the users posts and likes. 
+Each user has their own profile, which displays their posts and likes, similar to Twitter.
 
 ## Upcoming Features
 
-Re-posting, following/followers, and direct messages are still to be added. Also, account settings will have more optinons beyond just uploading a profile picture. Banner images and editing User data will be included as well.
-
+Reposting, following/followers, and direct messages will be added in the future. Additionally, account settings will have more options beyond just uploading a profile picture. Banner images and editing user data will be included.
