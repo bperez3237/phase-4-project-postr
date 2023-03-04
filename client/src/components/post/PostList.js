@@ -63,7 +63,7 @@ function PostList({posts, setPosts, login, editable}) {
             .then((posts)=>setPosts(posts))
     }
 
-    const postElements = posts.sort((a,b)=> Date.parse(b.created_at) - Date.parse(a.created_at)).map((post)=>{
+    const postElements = posts?.sort((a,b)=> Date.parse(b.created_at) - Date.parse(a.created_at)).map((post)=>{
         return <Post 
         key={post.id} 
         post={post}
