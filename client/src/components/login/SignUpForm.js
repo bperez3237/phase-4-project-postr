@@ -3,7 +3,7 @@ import {storage} from '../../firebase'
 import {ref, getDownloadURL} from 'firebase/storage'
 import ErrorMessage from "../errors/ErrorMessage";
 
-function SignUpForm({setLoginState, loginState}) {
+function SignUpForm({setLoginState, loginState, handleChange, optionElements, allLocations, selectedLocation}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -21,7 +21,6 @@ function SignUpForm({setLoginState, loginState}) {
     function handleSubmit(e) {
       e.preventDefault();
       setErrors(null);
-      // setIsLoading(true);
       fetch("/signup", {
         method: "POST",
         headers: {
@@ -32,13 +31,13 @@ function SignUpForm({setLoginState, loginState}) {
           password,
           password_confirmation: passwordConfirmation,
           name: name,
-          avatar: avatarUrl
+          avatar: avatarUrl,
+          location_id: selectedLocation.id
         }),
       }).then((r) => {
-        // setIsLoading(false);
         if (r.ok) {
-          r.json().then((user) => {
-            setLoginState({...loginState, user: user})
+          r.json().then((login) => {
+            setLoginState(login)
           });
         } else {
           r.json().then((err) => setErrors(err.errors));
@@ -56,6 +55,7 @@ function SignUpForm({setLoginState, loginState}) {
             id="username"
             autoComplete="off"
             value={username}
+            placeholder="Enter Username"
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
@@ -65,6 +65,7 @@ function SignUpForm({setLoginState, loginState}) {
             type="password"
             id="password"
             value={password}
+            placeholder="Enter Password"
             onChange={(e) => setPassword(e.target.value)}
             autoComplete="current-password"
           />
@@ -75,6 +76,7 @@ function SignUpForm({setLoginState, loginState}) {
             type="password"
             id="password_confirmation"
             value={passwordConfirmation}
+            placeholder="Confirm Password"
             onChange={(e) => setPasswordConfirmation(e.target.value)}
             autoComplete="current-password"
           />
@@ -88,6 +90,10 @@ function SignUpForm({setLoginState, loginState}) {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
+        <br />
+        <select value={loginState.location?.id} onChange={handleChange}>
+          {allLocations ? optionElements : <></>}
+        </select>
         <button style={{width:'100%'}} className='round-button' type='submit'>Signup</button>
       </form>
     )

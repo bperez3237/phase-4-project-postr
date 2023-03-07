@@ -4,9 +4,12 @@ class UsersController < ApplicationController
     
     def create
         user = User.create(user_params)
+        location = Location.find(params[:location_id])
         if user.valid?
             session[:user_id] = user.id
-            render json: user, status: :created
+            session[:location_id] = location.id
+            login_state = {user: user, location: location}
+            render json: login_state, status: :created
         else
             render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
         end

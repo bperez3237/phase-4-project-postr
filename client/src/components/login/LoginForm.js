@@ -1,22 +1,12 @@
-import React from "react";
-import {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import ErrorMessage from "../errors/ErrorMessage";
 
-function LoginForm({loginState, setLoginState}) {
+function LoginForm({loginState, setLoginState, handleChange, optionElements, allLocations, selectedLocation}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState(null);
-    const [selectedLocation, setSelectedLocation] = useState(null)
-    const [allLocations, setAllLocations] = useState([])
 
-    useEffect(()=>{
-        fetch('/locations')
-            .then((r)=>r.json())
-            .then((locations)=>{
-                setAllLocations(locations)
-                setSelectedLocation(locations[0])
-            })
-    },[])
+   
    
     function handleSubmit(e) {
         e.preventDefault();
@@ -45,17 +35,6 @@ function LoginForm({loginState, setLoginState}) {
     }
 
 
-    function handleChange(e) {
-        fetch(`/locations/${e.target.value}`)
-            .then((r)=>r.json())
-            .then((location)=>{
-                // setLocation(location)
-                setLoginState({...loginState, location: location})
-            })
-    }
-
-    const optionElements = allLocations.map((location)=><option key={location.id} value={location.id}>{location.name}</option>)
-
     return (
         <form  className="login-form" onSubmit={handleSubmit}>
             {errors ? <ErrorMessage errors={errors} setErrors={setErrors}/> : null}
@@ -66,7 +45,7 @@ function LoginForm({loginState, setLoginState}) {
                         id="username"
                         autoComplete="off"
                         value={username}
-                        placeholder="Enter Email"
+                        placeholder="Enter Username"
                         onChange={(e) => setUsername(e.target.value)}/>
             </div>
             <div className="mb-4">
@@ -80,6 +59,7 @@ function LoginForm({loginState, setLoginState}) {
                         onChange={(e) => setPassword(e.target.value)}
                     />
             </div>
+            <br />
                 <select value={loginState.location?.id} onChange={handleChange}>
                     {allLocations ? optionElements : <></>}
                 </select>

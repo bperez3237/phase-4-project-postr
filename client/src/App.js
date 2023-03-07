@@ -22,6 +22,7 @@ function App() {
 
 
   const {data: login, setData: setLogin} = useGet('/me')
+  console.log(login)
 
   const layoutState = maxMatch ? (minMatch ? "medium" : "min") : 'max'
 

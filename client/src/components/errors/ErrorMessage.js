@@ -2,16 +2,18 @@ import React from 'react'
 import './styles/style.css'
 
 function ErrorMessage({errors, setErrors}) {
-    console.log(errors)
+  console.log(errors)
   return (
     <div className='error-message'>
         Error!
-        <ul>{errors.map((error, index)=>{
+        <br />
+        {/* <ul>{errors.map((error, index)=>{
             return <li key={index}>{error}</li>
-        })}</ul>
-        <p onClick={()=>setErrors(null)}>Close</p>
+        })}</ul> */}
+        <p>{errors}</p>
+        <button onClick={()=>setErrors(null)} className='round-button'>Close</button>
     </div>
   )
 }
 
-export default ErrorMessage
+export default ErrorMessage;
