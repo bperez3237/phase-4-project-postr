@@ -4,7 +4,7 @@
 
     .sidebar {
         min-width: 40%;
-
+        padding: 1rem;
         border-right: 1px solid var(--main-light-color);
 
         .sidebar-container {
@@ -29,4 +29,17 @@
 .your-account {
     display: flex;
     flex-direction: column;
+    padding: 1rem;
+
+    .account-options {
+        padding: 10px 0;
+    }
+}
+
+.notification-settings {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    
 }

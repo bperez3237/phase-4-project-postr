@@ -10,7 +10,7 @@ function Account({title, setTitle, file, setFile, uploadImage}) {
             <p>See information about your account, download an archive of your data, or learn about your account deactivation options</p>
         </div>
         <div className='account-options'>
-            <div className='option' onClick={()=>setToggle(!toggle)}>Change profile Picture</div>
+            <button className='option' onClick={()=>setToggle(!toggle)}>Change profile Picture</button>
         </div>
          {toggle ? <form id='profile-pic-upload'>
                 <label>Title: </label>

@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Notifications() {
   return (
-    <div>Notifications</div>
+    <div className='notification-settings'>Notifications</div>
   )
 }
