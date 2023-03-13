@@ -9,10 +9,12 @@ import {v4} from 'uuid'
 import SettingsSidebar from "./SettingsSidebar";
 import Account from "./Account";
 import Notifications from "./Notifications";
+// import uploadImage from "./utils/uploadUtils";
 
 function Settings({login, setLogin}) {
     const [title, setTitle] = useState('')
     const [avatarUrl, setAvatarUrl] = useState('')
+    const [bannerUrl, setBannerUrl] = useState('')
     const [file, setFile] = useState(null)
 
     
@@ -28,6 +30,21 @@ function Settings({login, setLogin}) {
         })
 
     }
+
+    const uploadBanner = (e) => {
+        e.preventDefault()
+        if (file==null) return;
+        const imageRef = ref(storage, `images/${file.name+v4()}`)
+        uploadBytes(imageRef, file).then((snapshot) => {
+            getDownloadURL(snapshot.ref).then((url) => {
+                setBannerUrl(url)
+
+            })
+        })
+
+    }
+
+
 
     useEffect(()=>{
         if (avatarUrl!=='') {
@@ -51,13 +68,35 @@ function Settings({login, setLogin}) {
         }
     },[avatarUrl, login, setLogin])
 
+    useEffect(()=>{
+        if (bannerUrl!=='') {
+            fetch(`/users/${login.user.id}`,{
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({banner: bannerUrl})
+            }).then((r)=>{
+                if (r.ok) {
+                    r.json().then((data)=>{
+                        setLogin({...login, user: data})
+                        setBannerUrl('')
+                        setFile(null)
+                    })
+                } else {
+                    r.json().then((error)=>console.log(error))
+                }
+            })
+        }
+    },[bannerUrl, login, setLogin])
+
     return (
         <div className="settings">
             <SettingsSidebar/>
             <div className="content">
                 <Switch>
                     <Route path='/settings/account' >
-                        <Account title={title} setTitle={setTitle} file={file} setFile={setFile} uploadImage={uploadImage}/>
+                        <Account title={title} setTitle={setTitle} file={file} setFile={setFile} uploadImage={uploadImage} uploadBanner={uploadBanner}/>
                     </Route>
                     <Route path='/settings/notifications' >
                         <Notifications/>
