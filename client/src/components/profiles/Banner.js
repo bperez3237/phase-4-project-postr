@@ -8,7 +8,7 @@ function Banner({user}) {
     <div>
       <div className='profile-banner'>
         <div className='banner-image'>
-          <img src={user.banner} alt='banner'/>
+          {user.banner ? <img src={user.banner} alt='banner'/> :  <div className='empty-banner'></div> } 
         </div>
         <BannerDetails user={user}/>
       </div>

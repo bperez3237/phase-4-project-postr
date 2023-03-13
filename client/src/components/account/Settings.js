@@ -22,25 +22,18 @@ function Settings({login, setLogin}) {
         e.preventDefault()
         if (file==null) return;
         const imageRef = ref(storage, `images/${file.name+v4()}`)
-        uploadBytes(imageRef, file).then((snapshot) => {
-            getDownloadURL(snapshot.ref).then((url) => {
-                setAvatarUrl(url)
-
-            })
-        })
-
+        const snapshot = uploadBytes(imageRef, file)
+        const url = getDownloadURL(snapshot.ref)
+        setAvatarUrl(url)
     }
 
-    const uploadBanner = (e) => {
+    const uploadBanner = async (e) => {
         e.preventDefault()
         if (file==null) return;
         const imageRef = ref(storage, `images/${file.name+v4()}`)
-        uploadBytes(imageRef, file).then((snapshot) => {
-            getDownloadURL(snapshot.ref).then((url) => {
-                setBannerUrl(url)
-
-            })
-        })
+        const snapshot = await uploadBytes(imageRef, file)
+        const url = await getDownloadURL(snapshot.ref)
+        setBannerUrl(url)
 
     }
 

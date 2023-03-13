@@ -9,7 +9,7 @@ function Heading({username}) {
       <div id='label'>
         <BsArrowLeft onClick={()=>history.goBack()} />
         <div className='heading-label'>
-          <h3>{username}</h3>
+          <h3>{username ? username : ''}</h3>
           <p>{'#'} Posts</p>
         </div></div>
       

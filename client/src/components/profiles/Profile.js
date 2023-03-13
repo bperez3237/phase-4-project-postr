@@ -13,16 +13,13 @@ function Profile() {
     const {data: user} = useGet(`/users/${username}`)
     const {data: posts, setData: setPosts} = useGet(`/users/${username}/${pathState}`)
   
-    if (posts.length === 0) {
-        return <div>nothing</div>
-    }
-    else {return (
+    return (
         <div className='profile'>
             <Heading username={username}/>
             <Banner user={user}/>
-            <Feed pathState={pathState} setPathState={setPathState} posts={posts} setPosts={setPosts}/>
+           <Feed pathState={pathState} setPathState={setPathState} posts={posts} setPosts={setPosts}/>
         </div>
-    )}
+    )
 }
 
 export default Profile

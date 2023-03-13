@@ -37,14 +37,17 @@
   background-color: gray;
   min-height: 250px;
   max-height: 250px;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .profile-banner .banner-image img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.profile-banner .banner-image .empty-banner {
+  background-color: var(--main-dark-color);
+  min-height: 250px;
+  max-height: 250px;
 }
 .profile-banner .banner-details {
   background-color: white;

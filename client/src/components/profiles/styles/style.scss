@@ -46,12 +46,17 @@
         background-color: gray;
         min-height: 250px;
         max-height: 250px;
-        object-fit: cover;
 
         img {
             height: 100%;
             width: 100%;
             object-fit: cover;
+        }
+
+        .empty-banner {
+            background-color: var(--main-dark-color);
+            min-height: 250px;
+            max-height: 250px;
         }
         
     }
