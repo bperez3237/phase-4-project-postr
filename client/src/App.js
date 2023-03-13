@@ -20,9 +20,7 @@ function App() {
   const minMatch = useMediaQuery('(min-width: 960px)')
   const maxMatch = useMediaQuery('(max-width: 1260px)')
 
-
   const {data: login, setData: setLogin} = useGet('/me')
-  console.log(login)
 
   const layoutState = maxMatch ? (minMatch ? "medium" : "min") : 'max'
 

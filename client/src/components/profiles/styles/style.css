@@ -36,6 +36,15 @@
 .profile-banner .banner-image {
   background-color: gray;
   min-height: 250px;
+  max-height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profile-banner .banner-image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .profile-banner .banner-details {
   background-color: white;

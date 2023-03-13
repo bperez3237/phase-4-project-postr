@@ -3,11 +3,12 @@ import BannerDetails from './BannerDetails'
 
 
 function Banner({user}) {
+  console.log(user)
   return (
     <div>
       <div className='profile-banner'>
         <div className='banner-image'>
-          <div>image</div>
+          <img src={user.banner} alt='banner'/>
         </div>
         <BannerDetails user={user}/>
       </div>
