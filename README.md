@@ -3,6 +3,8 @@
 
 Postr is a Twitter-like app built with Ruby on Rails and React, which sorts posts based on their location. Users can create and comment on posts in their current location, but can only view posts from different locations. The app's design is similar to Twitter, but with green instead of blue as the primary color.
 
+See this app deployed through Render: https://postr.onrender.com/
+
 ## Getting Started
 
 Note that the React front-end is located in the client folder, so "--prefix client" must be included in npm commands to run.
