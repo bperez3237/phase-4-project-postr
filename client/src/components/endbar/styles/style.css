@@ -104,43 +104,56 @@
 }
 
 .Newsfeed {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   border-radius: 20px;
   margin-top: 10px;
+  width: 100%;
   background-color: var(--main-light-color);
 }
 .Newsfeed h2 {
   padding: 10px;
+  margin-bottom: 0;
+  width: 100%;
 }
-.Newsfeed .list {
-  display: grid;
-}
-.Newsfeed .list .news-card {
+.Newsfeed .news-card {
   display: flex;
+  flex-direction: row; /* updated */
   max-height: 100px;
   padding: 10px;
+  width: 100%;
+  max-width: 100%;
 }
-.Newsfeed .list .news-card .card-body {
-  display: grid;
-  padding: 0;
+.Newsfeed .news-card .headline {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: calc(100% - 80px);
 }
-.Newsfeed .list .news-card .card-body h4 {
+.Newsfeed .news-card .headline h2 {
   font-size: 1rem;
   font-weight: 600;
   padding: 0;
+  margin: 0; /* added to remove default margins */
+  max-width: calc(100% - 80px); /* added to make sure the text doesn't overflow */
 }
-.Newsfeed .list .news-card .card-body h2 {
-  font-size: 1rem;
+.Newsfeed .news-card .headline h4 {
+  font-size: 0.8rem;
   font-weight: 600;
   padding: 0;
+  margin: 0; /* added to remove default margins */
+  margin-bottom: 5px; /* added to add some space between the headings */
+  max-width: calc(100% - 80px);
 }
-.Newsfeed .list .news-card img {
+.Newsfeed .news-card img {
   width: 60px;
   height: 60px;
+  min-width: 60px;
+  min-height: 60px;
   border-radius: 25%;
   margin: 10px;
 }
-.Newsfeed .list .news-card:hover {
+.Newsfeed .news-card .news-card:hover {
   cursor: pointer;
   background-color: var(--hover-light-color);
 }

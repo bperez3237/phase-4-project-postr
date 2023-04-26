@@ -1,36 +1,34 @@
-import React from 'react'
-import NewsCard from './NewsCard'
-import api_key from '../../news_key'
-import './styles/style.css'
-import { useHistory } from 'react-router-dom'
-import useGet from '../../hooks/useGet'
+import React from "react";
+import NewsCard from "./NewsCard";
+import api_key from "../../news_key";
+import "./styles/style.css";
+import { useHistory } from "react-router-dom";
+import useGet from "../../hooks/useGet";
 
 function Newsfeed() {
-  const history = useHistory()
+  const history = useHistory();
 
-  const url = (`https://newsapi.org/v2/everything?`+
-    `q=News&`+
-    `sortBy=date&`+
-    `apiKey=${api_key}`)
+  const url =
+    `https://newsapi.org/v2/everything?` +
+    `q=News&` +
+    `sortBy=date&` +
+    `apiKey=${api_key}`;
 
-  const {data: news} = useGet(url)
+  const { data: news } = useGet(url);
 
-  const newsCards = news.articles?.slice(0,6).map((article, index) => {
-    return <NewsCard key={index} props={article} />
-  })
-
+  const newsCards = news.articles?.slice(0, 6).map((article, index) => {
+    return <NewsCard key={index} props={article} />;
+  });
 
   return (
-    <div className='Newsfeed'>
+    <div className="Newsfeed">
       <h2>What's happening</h2>
-      <div className='list'>
-        {newsCards}
-      </div>
-      <div className='show-more' onClick={()=>history.push('/explore')}>
+      {newsCards}
+      <div className="show-more" onClick={() => history.push("/explore")}>
         <p>Show More</p>
       </div>
     </div>
-  )
+  );
 }
 
-export default Newsfeed
+export default Newsfeed;
