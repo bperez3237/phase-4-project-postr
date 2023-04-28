@@ -37,8 +37,8 @@ function BannerDetails({ user }) {
         <p>user.bio here</p>
       </div>
       <div className="links">
-        <SlLocationPin /> brooklyn, ny
-        <AiOutlineLink /> links.com
+        <SlLocationPin /> brooklyn, ny <span> </span>
+        <AiOutlineLink /> links.com <span> </span>
         <BiCalendar /> Joined on
       </div>
       <div className="connections"># Following # Followers</div>
