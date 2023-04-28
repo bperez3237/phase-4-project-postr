@@ -123,6 +123,7 @@
   padding: 10px;
   width: 100%;
   max-width: 100%;
+  cursor: pointer;
 }
 .Newsfeed .news-card .headline {
   display: flex;
