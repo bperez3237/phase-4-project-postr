@@ -90,8 +90,7 @@
 }
 
 #logo {
-  width: 100%;
-  float: left;
+  height: 60px;
 }
 
 li#logo svg {

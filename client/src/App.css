@@ -24,6 +24,7 @@
 
 .short {
   max-width: 100px;
+  min-width: 100px;
 }
 
 .Sidebar-list {
@@ -34,8 +35,6 @@
 }
 
 .Sidebar .row {
-  display: flex;
-  justify-content: space-between;
   height: 60px;
   background-color: white;
   border: 1px;
@@ -46,7 +45,6 @@
   list-style-type: none;
   cursor: pointer;
   margin: 11px;
-  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -114,8 +112,7 @@
   height: 100vh;
   width: 100vw;
 
-  font-family: 'Roboto', sans-serif;
-
+  font-family: "Roboto", sans-serif;
 }
 
 .round-button {
@@ -127,8 +124,6 @@
   background: black;
   font-weight: bold;
 }
-
-
 
 .round-button:disabled,
 .round-button[disabled] {
@@ -150,7 +145,7 @@
   top: 50%;
   left: 50%;
 
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
 }
 
 .popup-content {
@@ -182,19 +177,16 @@ svg {
   flex-direction: row;
   padding: 10px;
   cursor: pointer;
-
-  
 }
 
 .post-card:hover {
-  background-color: var(--main-light-color)
+  background-color: var(--main-light-color);
 }
 
 .profile-pic {
   min-width: 80px;
   display: flex;
   justify-content: center;
-
 }
 
 .profile-pic .pic {
@@ -202,6 +194,3 @@ svg {
   height: 60px;
   border-radius: 50%;
 }
-
-
-

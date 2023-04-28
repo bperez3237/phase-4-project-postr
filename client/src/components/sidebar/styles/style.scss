@@ -1,115 +1,113 @@
 .user-profile {
-    border: 1px;
-    border-radius: 40px;
-    margin: 10px;
-    padding: 20px 10px;
-    background-color: white;
-    max-height: 80px;
+  border: 1px;
+  border-radius: 40px;
+  margin: 10px;
+  padding: 20px 10px;
+  background-color: white;
+  max-height: 80px;
+  align-items: center;
+
+  display: flex;
+  cursor: pointer;
+
+  .image {
+    display: grid;
+    justify-content: center;
     align-items: center;
+    .pic {
+      border: 1px;
+      border-style: solid;
+      border-color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+    }
+  }
 
+  .options {
+    min-width: 200px;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    border-radius: 10px;
+
+    position: absolute;
+    bottom: 130px;
+
+    display: grid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .arrow {
+      min-width: 30px;
+      max-width: 30px;
+      min-height: 30px;
+      max-height: 30px;
+      background-color: white;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 200px;
+      left: 35px;
+    }
+
+    .option-row {
+      z-index: 1;
+      background-color: white;
+      min-height: 50px;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .option-row:hover {
+      background-color: #e6e6e6;
+    }
+  }
+
+  .info {
     display: flex;
-    cursor: pointer;
+    flex-direction: column;
+    padding: 0.5em;
+    width: 100%;
+    justify-content: center;
 
-    .image {
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        .pic {
-            border: 1px;
-            border-style: solid;
-            border-color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-        }
+    h3 {
+      margin: 0px;
+      padding: 0px;
+      font-size: 1rem;
+      font-weight: 600;
     }
 
-
-    .options {
-        min-width: 200px;
-        border: 1px;
-        border-style: solid;
-        border-color: black;
-        background-color: white;
-        border-radius: 10px;
-
-        position: absolute;
-        bottom: 130px;
-
-        display: grid;
-        padding-top: 10px;
-        padding-bottom: 10px;
-
-        .arrow {
-            min-width: 30px;
-            max-width: 30px;
-            min-height: 30px;
-            max-height: 30px;
-            background-color: white;
-            transform: rotate(45deg);
-            position: absolute;
-            top: 200px;
-            left: 35px;
-        }
-
-        .option-row {
-            z-index: 1;
-            background-color: white;
-            min-height: 50px;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-        }
-
-        .option-row:hover {
-            background-color: #e6e6e6;
-        }
+    h4 {
+      margin: 0px;
+      padding: 0px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: gray;
     }
+  }
 
-    .info {
-        display: flex;
-        flex-direction: column;
-        padding: 0.5em;
-        width: 100%;
-        justify-content: center;
+  .more-options {
+    min-width: 100px;
 
-
-        h3 {
-            margin: 0px;
-            padding: 0px;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        
-        h4 {
-            margin: 0px;
-            padding: 0px;
-            font-size: 1rem;
-            font-weight: 600;
-            color: gray;
-        }
+    svg {
+      float: right;
+      margin: 20px;
     }
-
-    .more-options {
-        min-width: 100px;
-
-        svg {
-            float: right;
-            margin: 20px;
-        }
-    }
-
+  }
 }
 
 .user-profile:hover {
-    background-color: #e6e6e6;
+  background-color: #e6e6e6;
 }
 
 #logo {
-    width: 100%;
-    float: left;
-} 
+  height: 60px;
+  //   display: flex;
+  //   float: left;
+}
 
 li#logo svg {
-    color: var(--main-dark-color)
+  color: var(--main-dark-color);
 }
