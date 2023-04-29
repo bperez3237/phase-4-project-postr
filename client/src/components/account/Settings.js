@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 
 import "./styles/style.css";
@@ -13,71 +13,61 @@ import Notifications from "./Notifications";
 
 function Settings({ login, setLogin }) {
   const [title, setTitle] = useState("");
-  const [avatarUrl, setAvatarUrl] = useState("");
-  const [bannerUrl, setBannerUrl] = useState("");
   const [file, setFile] = useState(null);
 
   const uploadBanner = async (e) => {
     e.preventDefault();
-    if (file == null) return;
-    const imageRef = ref(storage, `images/${file.name + v4()}`);
+    if (!file) return;
+    const imageRef = ref(storage, `images/${file.name}${v4()}`);
     const snapshot = await uploadBytes(imageRef, file);
     const url = await getDownloadURL(snapshot.ref);
-    setBannerUrl(url);
+
+    try {
+      const response = await fetch(`/users/${login.user.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ banner: url }),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setLogin((prevLogin) => ({ ...prevLogin, user: data }));
+      } else {
+        const error = await response.json();
+        console.log(error);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const uploadImage = async (e) => {
     e.preventDefault();
-    if (file == null) return;
-    const imageRef = ref(storage, `images/${file.name + v4()}`);
+    if (!file) return;
+    const imageRef = ref(storage, `images/${file.name}${v4()}`);
     const snapshot = await uploadBytes(imageRef, file);
     const url = await getDownloadURL(snapshot.ref);
-    setAvatarUrl(url);
+
+    try {
+      const response = await fetch(`/users/${login.user.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ avatar: url }),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setLogin((prevLogin) => ({ ...prevLogin, user: data }));
+      } else {
+        const error = await response.json();
+        console.log(error);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
-
-  useEffect(() => {
-    if (avatarUrl !== "") {
-      fetch(`/users/${login.user.id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ avatar: avatarUrl }),
-      }).then((r) => {
-        if (r.ok) {
-          r.json().then((data) => {
-            setLogin({ ...login, user: data });
-            setAvatarUrl("");
-            setFile(null);
-          });
-        } else {
-          r.json().then((error) => console.log(error));
-        }
-      });
-    }
-  }, [avatarUrl, login, setLogin]);
-
-  useEffect(() => {
-    if (bannerUrl !== "") {
-      fetch(`/users/${login.user.id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ banner: bannerUrl }),
-      }).then((r) => {
-        if (r.ok) {
-          r.json().then((data) => {
-            setLogin({ ...login, user: data });
-            setBannerUrl("");
-            setFile(null);
-          });
-        } else {
-          r.json().then((error) => console.log(error));
-        }
-      });
-    }
-  }, [bannerUrl, login, setLogin]);
 
   return (
     <div className="settings">
